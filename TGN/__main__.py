@@ -110,6 +110,10 @@ buttons = [
                              url=f"https://t.me/Liu_wulang_monkes"),
     ],
     [
+InlineKeyboardButton(
+                             text="U📡",
+                             url=f"https://t.me/Liu_wulang_monkes"),
+
         InlineKeyboardButton(
               text="Help",
               callback_data="help_back"),
