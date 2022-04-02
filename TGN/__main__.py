@@ -81,9 +81,9 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-────「 [GodfatherBot](https://telegra.ph/file/bfa2fbaf65ac04fad78ee.jpg) 」────
+────「 [BRUCE LEE THE MANAGER](https://telegra.ph/file/a9f79df18443873229677.jpg) 」────
 ʜᴇʏ! {}
-ɪ ᴀᴍ 𝐆𝐨𝐝𝐟𝐚𝐭𝐡𝐞𝐫𝐛𝐨𝐭 ᴀɴ ᴀɴɪᴍᴇ ᴛʜᴇᴍᴇᴅ ᴀᴅᴠᴀɴᴄᴇ ɢʀᴏᴜᴏ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴡɪᴛʜ ᴀ ʟᴏᴛ ᴏғ sᴘᴇᴄɪᴀʟɪᴛʏ.
+ɪ ᴀᴍ BRUCE LEE ᴀɴ ᴀɴɪᴍᴇ ᴛʜᴇᴍᴇᴅ ᴀᴅᴠᴀɴᴄᴇ ɢʀᴏᴜᴏ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴡɪᴛʜ ᴀ ʟᴏᴛ ᴏғ sᴘᴇᴄɪᴀʟɪᴛʏ.
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
 I have lots of handy features such as:
 ‣ Warning system
@@ -104,10 +104,10 @@ buttons = [
     [                  
                        InlineKeyboardButton(
                              text="Support👥",
-                             url=f"https://t.me/GodfatherSupport"),
+                             url=f"https://t.me/Ronin_Fighters_Fd"),
                        InlineKeyboardButton(
                              text="Updates📡",
-                             url=f"https://t.me/The_Godfather_Network"),
+                             url=f"https://t.me/Liu_wulang_monkes"),
     ],
     [
         InlineKeyboardButton(
@@ -119,8 +119,8 @@ buttons = [
     ],
     [
         InlineKeyboardButton(
-            text="Donate 🌹", 
-            callback_data="shukurenai_donate"),
+            text="Offical channel 🌹", 
+            callback_data="https://t.me/RoninXJin_updates"),
     ],
 
 ]
@@ -131,8 +131,8 @@ Click on the button bellow to get description about specifics command."""
 
 HELP_MSG = "Click the button below to get help manu in your pm."
 DONATE_STRING = """Contact to **@Godfatherakkii**"""
-HELP_IMG = "https://telegra.ph/file/d394e1486b4fa1cfcb322.jpg"
-GROUP_IMG = "https://telegra.ph/file/3f3c3af0e2236daad0dd2.jpg"
+HELP_IMG = "https://telegra.ph/file/a9f79df18443873229677.jpg"
+GROUP_IMG = "https://telegra.ph/file/a9f79df18443873229677.jpg"
 
 
 
@@ -249,7 +249,7 @@ def start(update: Update, context: CallbackContext):
     else:
         first_name = update.effective_user.first_name
         update.effective_message.reply_photo(
-             GROUP_IMG, caption= "*Hey {},*\n*GodfatherBot is here*\n*Power lavel time* : {} ".format(
+             GROUP_IMG, caption= "*Hey {},*\n*BRUCE LEE is here*\n*Power lavel time* : {} ".format(
              first_name,uptime
             ),
             parse_mode=ParseMode.MARKDOWN,
