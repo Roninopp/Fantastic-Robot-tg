@@ -251,10 +251,10 @@ def info(update: Update, context: CallbackContext):
     else:
         return
 
-    rep = message.reply_text("<code>Appraising...</code>", parse_mode=ParseMode.HTML)
+    rep = message.reply_text("<code>getting information. . .</code>", parse_mode=ParseMode.HTML)
 
     text = (
-        f"╔═━「<b> Appraisal results:</b> 」\n"
+        f"╔═━「<b> Appraisal results by Bruce lee:</b> 」\n"
         f"✪ ID: <code>{user.id}</code>\n"
         f"✪ First Name: {html.escape(user.first_name)}"
     )
@@ -330,9 +330,9 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "Support", url="https://t.me/OMG_info"),
+                                "Support", url="https://t.me/liu_WULANG_MONKES"),
                             InlineKeyboardButton(
-                                "Creator", url="https://t.me/shado_hackers")
+                                "UPDATE CHANNEL", url="https://t.me/RoninXJin_updates")
                         ],
                     ]
                 ),
@@ -348,9 +348,9 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "Support", url="https://t.me/OMG_info"),
+                                "Support", url="https://t.me/liu_WULANG_MONKES"),
                             InlineKeyboardButton(
-                                "Creator", url="https://t.me/shado_hackers")
+                                "UPDATE CHANNEL", url="https://t.me/RoninXJin_updates")
                         ],
                     ]
                 ),
