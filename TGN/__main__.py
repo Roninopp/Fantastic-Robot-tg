@@ -81,9 +81,9 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-────「 [BRUCE LEE THE MANAGER](https://telegra.ph/file/a9f79df18443873229677.jpg) 」────
+────「 [FANTASTIC THE MANAGER](https://te.legra.ph/file/9012a958e07362727ae19.jpg) 」────
 ʜᴇʏ! {}
-ɪ ᴀᴍ BRUCE LEE ᴀɴ ᴀɴɪᴍᴇ ᴛʜᴇᴍᴇᴅ ᴀᴅᴠᴀɴᴄᴇ ɢʀᴏᴜᴏ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴡɪᴛʜ ᴀ ʟᴏᴛ ᴏғ sᴘᴇᴄɪᴀʟɪᴛʏ.
+ɪ ᴀᴍ FANTASTIC ᴀɴ ᴀɴɪᴍᴇ ᴛʜᴇᴍᴇᴅ ᴀᴅᴠᴀɴᴄᴇ ɢʀᴏᴜᴏ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴡɪᴛʜ ᴀ ʟᴏᴛ ᴏғ sᴘᴇᴄɪᴀʟɪᴛʏ.
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
 I have lots of handy features such as:
 ‣ Warning system
@@ -91,6 +91,7 @@ I have lots of handy features such as:
 ‣ Flood control system
 ‣ Note keeping system
 ‣ Filters keeping system
+‣ without lag music+video
 ‣ Approvals and much more.
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
 ➛ᴛʀʏ ᴛʜᴇ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴs ʙᴇʟᴏᴡ ᴛᴏ ᴋɴᴏᴡ ᴍʏ ᴀʙɪʟɪᴛɪᴇs ××
@@ -99,7 +100,7 @@ I have lots of handy features such as:
 buttons = [
     [
         InlineKeyboardButton(
-            text="💕 Add To Your Group 💕", url="t.me/The_Bruce_leebot?startgroup=new"),
+            text="💕 Add To Your Group 💕", url="https://t.me/FANTASTICFIGHTERBOT?startgroup=new"),
     ],
     [                  
                        InlineKeyboardButton(
@@ -111,8 +112,8 @@ buttons = [
     ],
     [
 InlineKeyboardButton(
-                             text="BROTHER 💙",
-                             url=f"https://t.me/FANTASTICFIGHTERBOT"),
+                             text="MY DARLING",
+                             url=f"https://t.me/JinKazamaXBot"),
 
         InlineKeyboardButton(
               text="Help",
@@ -123,7 +124,7 @@ InlineKeyboardButton(
     ],
     [
         InlineKeyboardButton(
-            text="Offical channel 🌹", 
+            text="Offical CHANNEL", 
             url=f"https://t.me/RoninXJin_updates"),
     ],
 
@@ -134,9 +135,9 @@ HELP_STRINGS = """
 Click on the button bellow to get description about specifics command."""
 
 HELP_MSG = "Click the button below to get help manu in your pm."
-DONATE_STRING = """Contact to **@Godfatherakkii**"""
-HELP_IMG = "https://telegra.ph/file/a9f79df18443873229677.jpg"
-GROUP_IMG = "https://telegra.ph/file/a9f79df18443873229677.jpg"
+DONATE_STRING = """Contact to **@DushmanxRonin**"""
+HELP_IMG = "https://te.legra.ph/file/4789bb3e07507c35248c5.jpg"
+GROUP_IMG = "https://te.legra.ph/file/4789bb3e07507c35248c5.jpg"
 
 
 
