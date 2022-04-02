@@ -44,13 +44,9 @@
          "value": ""
       },    
       "DATABASE_URL": {
-
          "description": "Your postgres sql db, Go and get one at elephantSql.com .",
-
          "required": true,
-
          "value": "sqldbtype://username:pw@hostname:port/db_name"
-
       },      
       "OWNER_ID": {
          "description": "Your user ID as an integer.",
