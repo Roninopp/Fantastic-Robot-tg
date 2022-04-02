@@ -99,7 +99,7 @@ I have lots of handy features such as:
 buttons = [
     [
         InlineKeyboardButton(
-            text="💕 Add To Your Group 💕", url="t.me/TGN_Ro_bot?startgroup=new"),
+            text="💕 Add To Your Group 💕", url="t.me/The_Bruce_leebot?startgroup=new"),
     ],
     [                  
                        InlineKeyboardButton(
@@ -390,7 +390,7 @@ def shukurenai_about_callback(update, context):
     query = update.callback_query
     if query.data == "shukurenai_":
         query.message.edit_text(
-            text="๏ I'm *GODFATHERBOT*, a powerful group management bot built to help you manage your group easily."
+            text="๏ I'm *BRUCE LEE*, a powerful group management bot built to help you manage your group easily."
             "\n• I can restrict users."
             "\n• I can greet users with customizable welcome messages and even set a group's rules."
             "\n• I have an advanced anti-flood system."
@@ -471,8 +471,8 @@ def shukurenai_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Support", url="https://t.me/GodfatherSupport"),
-                    InlineKeyboardButton(text="Updates", url="https://t.me/The_Godfather_Network"),
+                    InlineKeyboardButton(text="Support", url="https://t.me/liu_WULANG_MONKES"),
+                    InlineKeyboardButton(text="Updates", url="https://t.me/liu_WULANG_MONKES"),
                  ],
                  [
                     InlineKeyboardButton(text="Go Back", callback_data="shukurenai_"),
@@ -491,8 +491,8 @@ def shukurenai_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Zaid", url="https://t.me/Timesisnotwaiting"),
-                    InlineKeyboardButton(text="Null", url="https://t.me/Shubhanshutya"),
+                    InlineKeyboardButton(text="Zaid", url="https://t.me/liu_WULANG_MONKES"),
+                    InlineKeyboardButton(text="Null", url="https://t.me/Dushmanxronin"),
                     InlineKeyboardButton(text="Akki", url="https://t.me/Godfatherakki"), 
                  ],
                  [
