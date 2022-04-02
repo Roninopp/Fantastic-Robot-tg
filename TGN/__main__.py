@@ -264,7 +264,7 @@ def start(update: Update, context: CallbackContext):
                   InlineKeyboardButton(text="✧ Support ", url=f"https://t.me/liu_WULANG_MONKES"),
                   InlineKeyboardButton(text="✧ Updates ", url=f"https://t.me/RoninXjin_updates"),
                   ]
-                ]GH
+                ]
             ),
         )
        
