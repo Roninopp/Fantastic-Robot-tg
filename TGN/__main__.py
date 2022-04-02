@@ -100,20 +100,20 @@ I have lots of handy features such as:
 buttons = [
     [
         InlineKeyboardButton(
-            text="💕 Add To Your Group 💕", url="https://t.me/FANTASTICFIGHTERBOT?startgroup=new"),
+            text="💖 Add To Your Group 💖", url="https://t.me/FANTASTICFIGHTERBOT?startgroup=new"),
     ],
     [                  
                        InlineKeyboardButton(
-                             text="Support👥",
+                             text="Support🤝",
                              url=f"https://t.me/Ronin_Fighters_Fd"),
                        InlineKeyboardButton(
-                             text="Updates📡",
+                             text="Updates💖",
                              url=f"https://t.me/Liu_wulang_monkes"),
     ],
     [
 InlineKeyboardButton(
-                             text="MY DARLING",
-                             url=f"https://t.me/JinKazamaXBot"),
+                             text="MY DARLING💝",
+                             url=f"https://t.me/"DarlingXRobot),
 
         InlineKeyboardButton(
               text="Help",
