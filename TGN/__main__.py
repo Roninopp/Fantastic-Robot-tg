@@ -111,8 +111,8 @@ buttons = [
     ],
     [
 InlineKeyboardButton(
-                             text="U📡",
-                             url=f"https://t.me/Liu_wulang_monkes"),
+                             text="BROTHER 💙",
+                             url=f"https://t.me/FANTASTICFIGHTERBOT"),
 
         InlineKeyboardButton(
               text="Help",
