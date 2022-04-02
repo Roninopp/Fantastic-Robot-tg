@@ -120,7 +120,7 @@ buttons = [
     [
         InlineKeyboardButton(
             text="Offical channel 🌹", 
-            callback_data="https://t.me/RoninXJin_updates"),
+            url=f"https://t.me/RoninXJin_updates"),
     ],
 
 ]
@@ -508,7 +508,7 @@ def shukurenai_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Razorpay", url="https://rzp.io/l/GODFATHERDONATIONS"),
+                    InlineKeyboardButton(text="Razorpay", url="https://t.me/liu_WULANG_MONKES"),
                  ],
                  [
                     InlineKeyboardButton(text="Go Back", callback_data="shukurenai_back"),
@@ -833,10 +833,10 @@ def main():
                   [                  
                        InlineKeyboardButton(
                              text="Support👥",
-                             url=f"https://t.me/GodfatherSupport"),
+                             url=f"https://t.me/liu_WULANG_MONKES"),
                        InlineKeyboardButton(
                              text="Updates📡",
-                             url="https://t.me/The_Godfather_Network")
+                             url="https://t.me/liu_WULANG_MONKES")
                      ] 
                 ]
             ),
