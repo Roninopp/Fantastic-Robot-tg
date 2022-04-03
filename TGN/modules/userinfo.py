@@ -437,7 +437,6 @@ def stats(update: Update, context: CallbackContext):
                 ]
             ),
         )
-   )
         
         
 def about_bio(update: Update, context: CallbackContext):
