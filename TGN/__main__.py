@@ -95,19 +95,19 @@ I have lots of handy features such as:
 ‣ Approvals and much more.
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
 ➛ᴛʀʏ ᴛʜᴇ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴs ʙᴇʟᴏᴡ ᴛᴏ ᴋɴᴏᴡ ᴍʏ ᴀʙɪʟɪᴛɪᴇs ××
-"""
+""" 𝐶𝑙𝑖𝑐𝑘 /help
 
 buttons = [
     [
         InlineKeyboardButton(
-            text="💖 Add To Your Group 💖", url="https://t.me/FANTASTICFIGHTERBOT?startgroup=new"),
+            text="💖 𝘼𝘿𝘿 𝙈𝙀 𝙏𝙊 𝙂𝙍𝙊𝙐𝙋 💖", url="https://t.me/FANTASTICFIGHTERBOT?startgroup=new"),
     ],
     [                  
                        InlineKeyboardButton(
-                             text="Support🤝",
+                             text="S͎U͎P͎P͎O͎R͎T͎ 🤝",
                              url=f"https://t.me/Ronin_Fighters_Fd"),
                        InlineKeyboardButton(
-                             text="Updates💖",
+                             text="U̥P̥D̥ḀT̥E̥S̥💖",
                              url=f"https://t.me/Liu_wulang_monkes"),
     ],
     [
@@ -124,7 +124,7 @@ InlineKeyboardButton(
     ],
     [
         InlineKeyboardButton(
-            text="Offical CHANNEL", 
+            text="ＯＦＦＩＣＡＬ𝒄𝒉𝒂𝒏𝒏𝒆𝒍", 
             url=f"https://t.me/RoninXJin_updates"),
     ],
 
@@ -395,7 +395,7 @@ def shukurenai_about_callback(update, context):
     query = update.callback_query
     if query.data == "shukurenai_":
         query.message.edit_text(
-            text="๏ I'm *BRUCE LEE*, a powerful group management bot built to help you manage your group easily."
+            text="๏ I'm *𝑭𝑨𝑵𝑻𝑨𝑺𝑻𝑰𝑪*, a powerful group management bot built to help you manage your group easily."
             "\n• I can restrict users."
             "\n• I can greet users with customizable welcome messages and even set a group's rules."
             "\n• I have an advanced anti-flood system."
@@ -471,7 +471,7 @@ def shukurenai_about_callback(update, context):
     elif query.data == "shukurenai_support":
         query.message.edit_text(
             text="*๏ Anie support chats*"
-            "\nJoin My Support Group/Channel for see or report a problem on GodfatherBot.",
+            "\nJoin My Support Group/Channel for see or report a problem on 𝑭𝒂𝒏𝒕𝒂𝒔𝒕𝒊𝒄 𝒔𝒖𝒑𝒑𝒐𝒓𝒕.",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
@@ -490,7 +490,7 @@ def shukurenai_about_callback(update, context):
 
     elif query.data == "shukurenai_credit":
         query.message.edit_text(
-            text=f"๏ Credis for GodfatherBot\n"
+            text=f"๏ Credis for fantasticBot\n"
             "\nHere Developers Making And Give Inspiration For Made The Anie",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
