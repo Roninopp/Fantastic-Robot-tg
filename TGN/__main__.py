@@ -114,7 +114,7 @@ buttons = [
     [
 InlineKeyboardButton(
                              text="MY DARLING💝",
-                             url=f"https://t.me/DarlingXRobot"),
+                             url=f"https://t.me/AVIVEKbot"),
 
         InlineKeyboardButton(
               text="Help",
