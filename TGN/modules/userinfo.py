@@ -1,24 +1,30 @@
+
+
 import html
 import re
 import os
 import requests
+import importlib
 import datetime
 import platform
 import time
+from typing import List
 
 from psutil import cpu_percent, virtual_memory, disk_usage, boot_time
 from platform import python_version
 from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.types import ChannelParticipantsAdmins
 from telethon import events
+from pyrogram import filters
 
 from telegram import MAX_MESSAGE_LENGTH, ParseMode, Update, MessageEntity, __version__ as ptbver, InlineKeyboardButton, InlineKeyboardMarkup
-from telegram.ext import CallbackContext, CommandHandler
+from telegram.ext import (CallbackContext, CallbackQueryHandler, CommandHandler,
+                          Filters, MessageHandler)
 from telegram.ext.dispatcher import run_async
 from telegram.error import BadRequest
 from telegram.utils.helpers import escape_markdown, mention_html
     
-from TGN import (
+from MikuXProBot import (
     DEV_USERS,
     OWNER_ID,
     DRAGONS,
@@ -29,18 +35,20 @@ from TGN import (
     dispatcher,
     sw,
     StartTime,
-    SUPPORT_CHAT,
+    SUPPORT_CHAT
 )
-from TGN.__main__ import STATS, TOKEN, USER_INFO
-from TGN.modules.sql import SESSION
-import TGN.modules.sql.userinfo_sql as sql
-from TGN.modules.disable import DisableAbleCommandHandler
-from TGN.modules.sql.global_bans_sql import is_user_gbanned
-from TGN.modules.sql.afk_sql import is_afk, set_afk
-from TGN.modules.sql.users_sql import get_user_num_chats
-from TGN.modules.helper_funcs.chat_status import sudo_plus
-from TGN.modules.helper_funcs.extraction import extract_user
-from TGN import telethn
+from MikuXProBot.__main__ import STATS, TOKEN, USER_INFO
+from MikuXProBot.modules.sql import SESSION
+import MikuXProBot.modules.sql.userinfo_sql as sql
+from MikuXProBot.modules.disable import DisableAbleCommandHandler
+from MikuXProBot.modules.sql.global_bans_sql import is_user_gbanned
+from MikuXProBot.modules.sql.afk_sql import is_afk, check_afk_status
+from MikuXProBot.modules.sql.users_sql import get_user_num_chats
+from MikuXProBot.modules.helper_funcs.chat_status import sudo_plus
+from MikuXProBot.modules.helper_funcs.extraction import extract_user
+from MikuXProBot import telethn
+
+MIKU_IMG = "https://te.legra.ph/file/9012a958e07362727ae19.jpg"
 
 def no_by_per(totalhp, percentage):
     """
@@ -110,7 +118,7 @@ def hpmanager(user):
             new_hp -= no_by_per(total_hp, 10)
 
         if is_afk(user.id):
-            afkst = set_afk(user.id)
+            afkst = check_afk_status(user.id)
             # if user is afk and no reason then decrease 7%
             # else if reason exist decrease 5%
             new_hp -= no_by_per(total_hp, 7) if not afkst else no_by_per(total_hp, 5)
@@ -131,7 +139,7 @@ def hpmanager(user):
 
 def make_bar(per):
     done = min(round(per / 10), 10)
-    return "✔️" * done + "🔸" * (10 - done)
+    return "◈" * done + "◇" * (10 - done)
 
 
 def get_id(update: Update, context: CallbackContext):
@@ -149,7 +157,7 @@ def get_id(update: Update, context: CallbackContext):
             user2 = message.reply_to_message.forward_from
 
             msg.reply_text(
-                f"<b>Telegram ID:</b>\n"
+                f"<b>Telegram ID:</b>,"
                 f"• {html.escape(user2.first_name)} - <code>{user2.id}</code>.\n"
                 f"• {html.escape(user1.first_name)} - <code>{user1.id}</code>.",
                 parse_mode=ParseMode.HTML,
@@ -170,7 +178,7 @@ def get_id(update: Update, context: CallbackContext):
 
     else:
         msg.reply_text(
-            f"This group's id is <code>{chat.id}</code>.", parse_mode=ParseMode.HTML,
+            f"<b>{message.chat.title}</b>'s id is <code>{chat.id}</code>.", parse_mode=ParseMode.HTML,
         )
 
 
@@ -228,6 +236,16 @@ def info(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
     message = update.effective_message
     chat = update.effective_chat
+    buttons = [
+    [
+                        InlineKeyboardButton(
+                             text="Health",
+                             url="https://t.me/Ronin_Fighters_Fd?start=health"),
+                       InlineKeyboardButton(
+                             text="Disasters",
+                             url="https://t.me/RoninXJin_updates?start=disasters"),
+                    ],
+    ]
     user_id = extract_user(update.effective_message, args)
 
     if user_id:
@@ -251,24 +269,24 @@ def info(update: Update, context: CallbackContext):
     else:
         return
 
-    rep = message.reply_text("<code>getting information. . .</code>", parse_mode=ParseMode.HTML)
+    rep = message.reply_text("<code>Collecting information by Ronin....</code>", parse_mode=ParseMode.HTML)
 
     text = (
-        f"╔═━「<b> Appraisal results by FANTASTIC:</b> 」\n"
-        f"✪ ID: <code>{user.id}</code>\n"
-        f"✪ First Name: {html.escape(user.first_name)}"
+        f"╒═══「<b>• Appraisal results By fantastic •</b> 」\n"
+        f"• ID: <code>{user.id}</code>\n"
+        f"• First Name: {html.escape(user.first_name)}"
     )
 
     if user.last_name:
-        text += f"\n✪ Last Name: {html.escape(user.last_name)}"
+        text += f"\n• Last Name: {html.escape(user.last_name)}"
 
     if user.username:
-        text += f"\n✪ Username: @{html.escape(user.username)}"
+        text += f"\n• Username: @{html.escape(user.username)}"
 
-    text += f"\n✪ Userlink: {mention_html(user.id, 'link')}"
+    text += f"\n• Userlink: {mention_html(user.id, 'link')}"
 
     if chat.type != "private" and user_id != bot.id:
-        _stext = "\n✪ Presence: <code>{}</code>"
+        _stext = "\n• Presence: <code>{}</code>"
 
         afk_st = is_afk(user.id)
         if afk_st:
@@ -282,7 +300,10 @@ def info(update: Update, context: CallbackContext):
                     text += _stext.format("Detected")
                 elif status in {"administrator", "creator"}:
                     text += _stext.format("Admin")
-    
+    if user_id not in [bot.id, 777000, 1087968824]:
+        userhp = hpmanager(user)
+        text += f"\n\n<b>Health:</b> <code>{userhp['earnedhp']}/{userhp['totalhp']}</code>\n[<i>{make_bar(int(userhp['percentage']))} </i>{userhp['percentage']}%]"
+
     try:
         spamwtc = sw.get_ban(int(user.id))
         if spamwtc:
@@ -294,7 +315,28 @@ def info(update: Update, context: CallbackContext):
 
     disaster_level_present = False
 
-    
+    if user.id == OWNER_ID:
+        text += "\n\nThe Disaster level of this person is 'kING OF SAMURAI'."
+        disaster_level_present = True
+    elif user.id in DEV_USERS:
+        text += "\n\nThis user is member of 'Fantastic Fans '."
+        disaster_level_present = True
+    elif user.id in DRAGONS:
+        text += "\n\nThe Disaster level of this person is 'LORD DEMON'."
+        disaster_level_present = True
+    elif user.id in DEMONS:
+        text += "\n\nThe Disaster level of this person is 'The KING OF TIGER'."
+        disaster_level_present = True
+    elif user.id in TIGERS:
+        text += "\n\nThe Disaster level of this person is 'THE KING OF WOLVES'."
+        disaster_level_present = True
+    elif user.id in WOLVES:
+        text += "\n\nThe Disaster level of this person is 'Wolf'."
+        disaster_level_present = True
+    elif user.id == 5291415314:
+         text += "\n\nCo-Owner Of A Bot."
+         disaster_level_present = False
+
 
     try:
         user_member = chat.get_member(user.id)
@@ -320,51 +362,30 @@ def info(update: Update, context: CallbackContext):
     if INFOPIC:
         try:
             profile = context.bot.get_user_profile_photos(user.id).photos[0][-1]
-            _file = bot.get_file(profile["file_id"])
-            _file.download(f"{user.id}.png")
-
-            message.reply_document(
-                document=open(f"{user.id}.png", "rb"),
-                caption=(text),
-                reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton(
-                                "Support", url="https://t.me/liu_WULANG_MONKES"),
-                            InlineKeyboardButton(
-                                "UPDATE CHANNEL", url="https://t.me/RoninXJin_updates")
-                        ],
-                    ]
-                ),
-                parse_mode=ParseMode.HTML,
-            )
-
-            os.remove(f"{user.id}.png")
+            context.bot.sendChatAction(chat.id, "upload_photo")
+            context.bot.send_photo(
+            chat.id,
+            photo=profile,
+            caption=(text),
+            reply_markup=InlineKeyboardMarkup(buttons),
+                parse_mode=ParseMode.HTML,            
+        )
         # Incase user don't have profile pic, send normal text
         except IndexError:
             message.reply_text(
-                text, 
-                reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton(
-                                "Support", url="https://t.me/liu_WULANG_MONKES"),
-                            InlineKeyboardButton(
-                                "UPDATE CHANNEL", url="https://t.me/RoninXJin_updates")
-                        ],
-                    ]
-                ),
-                parse_mode=ParseMode.HTML,
-                disable_web_page_preview=True
-            )
+            text,
+        reply_markup=InlineKeyboardMarkup(buttons),
+                parse_mode=ParseMode.HTML,            
+                   )
 
     else:
         message.reply_text(
-            text, parse_mode=ParseMode.HTML,
-        )
+            text,
+        reply_markup=InlineKeyboardMarkup(buttons),
+                parse_mode=ParseMode.HTML,            
+                   )
 
     rep.delete()
-
 
 def about_me(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
@@ -387,6 +408,7 @@ def about_me(update: Update, context: CallbackContext):
         )
     else:
         update.effective_message.reply_text("There isnt one, use /setme to set one.")
+
 
 
 def set_about_me(update: Update, context: CallbackContext):
@@ -421,15 +443,67 @@ def set_about_me(update: Update, context: CallbackContext):
             )
 
 @sudo_plus
-def stats(update: Update, context: CallbackContext):
-    stats = "❂ <b>Stats For <a href='https://t.me/FANTASTICFIGHTERBOT'>LIUWULANGbot</a>:</b>\n" + "\n".join([mod.__stats__() for mod in STATS])
-    result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
-    update.effective_message.reply_text(
-        result,
-        parse_mode=ParseMode.HTML, 
-        disable_web_page_preview=True
-        
-   )
+def stats(update, context):
+    uptime = datetime.datetime.fromtimestamp(boot_time()).strftime("%Y-%m-%d %H:%M:%S")
+    botuptime = get_readable_time((time.time() - StartTime))
+    status = "*╒═══「 System statistics 」*\n\n"
+    status += "*➢ System Start time:* " + str(uptime) + "\n"
+    uname = platform.uname()
+    status += "*➢ System:* " + str(uname.system) + "\n"
+    status += "*➢ Node name:* " + escape_markdown(str(uname.node)) + "\n"
+    status += "*➢ Release:* " + escape_markdown(str(uname.release)) + "\n"
+    status += "*➢ Machine:* " + escape_markdown(str(uname.machine)) + "\n"
+    mem = virtual_memory()
+    cpu = cpu_percent()
+    disk = disk_usage("/")
+    status += "*➢ CPU:* " + str(cpu) + " %\n"
+    status += "*➢ RAM:* " + str(mem[2]) + " %\n"
+    status += "*➢ Storage:* " + str(disk[3]) + " %\n\n"
+    status += "*➢ Python Version:* " + python_version() + "\n"
+    status += "*➢ python-Telegram-Bot:* " + str(ptbver) + "\n"
+    status += "*➢ Uptime:* " + str(botuptime) + "\n"
+    try:
+        update.effective_message.reply_photo(
+            Fantastic_IMG,
+            status
+            + "\n*Bot statistics*:\n"
+            + "\n".join([mod.__stats__() for mod in STATS])
+            + f"\n\n[✦ Support](https://t.me/liu_WULANG_MONKES) | [✦ Updates](https://t.me/RoninXJin_updates)\n\n"
+            + "\n╘══「 by [Ronin](https://t.me/Dushmanxronin) 」\n",
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                  [                  
+                       InlineKeyboardButton(
+                             text="Owner",
+                             url="https://t.me/Dushmanxronin")
+                     ] 
+                ]
+            ),
+        )
+    except BaseException:
+        update.effective_message.reply_text(
+            (
+                (
+                    (
+                        "\n*Bot statistics Powered by Fantastic manager*:\n"
+                        + "\n".join(mod.__stats__() for mod in STATS)
+                    )
+                    + f"\n\n✦ [Support](https://t.me/{SUPPORT_CHAT}) | ✦ [Updates](https://t.me/RoninXJin_updates)\n\n"
+                )
+                + "╘══「 by [Ronin](https://t.me/Dushmanxronin) 」\n"
+            ),
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                  [                  
+                       InlineKeyboardButton(
+                             text="POWERED BY",
+                             url="https://t.me/RoninXJin_updates")
+                     ] 
+                ]
+            ),
+        )
         
         
 def about_bio(update: Update, context: CallbackContext):
@@ -514,38 +588,45 @@ def __user_info__(user_id):
     result = result.strip("\n")
     return result
 
-
 __help__ = """
 *ID:*
-❂ /id*:* get the current group id. If used by replying to a message, gets that user's id.
-❂ /gifid*:* reply to a gif to me to tell you its file ID.
+ • `/id`*:* get the current group id. If used by replying to a message, gets that user's id.
+ • `/gifid`*:* reply to a gif to me to tell you its file ID.
  
 *Self addded information:* 
-❂ /setme <text>*:* will set your info
-❂ /me*:* will get your or another user's info.
+ • `/setme <text>`*:* will set your info
+ • `/me`*:* will get your or another user's info.
 Examples:
-❂ /setme I am a wolf.
-❂ /me @username(defaults to yours if no user specified)
+ `/setme I am a wolf.`
+ `/me @username(defaults to yours if no user specified)`
  
 *Information others add on you:* 
-❂ /bio*:* will get your or another user's bio. This cannot be set by yourself.
-❂ /setbio <text>*:* while replying, will save another user's bio 
+ • `/bio`*:* will get your or another user's bio. This cannot be set by yourself.
+• `/setbio <text>`*:* while replying, will save another user's bio 
 Examples:
-❂ /bio @username(defaults to yours if not specified).
-❂ /setbio This user is a wolf (reply to the user)
+ `/bio @username(defaults to yours if not specified).`
+ `/setbio This user is a wolf` (reply to the user)
  
 *Overall Information about you:*
-❂ /info*:* get information about a user. 
+ • `/info`*:* get information about a user. 
+ 
+*◢ Intellivoid SpamProtection:*
+ • `/spwinfo`*:* SpamProtection Info
  
 *json Detailed info:*
-❂ /json*:* Get Detailed info about any message.
+ • `/json`*:* Get Detailed info about any message.
+ 
+*Covid info:*
+ • `/covid`*:* Get Detailed info about Covid.
+ 
+*ARQ Statistics:*
+ /arq : ARQ API Stats.
  
 *AFk:*
 When marked as AFK, any mentions will be replied to with a message stating that you're not available!
-❂ /afk <reason>*:* Mark yourself as AFK.
-  - brb <reason>: Same as the afk command, but not a command. 
+ • `/afk <reason>`*:* Mark yourself as AFK.
+  - brb <reason>: Same as the afk command, but not a command.\n 
   
-
 """
 
 SET_BIO_HANDLER = DisableAbleCommandHandler("setbio", set_about_bio, run_async=True)
