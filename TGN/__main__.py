@@ -94,8 +94,9 @@ I have lots of handy features such as:
 ‣ without lag music+video
 ‣ Approvals and much more.
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
-➛ᴛʀʏ ᴛʜᴇ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴs ʙᴇʟᴏᴡ ᴛᴏ ᴋɴᴏᴡ ᴍʏ ᴀʙɪʟɪᴛɪᴇs ××
-""" 𝐶𝑙𝑖𝑐𝑘 /help
+➛ᴛʀʏ ᴛʜᴇ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴs ʙᴇʟᴏᴡ ᴛᴏ ᴋɴᴏᴡ ᴍʏ ᴀʙɪʟɪᴛɪᴇs ××× 
+𝐶𝑙𝑖𝑐𝑘 /help 
+"""
 
 buttons = [
     [
