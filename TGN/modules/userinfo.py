@@ -422,21 +422,14 @@ def set_about_me(update: Update, context: CallbackContext):
 
 @sudo_plus
 def stats(update: Update, context: CallbackContext):
-    stats = "❂ <b>Stats For LIUWULANG\n" + "\n".join([mod.__stats__() for mod in STATS])
+    stats = "❂ <b>Stats For <a href='https://t.me/FANTASTICFIGHTERBOT'>LIUWULANGbot</a>:</b>\n" + "\n".join([mod.__stats__() for mod in STATS])
     result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
     update.effective_message.reply_text(
         result,
-        parse_mode=ParseMode.MARKDOWN, 
-        reply_markup=InlineKeyboardMarkup(
-                [
-                  [                  
-                       InlineKeyboardButton(
-                             text="Github",
-                             url="github.com/XHate-Official")                  
-                     ] 
-                ]
-            ),
-        )
+        parse_mode=ParseMode.HTML, 
+        disable_web_page_preview=True
+        
+   )
         
         
 def about_bio(update: Update, context: CallbackContext):
