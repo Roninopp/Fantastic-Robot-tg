@@ -76,7 +76,7 @@ async def writer(client, message):
         try:
             await message.reply_photo(
                 url,
-                caption=f"**Successfully Written** As {text}\n\nImage Link => {url}\n\n**By @kigo_omfo**",
+                caption=f"**Successfully Written** As {text}\n\nImage Link => {url}\n\n**By @FANTASTICFIGHTERBOT**",
             )
         except:
             return
@@ -111,7 +111,7 @@ async def writer(client, message):
         try:
             await message.reply_photo(
                 url,
-                caption=f"**Successfully Written** As {text}\n\nImage Link => {url}\n\n**By @kigo_omfo**",
+                caption=f"**Successfully Written** As {text}\n\nImage Link => {url}\n\n**By @FANTASTICFIGHTERBOT**",
             )
         except:
             return
@@ -167,7 +167,7 @@ async def longwriter(client, message):
         try:
             await message.reply_photo(
                 url,
-                caption=f"**Successfully Written**\n\nImage Link => {url}\n\n**By @TGN_Ro_bot**",
+                caption=f"**Successfully Written**\n\nImage Link => {url}\n\n**By @FANTASTICFIGHTERBOT**",
             )
         except:
             return
@@ -208,7 +208,7 @@ async def longwriter(client, message):
         try:
             await message.reply_photo(
                 url,
-                caption=f"**Successfully Written**\n\nImage Link => {url}\n\n**By @TGN_Ro_bot**",
+                caption=f"**Successfully Written**\n\nImage Link => {url}\n\n**By @FANTASTICFIGHTERBOT**",
             )
         except:
             return
