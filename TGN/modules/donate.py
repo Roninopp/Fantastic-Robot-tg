@@ -10,6 +10,6 @@ PHOTO = "https://telegra.ph/file/bd7b76ef72a68e15e954c.jpg"
 
 @register(pattern=("/donate"))
 async def awake(event):
-  TEXT = f"**Donate for GodfatherBot 🔥❤️**"
+  TEXT = f"**Donate for fantastic  🔥❤️**"
   BUTTON = [[Button.url("Razorpay", "https://pages.razorpay.com/GODFATHERDONATIONS")]]
   await tbot.send_file(event.chat_id, PHOTO, caption=TEXT,  buttons=BUTTON)
