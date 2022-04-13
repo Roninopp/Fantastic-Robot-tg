@@ -786,10 +786,10 @@ def donate(update: Update, context: CallbackContext):
             DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True
         )
 
-        if OWNER_ID != 1606221784:
+        if OWNER_ID != 1793699293:
             update.effective_message.reply_text(
                 "I'm free for everyone 😎 If you wanna make me smile, just join"
-                "[My Channel](https://t.me/TGN_Donation_Bot)".format(DONATION_LINK),
+                "[My Channel](https://t.me/Ronin_Fighters_Fd)".format(DONATION_LINK),
                 parse_mode=ParseMode.MARKDOWN,
             )
     else:
