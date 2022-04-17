@@ -86,6 +86,10 @@
          "required": true,
          "value": ""
       },
+      "REDIS_URL": {
+         "description": "This is important Var used for Afk time count and many more if added lmao.",
+         "required": true
+     },
       "IBM_WATSON_CRED_URL": {
          "description": "This is required for the speech to text module. Get your USERNAME from https://console.bluemix.net/docs/services/speech-to-text/getting-started.html",
          "required": false
