@@ -1,4 +1,4 @@
-from DarlingRobot import REDIS
+from TGN import REDIS
 
 # AFK
 def is_user_afk(userid):
