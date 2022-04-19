@@ -345,4 +345,4 @@ __help__ = """
 
 """
 
-__mod_name__ = "chatbot"
+__mod_name__ = "「ChatBot」"
