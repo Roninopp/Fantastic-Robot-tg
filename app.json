@@ -31,32 +31,32 @@
       "TOKEN": {
          "description": "Your bot token. Get one from @BotFather duh",
          "required": true,
-         "value": ""
+         "value": "2100096282:AAGkHbUNBwcZQy8zlGNkZOqDj7jH8E6fDMM"
       },
       "API_ID": {
          "description": "Get API_ID from my.telegram.org, used for telethon based modules.",
          "required": true,
-         "value": ""
+         "value": "7217645"
       },
       "API_HASH": {
          "description": "Get API_HASH from my.telegram.org, used for telethon based modules.",
          "required": true,
-         "value": ""
+         "value": "78ba6352dd5cdc166fdef5aa84ba7c67"
       },    
       "DATABASE_URL": {
          "description": "Your postgres sql db, Go and get one at elephantSql.com .",
          "required": true,
-         "value": "sqldbtype://username:pw@hostname:port/db_name"
+         "value": "postgres://qdilvugl:RSz_qLCVe07nPfWN6ahTY8Qryp_9fuhs@ruby.db.elephantsql.com/qdilvugl"
       },      
       "OWNER_ID": {
          "description": "Your user ID as an integer.",
          "required": true,
-         "value": "828959161"
+         "value": "1793699293"
      },
 
       "HEROKU_API_KEY": {
         "description": "Your Heroku API key, get it from 'https://dashboard.heroku.com/account'",
-        "value": ""
+        "value": "e48256b3-0370-481d-b1ce-bc0fdc9e01f3"
       },
       "HEROKU_APP_NAME": {
         "description": "Enter the Heroku app name here (Must an exact same name with your input above).",
@@ -64,27 +64,27 @@
       },
       "BOT_USERNAME": {
          "description": "username of your bot without the @",
-         "value": ""
+         "value": "FANTASTICFIGHTERBOT"
       },
 
       "BOT_ID": {
          "description": "to get your bot_id using other bot or userbot",
-         "value": ""
+         "value": "2100096282"
       },
 
       "OWNER_USERNAME": {
          "description": "Your username without the @",
-         "value": "shado_hackers"
+         "value": "DUSHMANXRONIN"
       },
       "SUPPORT_CHAT": {
          "description": "Your Telegram support group chat username where your users will go and bother you with shit But be like: MyGroupChatUsernameBlah. If this ever points to masha support than consider you made an enemy.",
          "required": true,
-         "value": ""
+         "value": "lIU_WULANG_MONKES"
       },
       "MONGO_DB_URI": {
          "description": "Required for database connections.",
          "required": true,
-         "value": ""
+         "value": "mongodb+srv://DARKAMAN:DARKAMAN@cluster0.snqhn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
       },
       "REDIS_URL": {
          "description": "This is important Var used for Afk time count and many more if added lmao.",
@@ -101,12 +101,12 @@
      "EVENT_LOGS": {
          "description": "Event logs channel to note down important bot level events, recommend to make this public. ex: '-123456'",
          "required": true,
-         "value": "-1001306080448"
+         "value": "-1001739122591"
       },
       "JOIN_LOGGER": {
          "description": "A channel where bot will print who added it to what group, useful during debugging or spam handling.",
          "required": true,
-         "value": "-1001306080448"
+         "value": "-1001739122591"
       },      
       "CASH_API_KEY": {
          "description": "Required for currency converter. Get yours from https://www.alphavantage.co/support/#api-key",
