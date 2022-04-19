@@ -47,7 +47,7 @@ def covid(update: Update, context: CallbackContext):
     if cleartime:
         context.dispatcher.run_async(delete, delmsg, cleartime.time)
 
-__mod_name__ = "covid"
+__mod_name__ = "「COVID」"
 __help__ = """
 ❂ /covid *:* <country> get covid info
 
