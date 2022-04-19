@@ -207,4 +207,4 @@ __help__ = """
  ♦/karmastat : check karma status
 
  """
-__mod_name__ = "karma"
+__mod_name__ = "「KARMA」"
