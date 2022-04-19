@@ -586,7 +586,7 @@ Locking bots will stop non-admins from adding bots to the chat.
 
 """
 
-__mod_name__ = "Locks"
+__mod_name__ = "「Locks」"
 
 
 LOCKTYPES_HANDLER = DisableAbleCommandHandler("locktypes", locktypes, run_async=True)
