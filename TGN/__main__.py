@@ -497,9 +497,9 @@ def shukurenai_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Zaid", url="https://t.me/liu_WULANG_MONKES"),
-                    InlineKeyboardButton(text="Null", url="https://t.me/Dushmanxronin"),
-                    InlineKeyboardButton(text="Akki", url="https://t.me/Godfatherakki"), 
+                    InlineKeyboardButton(text="ＳＵＰＰＯＲＴ", url="https://t.me/liu_WULANG_MONKES"),
+                    InlineKeyboardButton(text="ＲＯＮＩＮ", url="https://t.me/Dushmanxronin"),
+                    InlineKeyboardButton(text="X hate", url="https://t.me/AnxiousXd"), 
                  ],
                  [
                     InlineKeyboardButton(text="Go Back", callback_data="shukurenai_"),
