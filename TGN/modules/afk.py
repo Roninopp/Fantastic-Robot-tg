@@ -145,7 +145,7 @@ def __gdpr__(user_id):
 
 
 
-__mod_name__ = "AFK"
+__mod_name__ = "「AFK」"
 
 
 __help__ = """
