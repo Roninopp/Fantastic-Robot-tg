@@ -1,7 +1,7 @@
 # Copyright (C) 2021 TGN
 
 
-# This file is part of TGN (Telegram Bot)
+# This file is part of FANTASTIC (Telegram Bot)
 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as
@@ -110,7 +110,7 @@ async def virusscan(event):
         return
 
 
-_mod_name_ = "Virus Scan"
+_mod_name_ = "「VIRUS-SCAN」"
 _help_ = """
  - /scanit: Scan a file for virus (MAX SIZE = 3MB)
  """
