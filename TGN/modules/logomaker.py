@@ -81,4 +81,4 @@ __help__ = """
  ★ /logo text : create your own logo
  ∆ /write text : to hand writ logo
  """
-__mod_name__ = "Logo"
+__mod_name__ = "★LOGO★"
