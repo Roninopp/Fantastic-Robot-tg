@@ -366,7 +366,7 @@ async def check_anti_funcs(_, message: Message):
     # Warns or ban the user from the chat
     await warn_or_ban(message, anti_func_det[1])
 
-__mod_name__ = "Anti-lang"
+__mod_name__ = "「ANTI-LANG」"
 __help__ = """
 Delete messages containing characters from one of the following automatically
 - Arabic Language
