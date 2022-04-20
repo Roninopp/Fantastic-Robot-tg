@@ -344,7 +344,7 @@ def help_button(update, context):
                 "Here is the help for the *{}* module:\n".format(
                     HELPABLE[module].__mod_name__
                 )
-                + HELPABLE[module].__help__
+                + HELPABLE[module].__✧help✧__
             )
             query.message.edit_text(
                 text=text,
