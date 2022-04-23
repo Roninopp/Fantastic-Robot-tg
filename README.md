@@ -2,12 +2,12 @@
   <img src="https://te.legra.ph/file/9012a958e07362727ae19.jpg">
 </p>
 
-<h1 align="center"><b> GodfatherBot Robot  </b></h1>
+<h1 align="center"><b> FANTASTIC Robot  </b></h1>
 
 <h4 align="center">A Powerful, Smart And Simple Group Manager <br> ... Written with AioGram , Pyrogram and Telethon...</h4>
 <p align='center'>
   <a href="https://www.python.org/" alt="made-with-python"> <img src="https://img.shields.io/badge/Made%20with-Python-1f425f.svg?style=flat-square&logo=python&color=blue" /> </a>
-  <a href="https://github.com/Godfatherakkii/TGN-ROBOT/graphs/commit-activity" alt="Maintenance"> <img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=flat-square" /> </a>
+  <a href="https://github.com/Godfatherakkii//graphs/commit-activity" alt="Maintenance"> <img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=flat-square" /> </a>
 </p>
 
 <p align="center"><a href="https://t.me/TGN_Ro_bot"><img src="(https://te.legra.ph/file/9012a958e07362727ae19.jpg)" width="400"></a></p>
