@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://telegra.ph/file/bfa2fbaf65ac04fad78ee.jpg">
+  <img src="https://te.legra.ph/file/9012a958e07362727ae19.jpg">
 </p>
 
 <h1 align="center"><b> GodfatherBot Robot  </b></h1>
@@ -10,7 +10,7 @@
   <a href="https://github.com/Godfatherakkii/TGN-ROBOT/graphs/commit-activity" alt="Maintenance"> <img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=flat-square" /> </a>
 </p>
 
-<p align="center"><a href="https://t.me/TGN_Ro_bot"><img src="(https://telegra.ph/file/e641d3dd2ccdce6a3d934.jpg)" width="400"></a></p>
+<p align="center"><a href="https://t.me/TGN_Ro_bot"><img src="(https://te.legra.ph/file/9012a958e07362727ae19.jpg)" width="400"></a></p>
 
 ## Available on Telegram as [@](https://t.me/YurikoRobot)
 
@@ -28,9 +28,8 @@ The easiest way to deploy this Bot is via Heroku.
 
 ## CREDIT
 ```
-Shubhanshu
-Akki
-Zaid
+X hate 
+RONIN
 ```
 
  
