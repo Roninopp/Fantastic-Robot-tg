@@ -83,16 +83,16 @@ def get_readable_time(seconds: int) -> str:
 PM_START_TEXT = """
 ────「 [FANTASTIC THE MANAGER](https://te.legra.ph/file/9012a958e07362727ae19.jpg) 」────
 ʜᴇʏ! {}
-ɪ ᴀᴍ FANTASTIC ᴀɴ ᴀɴɪᴍᴇ ᴛʜᴇᴍᴇᴅ ᴀᴅᴠᴀɴᴄᴇ ɢʀᴏᴜᴏ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴡɪᴛʜ ᴀ ʟᴏᴛ ᴏғ sᴘᴇᴄɪᴀʟɪᴛʏ.
+ɪ ᴀᴍ FANTASTIC ᴀɴ ᴀɴɪᴍᴇ ᴛʜᴇᴍᴇᴅ ᴀᴅᴠᴀɴᴄᴇ ɢʀᴏᴜp ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴡɪᴛʜ ᴀ ʟᴏᴛ ᴏғ sᴘᴇᴄɪᴀʟɪᴛʏ.
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
 I have lots of handy features such as:
-‣ Warning system
-‣ Artificial intelligence
-‣ Flood control system
-‣ Note keeping system
-‣ Filters keeping system
-‣ without lag music+video
-‣ Approvals and much more.
+‣ 「Warning system」
+‣ 「Artificial intelligence」 
+‣ 「Flood control system」
+‣ 「Note keeping system」
+‣ 「Filters keeping system」
+‣ 「without lag music+video」
+‣ 「Approvals and much more」...
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
 ➛ᴛʀʏ ᴛʜᴇ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴs ʙᴇʟᴏᴡ ᴛᴏ ᴋɴᴏᴡ ᴍʏ ᴀʙɪʟɪᴛɪᴇs ××× 
 
