@@ -92,7 +92,7 @@ I have lots of handy features such as:
 ‣ 「Note keeping system」
 ‣ 「Filters keeping system」
 ‣ 「without lag music+video」
-‣ 「Approvals and much more」...
+‣ 「Approvals and much more」
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
 ➛ᴛʀʏ ᴛʜᴇ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴs ʙᴇʟᴏᴡ ᴛᴏ ᴋɴᴏᴡ ᴍʏ ᴀʙɪʟɪᴛɪᴇs ××× 
 
