@@ -240,8 +240,8 @@ def info(update: Update, context: CallbackContext):
                              text="Health",
                              url="https://t.me/Ronin_Fighters_Fd?start=health"),
                        InlineKeyboardButton(
-                             text="Disasters",
-                             url="https://t.me/RoninXJin_updates?start=disasters"),
+                             text="「ADD💡ME」",
+                             url="https://t.me/FANTASTICFIGHTERBOT?start=「ADD💡ME 」"),
                     ],
     ]
     user_id = extract_user(update.effective_message, args)
