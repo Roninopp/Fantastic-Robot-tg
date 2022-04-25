@@ -43,7 +43,7 @@ ujson
 pretty_errors
 pygithub
 TgCrypto
-Pyrogram
+pyrogram==1.0.7
 PyDictionary
 asyncio
 cloudscraper
