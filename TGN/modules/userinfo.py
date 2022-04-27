@@ -41,10 +41,10 @@ from TGN.modules.sql.afk_redis import is_user_afk, afk_reason
 from TGN.modules.sql.users_sql import get_user_num_chats
 from TGN.modules.helper_funcs.chat_status import sudo_plus
 from TGN.modules.helper_funcs.extraction import extract_user
-from TGN.modules.helper_funcs.decorators import enmucallback as ENMUCALLBACK
+from TGN.modules.helper_funcs.decorators import Emlicallback as ENMUCALLBACK
 from TGN import telethn
 
-ENMU_IMG = 'https://telegra.ph/file/efc8c427511970fff58f6.jpg'
+ENMU_IMG = 'https://telegra.ph/file/1df36662ab863f711ff34.jpg'
 
 def no_by_per(totalhp, percentage):
     """
@@ -301,22 +301,22 @@ def info(update: Update, context: CallbackContext):
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += "\n\nThe Disaster Of This Person Is Dᴇᴍᴏɴ Kɪɴɢ."
+        text += "\n\n This Person Is Kɪɴɢ."
         disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += "\n\nThis user is member of ᴜᴘᴘᴇʀ ᴍᴏᴏɴs."
+        text += "\n\nThis user is Member of Prince."
         disaster_level_present = True
     elif user.id in DRAGONS:
-        text += "\n\nThe Disaster Of This Person Is ʟᴏᴡᴇʀ ᴍᴏᴏɴs."
+        text += "\n\nThe Disaster Of This Person Is Dragons."
         disaster_level_present = True
     elif user.id in DEMONS:
-        text += "\n\nThe Disaster Of This Person Is Xʟᴏᴡᴇʀᴍᴏᴏɴs."
+        text += "\n\nThe Disaster Of This Person Is Demons ."
         disaster_level_present = True
     elif user.id in TIGERS:
-        text += "\n\nThe Disaster Of This Person Is ᴅᴇᴍᴏɴs."
+        text += "\n\nThe Disaster Of This Person Is Tiger."
         disaster_level_present = True
     elif user.id in WOLVES:
-        text += "\n\nThe Disaster Of This Person Is Xᴅᴇᴍᴏɴs."
+        text += "\n\nThe Disaster Of This Person Is Wolves."
         disaster_level_present = True
 
     try:
@@ -353,9 +353,7 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "Support", url="https://t.me/Enmu_Chat_Support"),
-                            InlineKeyboardButton(
-                                "Disasters", url="https://t.me/EnmuUpdates/4"),
+                                "Support", url="https://t.me/Ronin_Fighters_FD"),
                             InlineKeyboardButton(
                                 "User", url=f"https://t.me/{html.escape(user.username)}")
                         ],
@@ -373,10 +371,8 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "Support", url="https://t.me/Enmu_Chat_Support"),
-                            InlineKeyboardButton(
-                                "Disaster", url="https://t.me/EnmuUpdates/4"),
-                            InlineKeyboardButton(
+                                "Support", url="https://t.me/Ronin_Fighters_FD"),
+                             InlineKeyboardButton(
                                 "User", url=f"https://t.me/{html.escape(user.username)}")
                         ],
                     ]
@@ -449,15 +445,42 @@ def set_about_me(update: Update, context: CallbackContext):
             )
 
 @sudo_plus
-def stats(update: Update, context: CallbackContext):
-    stats = "<b>╒═══「 Bot Statistics 」</b>\n\n" + "\n".join(
-        [mod.__stats__() for mod in STATS]
-    )
-    result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
-    result += "\n\n<b>╘══「 By Yash 」</b>"
-    update.effective_message.reply_photo(
-        ENMU_IMG, result, parse_mode=ParseMode.HTML
-    )
+def stats(update, context):
+    uptime = datetime.datetime.fromtimestamp(boot_time()).strftime("%Y-%m-%d %H:%M:%S")
+    status = "*╒═══「 System Statistics 」*\n\n"
+    status += "*➢ System Start time:* " + str(uptime) + "\n"
+    status += "*➢ CPU:* " + str(cpu) + " %\n"
+    status += "*➢ RAM:* " + str(mem[2]) + " %\n"
+    status += "*➢ Storage:* " + str(disk[3]) + " %\n\n"
+    status += "*➢ Python Version:* " + python_version() + "\n"
+    status += "*➢ python-Telegram-Bot:* " + str(ptbver) + "\n"
+    try:
+        update.effective_message.reply_text(
+            status
+            + "\n*Bot statistics*:\n"
+            + "\n".join([mod.__stats__() for mod in STATS])
+            + f"\n\n✦ [Support](https://t.me/RONIN_FIGHTERS_FD) | ✦ [Updates](http://t.me/liu_WULANG_MONKES)\n\n"
+            + "╘══「 By [RONIN](https://t.me/DUSHMANxRONIN) 」\n",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+        )
+    except BaseException:
+        update.effective_message.reply_text(
+            (
+                (
+                    (
+                        "\n*Bot Statistics*:\n"
+                        + "\n".join(mod.__stats__() for mod in STATS)
+                    )
+                    + f"\n\n✦ [Support](https://t.me/RONIN_FIGHTERS_FD) | ✦ [Updates](http://t.me/liu_WULANG_MONKES)\n\n"
+                )
+                + "╘══「 By [RONIN](https://t.me/DUSHMANxRONIN)」\n"
+            ),
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+        )
+        
+        
 def about_bio(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
     message = update.effective_message
