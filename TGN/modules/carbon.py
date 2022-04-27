@@ -24,18 +24,18 @@ async def carbon_func(_, message):
     carbon.close()
 
 
-@pbot.on_message(filters.command("lele"))
+@pbot.on_message(filters.command("donate"))
 async def repo(_, message):
     await message.reply_text(
-        f"""✨ **Donate for GodfatherBot** 
+        f"""✨ **Donate ** 
 """,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "Repo", url="Www.google.com"), 
+                        "Repo", url="https://t.me/Bot_repo"), 
                     InlineKeyboardButton(
-                        "Support", url="https://t.me/Shubhanshutya")
+                        "Support", url="https://t.me/Ronin_Fighters_FD")
                 ]
             ]
         ),
