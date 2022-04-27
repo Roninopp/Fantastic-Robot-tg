@@ -11,6 +11,14 @@
     
    "logo":    "https://telegra.ph/file/ddfcd6fc8386a39613704.jpg",  
    "repository": "https://github.com/Godfatherakkii/TGN-ROBOT",
+  "addons": [
+          {
+         "options": {
+            "version": "12"
+         },
+         "plan": "heroku-postgresql"
+      }
+   ],
    "buildpacks": [
     {
       "url": "https://github.com/heroku/heroku-buildpack-python"
