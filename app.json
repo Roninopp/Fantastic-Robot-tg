@@ -11,7 +11,7 @@
     
    "logo":    "https://telegra.ph/file/ddfcd6fc8386a39613704.jpg",  
    "repository": "https://github.com/Godfatherakkii/TGN-ROBOT",
-  "addons": [
+   "addons": [
           {
          "options": {
             "version": "12"
@@ -210,7 +210,7 @@
       },
         "ARQ_API": {
             "description": "Get this from @ARQRobot.",
-            "required": true
+            "required": true,
             "value" : "RVLOWH-KMDHXW-QQCPAC-EFICND-ARQ"
         },
       "BAN_STICKER": {
@@ -222,7 +222,7 @@
          "description": "Required for wallpaper. Get your's from https://wall.alphacoders.com/",
          "required": false,
          "value": ""
-      }
-
-       }
+     }
+      
+   }
 }
