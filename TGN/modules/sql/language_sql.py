@@ -1,7 +1,7 @@
 import threading
 
 from sqlalchemy import Column, String, UnicodeText
-from EnmuBot.modules.sql import SESSION, BASE
+from TGN.modules.sql import SESSION, BASE
 
 
 class ChatLangs(BASE):
