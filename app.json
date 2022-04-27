@@ -88,7 +88,7 @@
       },
       "REDIS_URL": {
          "description": "This is important Var used for Afk time count and many more if added lmao.",
-         "required": true
+         "required": true,
          "value": "redis://default:5sv2mUjkVNgUimikzj9h@containers-us-west-22.railway.app:6234"
      },
       "IBM_WATSON_CRED_URL": {
@@ -133,7 +133,7 @@
      },
         "ARQ_API": {
             "description": "Get this from @ARQRobot.",
-            "required": true
+            "required": true,
             "value" : "RVLOWH-KMDHXW-QQCPAC-EFICND-ARQ"
         },
 
@@ -223,4 +223,5 @@
          "required": false,
          "value": ""
       }
-}
+
+   }
