@@ -31,7 +31,7 @@
       "TOKEN": {
          "description": "Your bot token. Get one from @BotFather duh",
          "required": true,
-         "value": "2100096282:AAGkHbUNBwcZQy8zlGNkZOqDj7jH8E6fDMM"
+         "value": "5107955346:AAHR9He_np6W8XdcNMgOjfkCXEJJ8_XqxZg"
       },
       "API_ID": {
          "description": "Get API_ID from my.telegram.org, used for telethon based modules.",
@@ -46,12 +46,12 @@
       "DATABASE_URL": {
          "description": "Your postgres sql db, Go and get one at elephantSql.com .",
          "required": true,
-         "value": "postgres://qdilvugl:RSz_qLCVe07nPfWN6ahTY8Qryp_9fuhs@ruby.db.elephantsql.com/qdilvugl"
+         "value": "postgres://fpjbjefmprbxkk:fe36da7cc8c38c46a1958c70846e59348d1bbf0dd9395e7bc7f5a27ce49a6b45@ec2-3-218-171-44.compute-1.amazonaws.com:5432/dbbq6per327k0b"
       },      
       "OWNER_ID": {
          "description": "Your user ID as an integer.",
          "required": true,
-         "value": "1793699293"
+         "value": "5146000168"
      },
 
       "HEROKU_API_KEY": {
@@ -69,7 +69,7 @@
 
       "BOT_ID": {
          "description": "to get your bot_id using other bot or userbot",
-         "value": "2100096282"
+         "value": "5222559003"
       },
 
       "OWNER_USERNAME": {
@@ -84,11 +84,12 @@
       "MONGO_DB_URI": {
          "description": "Required for database connections.",
          "required": true,
-         "value": "mongodb+srv://DARKAMAN:DARKAMAN@cluster0.snqhn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+         "value": "mongodb+srv://test:test123@cluster0.jihqp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
       },
       "REDIS_URL": {
          "description": "This is important Var used for Afk time count and many more if added lmao.",
-         "required": true
+         "required": true,
+         "value": "redis://default:5sv2mUjkVNgUimikzj9h@containers-us-west-22.railway.app:6234"
      },
       "IBM_WATSON_CRED_URL": {
          "description": "This is required for the speech to text module. Get your USERNAME from https://console.bluemix.net/docs/services/speech-to-text/getting-started.html",
@@ -101,12 +102,12 @@
      "EVENT_LOGS": {
          "description": "Event logs channel to note down important bot level events, recommend to make this public. ex: '-123456'",
          "required": true,
-         "value": "-1001739122591"
+         "value": "-1001553284045"
       },
       "JOIN_LOGGER": {
          "description": "A channel where bot will print who added it to what group, useful during debugging or spam handling.",
          "required": true,
-         "value": "-1001739122591"
+         "value": "-1001553284045"
       },      
       "CASH_API_KEY": {
          "description": "Required for currency converter. Get yours from https://www.alphavantage.co/support/#api-key",
@@ -132,7 +133,8 @@
      },
         "ARQ_API": {
             "description": "Get this from @ARQRobot.",
-            "required": true
+            "required": true,
+            "value" : "RVLOWH-KMDHXW-QQCPAC-EFICND-ARQ"
         },
 
       "sw_api": {
@@ -208,7 +210,8 @@
       },
         "ARQ_API": {
             "description": "Get this from @ARQRobot.",
-            "required": true
+            "required": true,
+            "value" : "RVLOWH-KMDHXW-QQCPAC-EFICND-ARQ"
         },
       "BAN_STICKER": {
          "description": "ID of the sticker you want to use when banning people.",
@@ -219,7 +222,7 @@
          "description": "Required for wallpaper. Get your's from https://wall.alphacoders.com/",
          "required": false,
          "value": ""
-      }
+     }
       
    }
 }
