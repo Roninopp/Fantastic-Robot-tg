@@ -172,7 +172,7 @@ class EmliHandler:
         return _inlinequery
 
 
-Emlicmd = EmikoHandler(d).command
-Emlimsg = EmikoHandler(d).message
-Emlicallback = EmikoHandler(d).callbackquery
-Emliinline = EmikoHandler(d).inlinequery
+Emlicmd = EmliHandler(d).command
+Emlimsg = EmliHandler(d).message
+Emlicallback = EmliHandler(d).callbackquery
+Emliinline = EmliHandler(d).inlinequery
