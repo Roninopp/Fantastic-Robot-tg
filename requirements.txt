@@ -12,6 +12,7 @@ feedparser
 faker
 hachoir
 pykeyboard
+numpy
 pynewtonmath
 aiofiles
 ffmpeg-python
