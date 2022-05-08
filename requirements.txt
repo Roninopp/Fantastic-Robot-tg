@@ -5,14 +5,13 @@ wget
 gtts
 beautifulsoup4
 requests
-python-telegram-bot==13.11
+python-telegram-bot==13.10
 sqlalchemy==1.3.23
 psycopg2-binary
 feedparser
 faker
 hachoir
 pykeyboard
-numpy==1.22.3
 pynewtonmath
 aiofiles
 ffmpeg-python
