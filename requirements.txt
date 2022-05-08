@@ -12,7 +12,7 @@ feedparser
 faker
 hachoir
 pykeyboard
-numpy
+numpy==1.22.3
 pynewtonmath
 aiofiles
 ffmpeg-python
