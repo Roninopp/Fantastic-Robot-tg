@@ -19,7 +19,7 @@ from TGN.ex_plugins.dbfunctions import (
 from TGN.utils.filter_groups import karma_negative_group, karma_positive_group
 
 
-regex_upvote = r"^((?i)\+|\+\+|\+1|thx|tnx|ty|thank you|thanx|thanks|pro|kool|cool|good|ok|okk|ultrapro|👍)$"
+regex_upvote = r"^((?i)\+|\+\+|\+1|thx|tnx|ty|thank you|thanx|thanks|pro|kool|cool|good|fuck|okk|ultrapro|👍)$"
 regex_downvote = r"^(\-|\-\-|\-1|👎|noob|weak)$"
 
 
