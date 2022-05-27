@@ -131,6 +131,7 @@ InlineKeyboardButton(
 
 ]
 
+TGN_STICKER = "CAACAgUAAxkBAAEEwKthkPVBp6d5T4S3dlYZM3L8BkXRNAACOAQAAryviVQbCLI09PvjAAEiBA"
 
 HELP_STRINGS = """
 Click on the button bellow to get description about specifics command."""
