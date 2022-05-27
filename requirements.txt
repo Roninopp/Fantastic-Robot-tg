@@ -87,4 +87,3 @@ humanize
 python-rapidjson
 covid
 redis
-TGN.modules.thonkify_dict
