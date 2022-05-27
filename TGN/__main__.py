@@ -97,7 +97,7 @@ I have lots of handy features such as:
 ➛ᴛʀʏ ᴛʜᴇ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴs ʙᴇʟᴏᴡ ᴛᴏ ᴋɴᴏᴡ ᴍʏ ᴀʙɪʟɪᴛɪᴇs ××× 
 
 """
-
+TGN_STICKER = "CAACAgUAAx0CYgQmdgACI2tikR5lupes5Xxl-Hxt78k4wddxYwACPwMAAqjgmFV9x_xeS8g4tCQE"
 buttons = [
     [
         InlineKeyboardButton(
@@ -131,7 +131,6 @@ InlineKeyboardButton(
 
 ]
 
-TGN_STICKER = "CAACAgUAAx0CYgQmdgACI2tikR5lupes5Xxl-Hxt78k4wddxYwACPwMAAqjgmFV9x_xeS8g4tCQE"
 
 HELP_STRINGS = """
 Click on the button bellow to get description about specifics command."""
