@@ -53,6 +53,7 @@ from telegram.ext import (
 )
 from telegram.ext.dispatcher import DispatcherHandlerStop, run_async
 from telegram.utils.helpers import escape_markdown
+await message.reply_sticker("CAACAgUAAxkBAAEENxZiNtPdibVkMsjLZrUG9NK4hotHQgAC2wEAAoM12VSdN9ujxVtnUyME")
 
 
 def get_readable_time(seconds: int) -> str:
@@ -96,8 +97,7 @@ I have lots of handy features such as:
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
 ➛ᴛʀʏ ᴛʜᴇ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴs ʙᴇʟᴏᴡ ᴛᴏ ᴋɴᴏᴡ ᴍʏ ᴀʙɪʟɪᴛɪᴇs ××× 
 
-"""
-TGN_STICKER = "CAACAgUAAx0CYgQmdgACI2tikR5lupes5Xxl-Hxt78k4wddxYwACPwMAAqjgmFV9x_xeS8g4tCQE"
+
 buttons = [
     [
         InlineKeyboardButton(
