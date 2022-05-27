@@ -301,16 +301,16 @@ def info(update: Update, context: CallbackContext):
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += "\n\n This Person Is Kɪɴɢ."
+        text += "\n\n This Person Is fantastic Kɪɴɢ."
         disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += "\n\nThis user is Member of Prince."
+        text += "\n\nThis user is Member of fantastic fan."
         disaster_level_present = True
     elif user.id in DRAGONS:
-        text += "\n\nThe Disaster Of This Person Is Dragons."
+        text += "\n\nThe Disaster Of This Person Is Dino."
         disaster_level_present = True
     elif user.id in DEMONS:
-        text += "\n\nThe Disaster Of This Person Is Demons ."
+        text += "\n\nThe Disaster Of This Person Is fantasticXdemon ."
         disaster_level_present = True
     elif user.id in TIGERS:
         text += "\n\nThe Disaster Of This Person Is Tiger."
