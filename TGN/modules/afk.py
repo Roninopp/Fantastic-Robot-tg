@@ -36,7 +36,7 @@ def afk(update, context):
     fname = update.effective_user.first_name
     try:
         update.effective_message.reply_text(
-            "{} is now Away!".format(fname))
+            "{} Good bye see you soon 👋!".format(fname))
     except BadRequest:
         pass
 
