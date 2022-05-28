@@ -95,7 +95,7 @@ I have lots of handy features such as:
 ‣ 「Approvals and much more」
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
 ➛ᴛʀʏ ᴛʜᴇ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴs ʙᴇʟᴏᴡ ᴛᴏ ᴋɴᴏᴡ ᴍʏ ᴀʙɪʟɪᴛɪᴇs ××× 
-
+"""
 
 buttons = [
     [
