@@ -6,6 +6,7 @@ import asyncio
 import time
 import spamwatch
 import telegram.ext as tg
+from redis import StrictRedis
 from inspect import getfullargspec
 from aiohttp import ClientSession
 from Python_ARQ import ARQ
@@ -98,6 +99,7 @@ if ENV:
     CASH_API_KEY = os.environ.get("CASH_API_KEY", None)
     TIME_API_KEY = os.environ.get("TIME_API_KEY", None)
     WALL_API = os.environ.get("WALL_API", None)
+    REDIS_URL = os.environ.get('REDIS_URL')
     ERROR_LOG = os.environ.get("ERROR_LOG", None)
     SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT", None)
     SPAMWATCH_SUPPORT_CHAT = os.environ.get("SPAMWATCH_SUPPORT_CHAT", None)
