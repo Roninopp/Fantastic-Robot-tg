@@ -353,7 +353,7 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "Support", url="https://t.me/Ronin_Fighters_FD"),
+                                "Summon💫me ", url="https://t.me/FANTASTICFIGHTERBOT?startgroup=new"),
                             InlineKeyboardButton(
                                 "User", url=f"https://t.me/{html.escape(user.username)}")
                         ],
