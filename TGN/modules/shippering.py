@@ -29,7 +29,7 @@ today = str(dt()[0])
 tomorrow = str(dt_tom())
 
 
-@app.on_message(filters.command("couples") & ~filters.edited)
+@app.on_message(filters.command("shipping") & ~filters.edited)
 @capture_err
 async def couple(_, message):
     if message.chat.type == "private":
@@ -74,4 +74,4 @@ __New couple of the day may be chosen at 12AM {tomorrow}__"""
         await message.reply_text(e)
 
 
-__mod_name__ = "Couples"
+__mod_name__ = "shipping"
