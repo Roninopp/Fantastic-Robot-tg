@@ -201,6 +201,7 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
                     f"Welcome to {html.escape(chat.title)} my king.", reply_to_message_id=reply
                 update.effectivs_message.reply_photo("https://te.legra.ph/file/c18ab8dbde14611c9f22f.jpg", caption=
                 result, 
+                  ) 
 
                 )
                 welcome_log = (
