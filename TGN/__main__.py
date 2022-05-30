@@ -837,11 +837,11 @@ def main():
                 [
                   [                  
                        InlineKeyboardButton(
-                             text="Support👥",
-                             url=f"https://t.me/liu_WULANG_MONKES"),
+                             text="🥺SUPPORT🥺",
+                             url=f"https://t.me/Ronin_Fighters_Fd"),
                        InlineKeyboardButton(
-                             text="Updates📡",
-                             url="https://t.me/liu_WULANG_MONKES")
+                             text="Pm💫help",
+                             url="https://t.me/FANTASTICFIGHTERBOT")
                      ] 
                 ]
             ),
