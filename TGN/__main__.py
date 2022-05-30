@@ -112,8 +112,8 @@ buttons = [
     ],
     [
 InlineKeyboardButton(
-                             text="MY DARLING💝",
-                             url=f"https://t.me/AVIVEKbot"),
+                             text="music💥Assistant",
+                             url=f"https://t.me/fantastic_ass"),
 
         InlineKeyboardButton(
               text="Help",
@@ -403,7 +403,7 @@ def shukurenai_about_callback(update, context):
             "\n• I have a note keeping system, blacklists, and even predetermined replies on certain keywords."
             "\n• I check for admins' permissions before executing any command and more stuffs"
             "\n\n_ GodfatherBot licensed under the GNU General Public License v3.0_"
-            "\n\n Click on button bellow to get basic help for Anie.",
+            "\n\n Click on button bellow to get basic help for Fantastic.",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -470,7 +470,7 @@ def shukurenai_about_callback(update, context):
         )
     elif query.data == "shukurenai_support":
         query.message.edit_text(
-            text="*๏ Anie support chats*"
+            text="*๏ Fantastic support chats*"
             "\nJoin My Support Group/Channel for see or report a problem on 𝑭𝒂𝒏𝒕𝒂𝒔𝒕𝒊𝒄 𝒔𝒖𝒑𝒑𝒐𝒓𝒕.",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
@@ -491,12 +491,12 @@ def shukurenai_about_callback(update, context):
     elif query.data == "shukurenai_credit":
         query.message.edit_text(
             text=f"๏ Credis for fantasticBot\n"
-            "\nHere Developers Making And Give Inspiration For Made The Anie",
+            "\nHere Developers Making And Give Inspiration For Made The Fantastic",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="ＳＵＰＰＯＲＴ", url="https://t.me/liu_WULANG_MONKES"),
+                    InlineKeyboardButton(text="ABHINAV", url="https://t.me/Redeye_Ghoul"),
                     InlineKeyboardButton(text="ＲＯＮＩＮ", url="https://t.me/Dushmanxronin"),
                     InlineKeyboardButton(text="X hate", url="https://t.me/AnxiousXd"), 
                  ],
