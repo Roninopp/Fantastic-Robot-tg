@@ -203,7 +203,7 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
                     f"#USER_JOINED\n"
-                    f"My King just joined the chat"
+                    f"welcome My King just joined the chat https://te.legra.ph/file/c18ab8dbde14611c9f22f.jpg"
                 )
                 continue
 
