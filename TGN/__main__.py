@@ -82,7 +82,7 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """
 ────「 [FANTASTIC THE MANAGER](https://te.legra.ph/file/9012a958e07362727ae19.jpg) 」────
-ʜᴇʏ! {}
+ʜᴇʏ! {mention}
 ɪ ᴀᴍ FANTASTIC ᴀɴ ᴀɴɪᴍᴇ ᴛʜᴇᴍᴇᴅ ᴀᴅᴠᴀɴᴄᴇ ɢʀᴏᴜp ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴡɪᴛʜ ᴀ ʟᴏᴛ ᴏғ sᴘᴇᴄɪᴀʟɪᴛʏ.
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
 I have lots of handy features such as:
@@ -402,7 +402,7 @@ def shukurenai_about_callback(update, context):
             "\n• I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc."
             "\n• I have a note keeping system, blacklists, and even predetermined replies on certain keywords."
             "\n• I check for admins' permissions before executing any command and more stuffs"
-            "\n\n_ GodfatherBot licensed under the GNU General Public License v3.0_"
+            "\n\n_ ｆａｎｔａｓｔｉｃ licensed under the GNU General Public License v3.0_"
             "\n\n Click on button bellow to get basic help for Fantastic.",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
