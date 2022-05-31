@@ -199,7 +199,7 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
             if new_mem.id == OWNER_ID:
                 update.effective_message.reply_text(
                     f"Welcome to {html.escape(chat.title)} my king.", reply_to_message_id=reply, 
-                 ) 
+                
 
                 welcome_log = Owner
                     f"{html.escape(chat.title)}\n"
