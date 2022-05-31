@@ -82,7 +82,7 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """
 ────「 [FANTASTIC THE MANAGER](https://te.legra.ph/file/9012a958e07362727ae19.jpg) 」────
-ʜᴇʏ! {mention}
+ʜᴇʏ! {}
 ɪ ᴀᴍ FANTASTIC ᴀɴ ᴀɴɪᴍᴇ ᴛʜᴇᴍᴇᴅ ᴀᴅᴠᴀɴᴄᴇ ɢʀᴏᴜp ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴡɪᴛʜ ᴀ ʟᴏᴛ ᴏғ sᴘᴇᴄɪᴀʟɪᴛʏ.
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
 I have lots of handy features such as:
