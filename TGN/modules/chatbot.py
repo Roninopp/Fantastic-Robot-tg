@@ -1,169 +1,200 @@
+Traceback (most recent call last):
+  File "/app/.heroku/python/lib/python3.10/base64.py", line 37, in _bytes_from_decode_data
+    return s.encode('ascii')
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2022' in position 4396: ordinal not in range(128)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/.heroku/python/lib/python3.10/site-packages/pyrogram/utils.py", line 47, in get_input_media_from_file_id
+    decoded = FileId.decode(file_id)
+  File "/app/.heroku/python/lib/python3.10/site-packages/pyrogram/file_id.py", line 198, in decode
+    decoded = rle_decode(b64_decode(file_id))
+  File "/app/.heroku/python/lib/python3.10/site-packages/pyrogram/file_id.py", line 53, in b64_decode
+    return base64.urlsafe_b64decode(s + "=" * (-len(s) % 4))
+  File "/app/.heroku/python/lib/python3.10/base64.py", line 131, in urlsafe_b64decode
+    s = _bytes_from_decode_data(s)
+  File "/app/.heroku/python/lib/python3.10/base64.py", line 39, in _bytes_from_decode_data
+    raise ValueError('string argument should contain only ASCII characters')
+ValueError: string argument should contain only ASCII characters
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/KURUMIBOT/modules/eval.py", line 142, in executor
+    await aexec(cmd, client, message)
+  File "/app/KURUMIBOT/modules/eval.py", line 62, in aexec
+    return await locals()["__aexec"](client, message)
+  File "<string>", line 4, in __aexec
+  File "/app/.heroku/python/lib/python3.10/site-packages/pyrogram/methods/messages/send_document.py", line 178, in send_document
+    media = utils.get_input_media_from_file_id(document, FileType.DOCUMENT)
+  File "/app/.heroku/python/lib/python3.10/site-packages/pyrogram/utils.py", line 49, in get_input_media_from_file_id
+    raise ValueError(f'Failed to decode "{file_id}". The value does not represent an existing local file, '
+ValueError: Failed to decode "
+
+import json
+import re
+import os
 import html
+import requests
 
-# AI module using Intellivoid's Coffeehouse API by @TheRealPhoenix
-from time import sleep, time
-
-import TGN.modules.sql.chatbot_sql as sql
-from coffeehouse.api import API
-from coffeehouse.exception import CoffeeHouseError as CFError
-from coffeehouse.lydia import LydiaAI
-from TGN import AI_API_KEY, OWNER_ID, SUPPORT_CHAT, dispatcher
-from TGN.modules.helper_funcs.chat_status import user_admin
-from TGN.modules.helper_funcs.filters import CustomFilters
-from TGN.modules.log_channel import gloggable
-from telegram import Update
+from time import sleep
+from telegram import ParseMode
+from telegram import (CallbackQuery, Chat, MessageEntity, InlineKeyboardButton,
+                      InlineKeyboardMarkup, Message, Update, Bot, User)
+from telegram.ext import (CallbackContext, CallbackQueryHandler, CommandHandler,
+                          DispatcherHandlerStop, Filters, MessageHandler,
+                          run_async)
 from telegram.error import BadRequest, RetryAfter, Unauthorized
-from telegram.ext import (
-    CallbackContext,
-    CommandHandler,
-    Filters,
-    MessageHandler,
-    run_async,
-)
-from telegram.utils.helpers import mention_html
+from telegram.utils.helpers import mention_html, mention_markdown, escape_markdown
 
-CoffeeHouseAPI = API(AI_API_KEY)
-api_client = LydiaAI(CoffeeHouseAPI)
+from KURUMIBOT.modules.helper_funcs.filters import CustomFilters
+from KURUMIBOT.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
+from KURUMIBOT import dispatcher, updater, SUPPORT_CHAT
+from KURUMIBOT.modules.log_channel import gloggable
 
+CHATS = []
 
-@run_async
+@user_admin_no_reply
+@gloggable
+def kukirm(update: Update, context: CallbackContext) -> str:
+    query: Optional[CallbackQuery] = update.callback_query
+    user: Optional[User] = update.effective_user
+    chat: Optional[Chat] = update.effective_chat
+    match = re.match(r"rm_chat\((.+?)\)", query.data)
+    if match:
+        user_id = update.effective_user.id
+        is_kuki = CHATS.remove(chat.id)
+        if is_kuki:
+            return (
+                f"<b>{html.escape(chat.title)}:</b>\n"
+                f"AI_DISABLED\n"
+                f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
+            )
+        else:
+            update.effective_message.edit_text(
+                "Miku Chatbot disable by {}.".format(mention_html(user.id, user.first_name)),
+                parse_mode=ParseMode.HTML,
+            )
+
+    return ""
+
+@user_admin_no_reply
+@gloggable
+def kukiadd(update: Update, context: CallbackContext) -> str:
+    query: Optional[CallbackQuery] = update.callback_query
+    chat: Optional[Chat] = update.effective_chat
+    user: Optional[User] = update.effective_user
+    match = re.match(r"add_chat\((.+?)\)", query.data)
+    if match:
+        user_id = update.effective_chat.id
+        is_kuki = CHATS.append(chat.id)
+        if is_kuki:
+            return (
+                f"<b>{html.escape(chat.title)}:</b>\n"
+                f"AI_ENABLE\n"
+                f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
+            )
+        else:
+            update.effective_message.edit_text(
+                "Miku Chatbot enable by {}.".format(mention_html(user.id, user.first_name)),
+                parse_mode=ParseMode.HTML,
+            )
+
+    return ""
+
 @user_admin
 @gloggable
-def add_chat(update: Update, context: CallbackContext):
-    global api_client
-    chat = update.effective_chat
-    msg = update.effective_message
+def kuki(update: Update, context: CallbackContext):
     user = update.effective_user
-    is_chat = sql.is_chat(chat.id)
-    if chat.type == "private":
-        msg.reply_text("You can't enable AI in PM.")
-        return
+    message = update.effective_message
+    msg = "Choose an option"
+    keyboard = InlineKeyboardMarkup([[
+        InlineKeyboardButton(
+            text="Enable",
+            callback_data="add_chat({})"),
+        InlineKeyboardButton(
+            text="Disable",
+            callback_data="rm_chat({})")]])
+    message.reply_text(
+        msg,
+        reply_markup=keyboard,
+        parse_mode=ParseMode.HTML,
+    )
 
-    if not is_chat:
-        ses = api_client.create_session()
-        ses_id = str(ses.id)
-        expires = str(ses.expires)
-        sql.set_ses(chat.id, ses_id, expires)
-        msg.reply_text("AI successfully enabled for this chat!")
-        message = (
-            f"<b>{html.escape(chat.title)}:</b>\n"
-            f"#AI_ENABLED\n"
-            f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
-        )
-        return message
-    else:
-        msg.reply_text("AI is already enabled for this chat!")
-        return ""
-
-
-@run_async
-@user_admin
-@gloggable
-def remove_chat(update: Update, context: CallbackContext):
-    msg = update.effective_message
-    chat = update.effective_chat
-    user = update.effective_user
-    is_chat = sql.is_chat(chat.id)
-    if not is_chat:
-        msg.reply_text("AI isn't enabled here in the first place!")
-        return ""
-    else:
-        sql.rem_chat(chat.id)
-        msg.reply_text("AI disabled successfully!")
-        message = (
-            f"<b>{html.escape(chat.title)}:</b>\n"
-            f"#AI_DISABLED\n"
-            f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
-        )
-        return message
-
-
-def check_message(context: CallbackContext, message):
-    reply_msg = message.reply_to_message
-    if message.text.lower() == "asuna":
+def kuki_message(context: CallbackContext, message):
+    reply_message = message.reply_to_message
+    if message.text.lower() == "kuki":
         return True
-    if reply_msg:
-        if reply_msg.from_user.id == context.bot.get_me().id:
+    if reply_message:
+        if reply_message.from_user.id == context.bot.get_me().id:
             return True
     else:
         return False
+        
 
-
-@run_async
 def chatbot(update: Update, context: CallbackContext):
-    global api_client
-    msg = update.effective_message
-    chat_id = update.effective_chat.id
-    is_chat = sql.is_chat(chat_id)
+    message = update.effective_message
+    chat: Optional[Chat] = update.effective_chat
     bot = context.bot
-    if not is_chat:
+    is_kuki = chat.id in CHATS
+    if not is_kuki:
         return
-    if msg.text and not msg.document:
-        if not check_message(context, msg):
+	
+    if message.text and not message.document:
+        if not kuki_message(context, message):
             return
-        sesh, exp = sql.get_ses(chat_id)
-        query = msg.text
-        try:
-            if int(exp) < time():
-                ses = api_client.create_session()
-                ses_id = str(ses.id)
-                expires = str(ses.expires)
-                sql.set_ses(chat_id, ses_id, expires)
-                sesh, exp = sql.get_ses(chat_id)
-        except ValueError:
-            pass
-        try:
-            bot.send_chat_action(chat_id, action="typing")
-            rep = api_client.think_thought(sesh, query)
-            sleep(0.3)
-            msg.reply_text(rep, timeout=60)
-        except CFError as e:
-            pass
-            # bot.send_message(OWNER_ID,
-            #                 f"Chatbot error: {e} occurred in {chat_id}!")
+        Message = message.text
+        bot.send_chat_action(chat_id=chat.id, action="typing")
+        kukiurl = requests.get('http://Kukiapi.xyz/api/apikey=5145883564-KUKISf4kHn2oT0/Miku/@h0daka/message='+Message)
+        Kuki = json.loads(kukiurl.text)
+        kuki = Kuki['reply']
+        sleep(0.3)
+        message.reply_text(kuki, timeout=60)
 
-
-@run_async
-def list_chatbot_chats(update: Update, context: CallbackContext):
-    chats = sql.get_all_chats()
-    text = "<b>AI-Enabled Chats</b>\n"
-    for chat in chats:
+def list_all_chats(update: Update, context: CallbackContext):
+    text = "<b>Miku Chatbot Enabled Chats</b>\n"
+    for chat in CHATS:
         try:
             x = context.bot.get_chat(int(*chat))
             name = x.title or x.first_name
             text += f"• <code>{name}</code>\n"
-        except BadRequest:
-            sql.rem_chat(*chat)
-        except Unauthorized:
-            sql.rem_chat(*chat)
+        except (BadRequest, Unauthorized):
+            CHATS.remove(*chat)
         except RetryAfter as e:
             sleep(e.retry_after)
     update.effective_message.reply_text(text, parse_mode="HTML")
 
+__help__ = """
+Chatbot utilizes the Kuki's api which allows Miku to talk and provide a more interactive group chat experience.
+
+*Admins only Commands*:
+  ➢ `/Chatbot`*:* Shows chatbot control panel.
+
+"""
+
+__mod_name__ = "ChatBot"
 
 
-ADD_CHAT_HANDLER = CommandHandler("addchat", add_chat)
-REMOVE_CHAT_HANDLER = CommandHandler("rmchat", remove_chat)
+CHATBOTK_HANDLER = CommandHandler("chatbot", kuki, run_async=True)
+ADD_CHAT_HANDLER = CallbackQueryHandler(kukiadd, pattern=r"add_chat", run_async=True)
+RM_CHAT_HANDLER = CallbackQueryHandler(kukirm, pattern=r"rm_chat", run_async=True)
 CHATBOT_HANDLER = MessageHandler(
-    Filters.text
-    & (~Filters.regex(r"^#[^\s]+") & ~Filters.regex(r"^!") & ~Filters.regex(r"^\/")),
-    chatbot,
-)
-LIST_CB_CHATS_HANDLER = CommandHandler(
-    "listaichats", list_chatbot_chats, filters=CustomFilters.dev_filter
-)
-# Filters for ignoring #note messages, !commands and sed.
+    Filters.text & (~Filters.regex(r"^#[^\s]+") & ~Filters.regex(r"^!")
+                    & ~Filters.regex(r"^\/")), chatbot, run_async=True)
+LIST_ALL_CHATS_HANDLER = CommandHandler(
+    "allchats", list_all_chats, filters=CustomFilters.dev_filter, run_async=True)
 
 dispatcher.add_handler(ADD_CHAT_HANDLER)
-dispatcher.add_handler(REMOVE_CHAT_HANDLER)
+dispatcher.add_handler(CHATBOTK_HANDLER)
+dispatcher.add_handler(RM_CHAT_HANDLER)
+dispatcher.add_handler(LIST_ALL_CHATS_HANDLER)
 dispatcher.add_handler(CHATBOT_HANDLER)
-dispatcher.add_handler(LIST_CB_CHATS_HANDLER)
 
-__mod_name__ = "Chatbot"
-__command_list__ = ["addchat", "rmchat", "listaichats"]
 __handlers__ = [
     ADD_CHAT_HANDLER,
-    REMOVE_CHAT_HANDLER,
+    CHATBOTK_HANDLER,
+    RM_CHAT_HANDLER,
+    LIST_ALL_CHATS_HANDLER,
     CHATBOT_HANDLER,
-    LIST_CB_CHATS_HANDLER,
-]
+]". The value does not represent an existing local file, HTTP URL, or valid file id.
