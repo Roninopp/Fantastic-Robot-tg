@@ -143,10 +143,10 @@ __help__ = """
 Advance Chatbot which can chat with you in your free time .
 *Admins only Commands*:
   ➢ `/Chatbot`*:* Shows chatbot control panel
-  API Credit :-> Kuki's api
+  API Credit :-> DushmanXRONIN
 """
 
-__mod_name__ = "ChatBot"
+__mod_name__ = "『CHATBOT』⁪⁬⁮⁮⁮⁮"
 
 
 CHATBOTK_HANDLER = CommandHandler("chatbot", kuki)
