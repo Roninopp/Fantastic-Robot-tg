@@ -184,7 +184,7 @@ PAT_TEMPLATES = (
 )
 
 PAT_GIFS = (
-    "CgACAgQAAxkBAALRX19Xs7tBdOH1gQwS_rglVRkTbgVYAAKEAgACmQn9UWlyGa_xy9_aGwQ",
+    "(https://te.legra.ph/file/9012a958e07362727ae19.jpg)",
     "CgACAgEAAxkBAALRYF9Xs8EnhsDfDpld3ILoqTbzDmwxAAJFAAOJxjlHECanwn69E5QbBA",
 )
 
@@ -437,7 +437,7 @@ EIGHTBALL = [
     "🟢 You may rely on it.",
 ]
 
-DECIDE = ("https://te.legra.ph/file/4a8fa24a2ee4b3f2edd0c.mp4 yes", "No.", "Maybe.")
+DECIDE = ("CAACAgQAAxkBAALRXF9Xs6XmIeDbnoL1wiDky0TdX-CvAAKKAQAC1TMzC9A3CtiT2rqVGwQ. ", "No.", "Maybe.")
 
 TABLE = (
     "(╯°□°）╯彡 ┻━┻",
