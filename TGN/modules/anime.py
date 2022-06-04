@@ -15,10 +15,10 @@ from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Upda
 from telegram.ext import CommandHandler, CallbackQueryHandler, CallbackContext
 from telegram.utils.helpers import mention_html
 
-from KURUMIBOT import OWNER_ID, REDIS, dispatcher, pgram
-from KURUMIBOT.modules.disable import DisableAbleCommandHandler
-from KURUMIBOT.modules.helper_funcs.alternate import typing_action
-from KURUMIBOT.modules.helper_funcs.chat_status import callbacks_in_filters
+from TGN import OWNER_ID, REDIS, dispatcher, pgram
+from TGN.modules.disable import DisableAbleCommandHandler
+from TGN.modules.helper_funcs.alternate import typing_action
+from TGN.modules.helper_funcs.chat_status import callbacks_in_filters
 
 kaizoku_btn = "Kaizoku ☠️"
 kayo_btn = "Kayo 🏴‍☠️"
