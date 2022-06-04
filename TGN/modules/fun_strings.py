@@ -437,7 +437,7 @@ EIGHTBALL = [
     "🟢 You may rely on it.",
 ]
 
-DECIDE = ("Yes.", "No.", "Maybe.")
+DECIDE = ("CgACAgQAAxkBAAKmaGKbqbHA_UnP8-cshj-x3PVgiQJqAAJbAwACvSJ0US23VpOez-5NJAQ", "No.", "Maybe.")
 
 TABLE = (
     "(╯°□°）╯彡 ┻━┻",
