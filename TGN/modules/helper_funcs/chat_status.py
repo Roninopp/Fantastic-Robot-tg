@@ -1,6 +1,7 @@
 from time import perf_counter
 from functools import wraps
 from cachetools import TTLCache
+from pyrogram import filters
 from threading import RLock
 from TGN import (
     DEL_CMDS,
@@ -406,3 +407,6 @@ def connection_status(func):
 from TGN.modules import connection
 
 connected = connection.connected
+
+def callbacks_in_filters(data):
+    return filters.create(lambda flt, _, query: flt.data in query.data, data=data)
