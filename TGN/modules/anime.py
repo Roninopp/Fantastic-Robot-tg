@@ -15,7 +15,7 @@ from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Upda
 from telegram.ext import CommandHandler, CallbackQueryHandler, CallbackContext
 from telegram.utils.helpers import mention_html
 
-from TGN import OWNER_ID, REDIS, dispatcher, pgram
+from TGN import OWNER_ID, REDIS, dispatcher, pbot as pgram
 from TGN.modules.disable import DisableAbleCommandHandler
 from TGN.modules.helper_funcs.alternate import typing_action
 from TGN.modules.helper_funcs.chat_status import callbacks_in_filters
