@@ -1,6 +1,6 @@
 import random
 
-from Cutiepii_Robot import OWNER_ID, telethn
+from TGN import OWNER_ID, telethn
 
 from telethon import events, Button
 from telegram.constants import ParseMode
