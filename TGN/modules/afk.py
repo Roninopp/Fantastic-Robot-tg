@@ -35,8 +35,8 @@ def afk(update, context):
     REDIS.set(f'afk_time_{update.effective_user.id}', start_afk_time)
     fname = update.effective_user.first_name
     try:
-        update.effective_message.reply_animation("https://telegra.ph/file/8d7e959ed944d5c8b6607.mp4", 
-         caption="{} Good bye see you soon 👋!".format(fname,notice))
+        update.effective_message.reply_text(
+         "{} Good bye see you soon 👋!".format(fname))
             
     except BadRequest:
         pass
