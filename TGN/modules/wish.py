@@ -2,6 +2,9 @@ import random
 from PIL import Image
 from TGN import telethn as neko
 from telethon import events
+
+
+BUTTON = [[Button.url("❓ What Is This", "https://t.me/RoninXJin_updates/166")]]
 @neko.on(events.NewMessage(pattern="/wish ?(.*)"))
 async def wish(e):
 
