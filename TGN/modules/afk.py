@@ -36,8 +36,7 @@ def afk(update, context):
     fname = update.effective_user.first_name
     try:
         update.effective_message.reply_text(
-         "{} Good bye see you soon 👋!".format(fname))
-            
+         update.effective_message.reply_animation("https://telegra.ph/file/e6cf8b55e025d130f8e8e.mp4", caption="{} is now away!{}".format(fname, notice))
     except BadRequest:
         pass
 
