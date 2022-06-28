@@ -291,7 +291,7 @@ def kang(update, context):
                         [
                             [
                                 InlineKeyboardButton(
-                                    text="ᴠɪᴇᴡ ＰＡＣＫ", url=f"t.me/addstickers/{packname}"
+                                    text="View Pack", url=f"t.me/addstickers/{packname}"
                                 )
                             ]
                         ]
@@ -414,7 +414,7 @@ def kang(update, context):
                     [
                         [
                             InlineKeyboardButton(
-                                text="ᴠɪᴇᴡ ＰＡＣＫ", url=f"t.me/addstickers/{packname}"
+                                text="View Pack", url=f"t.me/addstickers/{packname}"
                             )
                         ]
                     ]
