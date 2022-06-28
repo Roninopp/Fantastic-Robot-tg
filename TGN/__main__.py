@@ -104,16 +104,16 @@ buttons = [
     ],
     [                  
                        InlineKeyboardButton(
-                             text="S͎U͎P͎P͎O͎R͎T͎ 🤝",
-                             url=f"https://t.me/Ronin_Fighters_Fd"),
+                             text="SUPPORT",
+                             url=f"https://t.me/liu_WULANG_MONKES"),
                        InlineKeyboardButton(
-                             text="U̥P̥D̥ḀT̥E̥S̥💖",
-                             url=f"https://t.me/Liu_wulang_monkes"),
+                             text="UPDATES",
+                             url=f"https://t.me/tag_op/3"),
     ],
     [
 InlineKeyboardButton(
-                             text="music💥Assistant",
-                             url=f"https://t.me/fantastic_ass"),
+                             text="LOGS🖥",
+                             url=f"https://t.me/op_bot_fan"),
 
         InlineKeyboardButton(
               text="Help",
