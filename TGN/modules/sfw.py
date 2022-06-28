@@ -402,7 +402,7 @@ __handlers__ = [
 
 
 
-__mod_name__ = "MORE✨FUN"
+__mod_name__ = "EXTRA✨FUN"
 __help__ = """
 *Commands* *:*  
    ➢ `/neko`*:*Sends Random SFW Neko source Images.
