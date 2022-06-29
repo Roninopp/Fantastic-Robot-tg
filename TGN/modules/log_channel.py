@@ -13,9 +13,9 @@ if is_module_loaded(FILENAME):
     from telegram.ext import CommandHandler, JobQueue
     from telegram.utils.helpers import escape_markdown
 
-    from zerotwobot import EVENT_LOGS, LOGGER, dispatcher
-    from zerotwobot.modules.helper_funcs.chat_status import user_admin
-    from zerotwobot.modules.sql import log_channel_sql as sql
+    from TGN import EVENT_LOGS, LOGGER, dispatcher
+    from TGN.modules.helper_funcs.chat_status import user_admin
+    from TGN.modules.sql import log_channel_sql as sql
 
     def loggable(func):
         @wraps(func)
