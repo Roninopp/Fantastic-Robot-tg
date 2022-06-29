@@ -71,6 +71,7 @@ UNGBAN_ERRORS = {
 }
 
 
+
 @support_plus
 def gban(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
@@ -114,7 +115,7 @@ def gban(update: Update, context: CallbackContext):
         return
 
     if user_id == bot.id:
-        message.reply_text("You uhh...want me to punch myself?")
+        message.reply_text("You uhh...want me to kick myself?")
         return
 
     if user_id in [777000, 1087968824]:
@@ -127,7 +128,8 @@ def gban(update: Update, context: CallbackContext):
         if excp.message == "User not found":
             message.reply_text("I can't seem to find this user.")
             return ""
-        return
+        else:
+            return
 
     if user_chat.type != "private":
         message.reply_text("That's not a user!")
@@ -142,9 +144,7 @@ def gban(update: Update, context: CallbackContext):
             return
 
         old_reason = sql.update_gban_reason(
-            user_id,
-            user_chat.username or user_chat.first_name,
-            reason,
+            user_id, user_chat.username or user_chat.first_name, reason,
         )
         if old_reason:
             message.reply_text(
@@ -231,9 +231,7 @@ def gban(update: Update, context: CallbackContext):
                     )
                 else:
                     send_to_list(
-                        bot,
-                        DRAGONS + DEMONS,
-                        f"Could not gban due to: {excp.message}",
+                        bot, DRAGONS + DEMONS, f"Could not gban due to: {excp.message}",
                     )
                 sql.ungban_user(user_id)
                 return
@@ -273,6 +271,7 @@ def gban(update: Update, context: CallbackContext):
         )
     except:
         pass  # bot probably blocked by user
+
 
 
 @support_plus
@@ -361,8 +360,7 @@ def ungban(update: Update, context: CallbackContext):
                     )
                 else:
                     bot.send_message(
-                        OWNER_ID,
-                        f"Could not un-gban due to: {excp.message}",
+                        OWNER_ID, f"Could not un-gban due to: {excp.message}",
                     )
                 return
         except TelegramError:
@@ -386,6 +384,7 @@ def ungban(update: Update, context: CallbackContext):
         message.reply_text(f"Person has been un-gbanned. Took {ungban_time} min")
     else:
         message.reply_text(f"Person has been un-gbanned. Took {ungban_time} sec")
+
 
 
 @support_plus
@@ -424,7 +423,7 @@ def check_and_ban(update, user_id, should_message=True):
             sw_ban = None
 
     if sw_ban:
-        update.effective_chat.ban_member(user_id)
+        update.effective_chat.kick_member(user_id)
         if should_message:
             update.effective_message.reply_text(
                 f"<b>Alert</b>: this user is globally banned.\n"
@@ -437,7 +436,7 @@ def check_and_ban(update, user_id, should_message=True):
         return
 
     if sql.is_user_gbanned(user_id):
-        update.effective_chat.ban_member(user_id)
+        update.effective_chat.kick_member(user_id)
         if should_message:
             text = (
                 f"<b>Alert</b>: this user is globally banned.\n"
@@ -449,6 +448,7 @@ def check_and_ban(update, user_id, should_message=True):
             if user.reason:
                 text += f"\n<b>Ban Reason:</b> <code>{html.escape(user.reason)}</code>"
             update.effective_message.reply_text(text, parse_mode=ParseMode.HTML)
+
 
 
 def enforce_gban(update: Update, context: CallbackContext):
@@ -478,6 +478,7 @@ def enforce_gban(update: Update, context: CallbackContext):
             user = msg.reply_to_message.from_user
             if user and not is_user_admin(chat, user.id):
                 check_and_ban(update, user.id, should_message=False)
+
 
 
 @user_admin
@@ -539,11 +540,11 @@ def __chat_settings__(chat_id, user_id):
 
 __help__ = f"""
 *Admins only:*
-❂ `/antispam <on/off/yes/no>`*:* Will toggle our antispam tech or return your current settings.
+ • `/antispam <on/off/yes/no>`*:* Will toggle our antispam tech or return your current settings.
 
 Anti-Spam, used by bot devs to ban spammers across all groups. This helps protect \
 you and your groups by removing spam flooders as quickly as possible.
-*Note:* Users can appeal gbans or report spammers at @{SUPPORT_CHAT}
+*Note:* Users can appeal gbans or report spammers at @Liu_wulang_monkes
 
 This also integrates @Spamwatch API to remove Spammers as much as possible from your chatroom!
 *What is SpamWatch?*
@@ -555,12 +556,10 @@ Constantly help banning spammers off from your group automatically So, you wont 
 GBAN_HANDLER = CommandHandler("gban", gban, run_async=True)
 UNGBAN_HANDLER = CommandHandler("ungban", ungban, run_async=True)
 GBAN_LIST = CommandHandler("gbanlist", gbanlist, run_async=True)
-GBAN_STATUS = CommandHandler(
-    "antispam", gbanstat, filters=Filters.chat_type.groups, run_async=True
-)
-GBAN_ENFORCER = MessageHandler(
-    Filters.all & Filters.chat_type.groups, enforce_gban, run_async=True
-)
+
+GBAN_STATUS = CommandHandler("antispam", gbanstat, filters=Filters.chat_type.groups, run_async=True)
+
+GBAN_ENFORCER = MessageHandler(Filters.all & Filters.chat_type.groups, enforce_gban, run_async=True)
 
 dispatcher.add_handler(GBAN_HANDLER)
 dispatcher.add_handler(UNGBAN_HANDLER)
