@@ -112,7 +112,7 @@ buttons = [
     ],
     [
 InlineKeyboardButton(
-                             text="LOGS🖥",
+                             text="G-LOGS🖥",
                              url=f"https://t.me/op_bot_fan"),
 
         InlineKeyboardButton(
@@ -261,7 +261,7 @@ def start(update: Update, context: CallbackContext):
         reply_markup=InlineKeyboardMarkup(
                 [
                   [
-                  InlineKeyboardButton(text="✧ Support ", url=f"https://t.me/liu_WULANG_MONKES"),
+                  InlineKeyboardButton(text="✧ ADD+ME ", url=f"https://t.me/FANTASTICFIGHTERBOT?startgroup=new"),
                   InlineKeyboardButton(text="✧ Updates ", url=f"https://t.me/RoninXjin_updates"),
                   ]
                 ]
