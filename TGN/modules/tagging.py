@@ -1,6 +1,6 @@
 from pyrogram import filters
 
-from TGN.pyrogramee.pluginshelper import admins_only, get_text
+from TGN.pyrogram.pluginshelper import admins_only, get_text
 from TGN import pbot
 
 
