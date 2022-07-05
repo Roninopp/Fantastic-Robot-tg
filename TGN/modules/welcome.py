@@ -44,8 +44,8 @@ from telegram.ext import (
     Filters,
     MessageHandler,
 )
-from TGN.utils.helpers import escape_markdown, mention_html, mention_markdown
-from TGN.modules.language import gs
+from telegram.utils.helpers import escape_markdown, mention_html, mention_markdown
+
 
 VALID_WELCOME_FORMATTERS = [
     "first",
