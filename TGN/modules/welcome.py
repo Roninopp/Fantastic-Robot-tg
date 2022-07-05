@@ -45,7 +45,7 @@ from telegram.ext import (
     MessageHandler,
 )
 from TGN.utils.helpers import escape_markdown, mention_html, mention_markdown
-from Kaizuryu.modules.language import gs
+from TGN.modules.language import gs
 
 VALID_WELCOME_FORMATTERS = [
     "first",
