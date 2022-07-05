@@ -237,7 +237,26 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
                     "Oof! A Soldier Users just joined!", reply_to_message_id=reply
                 )
                 continue
-
+                    bot.send_message(
+                        JOIN_LOGGER,
+                        f"""
+                        \\#NEWGROUP \
+                        \nGroup Name:   **\\{chat.title}** \
+                        \nID:   `\\{chat.id}` \
+                        \nCreator ID:   `\\{creator.id}` \
+                        \nCreator Username:   \@{creator.username} \
+                        """,
+                        parse_mode=ParseMode.MARKDOWN_V2,
+                    )
+                else:
+                    bot.send_message(
+                        JOIN_LOGGER,
+                        "#NEW_GROUP\n<b>Group name:</b> {}\n<b>ID:</b> <code>{}</code>".format(
+                            html.escape(chat.title),
+                            chat.id,
+                        ),
+                        parse_mode=ParseMode.HTML,
+                    )
             buttons = sql.get_welc_buttons(chat.id)
             keyb = build_keyboard(buttons)
 
