@@ -1,5 +1,5 @@
 # By @TroJanzHEX
-# Improved by Ronin
+# Improved by 
 
 from pyrogram import filters
 from pyrogram.types import (
@@ -18,7 +18,7 @@ from TGN.ex_plugins.ImageEditor.edit_1 import (  # pylint:disable=import-error
     mix,
     normal_blur,
 )
-from TGN.ex_plugins.ImageEditor.edit_2 import (  # pylint:disable=import-error
+from TGN.ex_plugins.ImageEditor.edit_2 import (
     cartoon,
     circle_with_bg,
     circle_without_bg,
