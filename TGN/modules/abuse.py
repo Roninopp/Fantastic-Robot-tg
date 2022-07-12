@@ -1,7 +1,7 @@
 import random
 import asyncio
 from pyrogram import filters
-from TGN import pbot as WILDROBOT
+from TGN import pbot as FANTASTICFIGHTERBOT
 
 GAALI_STRINGS = [
                      'ABA CHOOT KA TAPAKTA PANI NANKU MOCHI KI LAWARIS AULAD...',
@@ -19,7 +19,7 @@ GAALI_STRINGS = [
 
                    ]
 
-@FANTASTICFIGHTERbot.on_message(filters.command("gaali"))
+@FANTASTICFIGHTERBOT.on_message(filters.command("gaali"))
 async def lel(bot, message):
     ran = random.choice(GAALI_STRINGS)
     await bot.send_chat_action(message.chat.id, "typing")
