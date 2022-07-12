@@ -8,7 +8,7 @@ GAALI_STRINGS = [
                      'MADARBHOSDI AAJ TO CHODUGA TERI AMMA TOD KA KHATIYA...',
                      'Saale Phatele Nirodh Ke Natije. Chut Ka Maindak…!...',
                      'Chut Ke Pasine Mein Talay Hue Bhajiye…Chullu Bhar Muth Mein Doob Mar! ...',
-                     'Kaali Chut Ke Safed Jhaant…...',
+                     'ＧＡＡＮＤ ＭＡＡＲＥ ＧＡＡＮＤＵ ⒸⒽⓄⓄⓉ ⓂⒶⒶⓇⓎⒺ ⒸⒽⓊⓉⒾⓎⒺ ⓈⒶⒷⓈⒺ ⒶⒸⒽⒶⒶ ⓂⓊⓉⒽⒾ ➁ ⓂⒾⓃⓊⓉⒺ ⓂⒶⒾ ⒸⒽⓊⓉⓉⒾ..',
                      'Gote Kitne Bhi Badey Ho, Lund Ke Niche Hi Rehtein Hain...',
                      'Naa Chut, Naa Choche, Aur Nakhre Noor Jahan Ke!...',
                      'Teri Gaand Mein Kutte Ka Lund...',
@@ -17,6 +17,9 @@ GAALI_STRINGS = [
                      'Ahahahhahahaha beta dekh TV pe teri ammi ka porn bana rha mein😂😂😂...',
                      'Ye teri ammi ke porn pure xxxxx videos pe upload karke paisa kamaunga. Ek kaam kar lawde porn sites pe sabki mummy randi type kar tereko kaise paida kia tha wo wala video bhi a ajyega ehsaan man ki mera lund chooske teri ammi ne tereko paida kia🤤🤤🤤🤤🤤🤤🤤🤤🤤🤤 jaanat de dia tereko😂😂😂...',
                      'ＧＡＡＮＤ ＭＡＡＲＥ ＧＡＡＮＤＵ ⒸⒽⓄⓄⓉ ⓂⒶⒶⓇⓎⒺ ⒸⒽⓊⓉⒾⓎⒺ ⓈⒶⒷⓈⒺ ⒶⒸⒽⒶⒶ ⓂⓊⓉⒽⒾ ➁ ⓂⒾⓃⓊⓉⒺ ⓂⒶⒾ ⒸⒽⓊⓉⓉⒾ',
+
+
+
                    ]
 
 @FANTASTICFIGHTERBOT.on_message(filters.command("gaali"))
