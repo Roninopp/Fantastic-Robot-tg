@@ -1,7 +1,7 @@
 import random
 import asyncio
 from pyrogram import filters
-from TGN import pbot as TGN
+from TGN import pbot as WILDROBOT
 
 GAALI_STRINGS = [
                      'ABA CHOOT KA TAPAKTA PANI NANKU MOCHI KI LAWARIS AULAD...',
@@ -19,7 +19,7 @@ GAALI_STRINGS = [
 
                    ]
 
-@FANTASTICFIGHTERBOT.on_message(filters.command("fullabuse"))
+@FANTASTICFIGHTERbot.on_message(filters.command("gaali"))
 async def lel(bot, message):
     ran = random.choice(GAALI_STRINGS)
     await bot.send_chat_action(message.chat.id, "typing")
@@ -27,12 +27,12 @@ async def lel(bot, message):
     return await message.reply_text(text=ran)
 
 
-__mod_name__ = "FULLABUSE"
+__mod_name__ = "GAALI"
 
 help = """
 
-ᴍᴀᴋᴇs ᴀ ABUSE ᴀɴᴅ sᴇɴᴅ ɪᴛ ᴛᴏ ʏᴏᴜ.
+ᴍᴀᴋᴇs ᴀ GAALI ᴀɴᴅ sᴇɴᴅ ɪᴛ ᴛᴏ ʏᴏᴜ.
 
-❍ /fullabuse *:* ᴍᴀᴋᴇs ABUSE ɪғ ʏᴏᴜ sᴇɴᴅ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ :NOTE THIS COMMAND ONLY FOR 16+ aGE USERS
+❍ /GAALI *:* ᴍᴀᴋᴇs GAALI ɪғ ʏᴏᴜ sᴇɴᴅ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ
 
  """
