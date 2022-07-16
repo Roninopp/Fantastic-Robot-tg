@@ -419,7 +419,7 @@ __help__ = """
    ➢ `/gecg`*:* IDK
    ➢ `/slap`*:* Sends Random Slap GIFs.
 
-*Some more SFW commands :*
+*Some more EXTRA commands :*
    ➢ `/shinobu`
    ➢ `/megumin`
    ➢ `/bully`
