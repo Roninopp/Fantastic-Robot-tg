@@ -119,7 +119,7 @@ InlineKeyboardButton(
               text="Help",
               callback_data="help_back"),
         InlineKeyboardButton(
-              text="About",
+              text="About✨me",
               callback_data="shukurenai_"),   
     ],
     [
@@ -222,7 +222,7 @@ def start(update: Update, context: CallbackContext):
                     update.effective_chat.id,
                     HELPABLE[mod].__help__,
                     InlineKeyboardMarkup(
-                        [[InlineKeyboardButton(text="Go Back", callback_data="help_back")]]
+                        [[InlineKeyboardButton(text="Go🏃Back", callback_data="help_back")]]
                     ),
                 )
 
@@ -420,7 +420,7 @@ def shukurenai_about_callback(update, context):
                     InlineKeyboardButton(text="Try inline!​​", switch_inline_query_current_chat=""), 
                  ],
                  [
-                    InlineKeyboardButton(text="Go Back", callback_data="shukurenai_back"),
+                    InlineKeyboardButton(text="Go🙆Back", callback_data="shukurenai_back"),
                  ]
                 ]
             ),
@@ -453,7 +453,7 @@ def shukurenai_about_callback(update, context):
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Go Back", callback_data="shukurenai_")]]
+                [[InlineKeyboardButton(text="Go💁Back", callback_data="shukurenai_")]]
             ),
         )
 
@@ -465,7 +465,7 @@ def shukurenai_about_callback(update, context):
             f"\n\nYou can also set buttons for notes and filters (refer help menu)",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Go Back", callback_data="shukurenai_")]]
+                [[InlineKeyboardButton(text="Go🙇Back", callback_data="shukurenai_")]]
             ),
         )
     elif query.data == "shukurenai_support":
@@ -480,7 +480,7 @@ def shukurenai_about_callback(update, context):
                     InlineKeyboardButton(text="Updates", url="https://t.me/liu_WULANG_MONKES"),
                  ],
                  [
-                    InlineKeyboardButton(text="Go Back", callback_data="shukurenai_"),
+                    InlineKeyboardButton(text="Go🙅Back", callback_data="shukurenai_"),
                  
                  ]
                 ]
@@ -501,14 +501,14 @@ def shukurenai_about_callback(update, context):
                     InlineKeyboardButton(text="X hate", url="https://t.me/AnxiousXd"), 
                  ],
                  [
-                    InlineKeyboardButton(text="Go Back", callback_data="shukurenai_"),
+                    InlineKeyboardButton(text="Go🙇Back", callback_data="shukurenai_"),
                  ]
                 ]
             ),
         )
     elif query.data == "shukurenai_donate":
         query.message.edit_text(
-            text=f"๏ Donate for GodfatherBot",
+            text=f"๏ Donate for FantasticBot",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
@@ -516,7 +516,7 @@ def shukurenai_about_callback(update, context):
                     InlineKeyboardButton(text="Razorpay", url="https://t.me/liu_WULANG_MONKES"),
                  ],
                  [
-                    InlineKeyboardButton(text="Go Back", callback_data="shukurenai_back"),
+                    InlineKeyboardButton(text="Go🙇Back", callback_data="shukurenai_back"),
                  ]
                 ]
             ),
@@ -542,7 +542,7 @@ def Source_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Go Back", callback_data="shukurenai_")
+                    InlineKeyboardButton(text="Go💁Back", callback_data="shukurenai_")
                  ]
                 ]
             ),
