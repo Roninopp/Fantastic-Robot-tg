@@ -124,9 +124,9 @@ async def close_send_photo(_, CallbackQuery):
         await CallbackQuery.message.delete()
             
 __help__ = """
-× You can now report any bugs related to fantastic through /bug (your bug)
+× __You can now report any bugs related to fantastic through /bug (your bug)
 × we will check and solve your bug after checking 
-× usage : /bug (bug you have or reply to the bug)
+× usage : /bug (bug you have or reply to the bug__)
 """
 
 __mod_name__ = "BUG"
