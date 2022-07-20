@@ -86,15 +86,15 @@ PM_START_TEXT = """
 ɪ ᴀᴍ FANTASTIC ᴀɴ ᴀɴɪᴍᴇ ᴛʜᴇᴍᴇᴅ ᴀᴅᴠᴀɴᴄᴇ ɢʀᴏᴜp ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴡɪᴛʜ ᴀ ʟᴏᴛ ᴏғ sᴘᴇᴄɪᴀʟɪᴛʏ.
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
 I have lots of handy features such as:
-‣ 「Warning system」
-‣ 「Artificial intelligence」 
-‣ 「Flood control system」
-‣ 「Note keeping system」
-‣ 「Filters keeping system」
-‣ 「without lag music+video」
-‣ 「Approvals and much more」
+‣ `「Warning system」`
+‣ `「Artificial intelligence」`
+‣ `「Flood control system」`
+‣ `「Note keeping system」`
+‣ `「Filters keeping system」`
+‣ `「without lag music+video」`
+‣ `「Approvals and much more」`
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
-➛ᴛʀʏ ᴛʜᴇ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴs ʙᴇʟᴏᴡ ᴛᴏ ᴋɴᴏᴡ ᴍʏ ᴀʙɪʟɪᴛɪᴇs ××× 
+➛**ᴛʀʏ ᴛʜᴇ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴs ʙᴇʟᴏᴡ ᴛᴏ ᴋɴᴏᴡ ᴍʏ ᴀʙɪʟɪᴛɪᴇs** ××× 
 """
 
 buttons = [
@@ -104,10 +104,10 @@ buttons = [
     ],
     [                  
                        InlineKeyboardButton(
-                             text="SUPPORT",
+                             text="SUPPORT🤵",
                              url=f"https://t.me/liu_WULANG_MONKES"),
                        InlineKeyboardButton(
-                             text="UPDATES",
+                             text="UPDATES💁",
                              url=f"https://t.me/tag_op/3"),
     ],
     [
