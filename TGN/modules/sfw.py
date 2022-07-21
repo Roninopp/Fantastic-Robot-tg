@@ -402,22 +402,22 @@ __handlers__ = [
 
 
 
-__mod_name__ = "『EXTRA FUN🔥』⁪⁬⁮⁮⁮⁮"
+__mod_name__ = "『EXTRAS🔥』⁪⁬⁮⁮⁮⁮"
 __help__ = """
 *Commands* *:*  
-   ➢ `/neko`*:* **Sends Random SFW Neko source Images.**
-   ➢ `/ngif`*:* **Sends Random Neko GIFs.**
-   ➢ `/tickle`*:* **Sends Random Tickle GIFs.**
-   ➢ `/feed`*:* **Sends Random Feeding GIFs.**
-   ➢ `/gasm`*:* **Sends Random Orgasm Stickers.**
-   ➢ `/avatar`*:* **Sends Random Avatar Stickers.**
-   ➢ `/waifus`*:* **Sends Random Waifu Stickers.**
-   ➢ `/kiss`*:* Sends Random Kissing GIFs.
-   ➢ `/cuddle`*:* **Sends Random Cuddle GIFs.**
-   ➢ `/foxgirl`*:* **Sends Random FoxGirl source Images.**
-   ➢ `/smug`*:* **Sends Random Smug GIFs.**
-   ➢ `/gecg`*:* **TRY YOURSELF**
-   ➢ `/slap`*:* **Sends Random Slap GIFs.**
+   ➢ `/neko`*:* __Sends Random SFW Neko source Images__
+   ➢ `/ngif`*:* __Sends Random Neko GIFs__
+   ➢ `/tickle`*:* __Sends Random Tickle GIFs__
+   ➢ `/feed`*:* __Sends Random Feeding GIFs__
+   ➢ `/gasm`*:* __Sends Random Orgasm Stickers__
+   ➢ `/avatar`*:* __Sends Random Avatar Stickers__
+   ➢ `/waifus`*:* __Sends Random Waifu Stickers__
+   ➢ `/kiss`*:* __Sends Random Kissing GIFs__
+   ➢ `/cuddle`*:* __Sends Random Cuddle GIFs__
+   ➢ `/foxgirl`*:* __Sends Random FoxGirl source Images__
+   ➢ `/smug`*:* __Sends Random Smug GIFs__
+   ➢ `/gecg`*:* __TRY YOURSELF__
+   ➢ `/slap`*:* __Sends Random Slap GIFs__
 
 * __Some more EXTRA commands__ :*
    ➢ `/shinobu`
