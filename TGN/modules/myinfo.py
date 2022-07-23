@@ -60,12 +60,12 @@ async def proboyx(event):
     await asyncio.sleep(edit_time)
     ok7 = await bot.edit_message(event.chat_id, ok6, file=file4, buttons=button)
 
-@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"information")))
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b" 『INFORMATION』⁪⁬⁮⁮⁮⁮ ‌")))
 async def callback_query_handler(event):
   try:
     boy = event.sender_id
     PRO = await bot.get_entity(boy)
-    LILIE = "POWERED BY UNITED \n\n"
+    LILIE = "POWERED BY 『ＲＯＮＩＮ』⁪⁬⁮⁮⁮⁮ ‌ᴛᵐ \n\n"
     LILIE += f"FIRST NAME : {PRO.first_name} \n"
     LILIE += f"LAST NAME : {PRO.last_name}\n"
     LILIE += f"YOU BOT : {PRO.bot} \n"
