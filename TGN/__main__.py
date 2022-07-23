@@ -139,6 +139,11 @@ DONATE_STRING = """Contact to **@DushmanxRonin**"""
 HELP_IMG = "https://te.legra.ph/file/4789bb3e07507c35248c5.jpg"
 GROUP_IMG = "https://telegra.ph/file/a537738bfac3c85ab919d.jpg"
 
+PM_IMG = ( "https://te.legra.ph/file/9012a958e07362727ae19.jpg",
+           "https://te.legra.ph/file/4789bb3e07507c35248c5.jpg",
+           "https://te.legra.ph/file/9012a958e07362727ae19.jpg",
+           "https://te.legra.ph/file/f3b977361cec62f89ec3d.jpg",
+           "https://te.legra.ph/file/a524868f792bca01aaf7c.jpg", )
 
 
 IMPORTED = {}
