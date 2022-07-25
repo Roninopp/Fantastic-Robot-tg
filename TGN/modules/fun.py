@@ -338,6 +338,13 @@ __help__ = """
 ❂ /blue <text>: bluify your text!
 ❂ /latin <text>: latinify your text!
 ❂ /lined <text>: lined your text!
+ ("SOME MORE FUN COMMAMDS ")
+❂ /dice - Dice 🎲
+❂/dart - Dart 🎯
+❂/basket - Basket Ball 🏀
+❂/bowling - Bowling Ball 🎳
+❂/football - Football ⚽
+❂/slot - Spin slot machine 
 """
 
 SANITIZE_HANDLER = DisableAbleCommandHandler("sanitize", sanitize, run_async=True)
