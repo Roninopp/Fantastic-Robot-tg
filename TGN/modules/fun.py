@@ -338,7 +338,10 @@ __help__ = """
 ❂ /blue <text>: bluify your text!
 ❂ /latin <text>: latinify your text!
 ❂ /lined <text>: lined your text!
- ("SOME MORE FUN COMMAMDS ")
+
+
+ Sᴏᴍᴇ ɢᴀᴍᴇS ᴄᴏᴍᴍᴀɴᴅS
+
 ❂ /dice - Dice 🎲
 ❂/dart - Dart 🎯
 ❂/basket - Basket Ball 🏀
