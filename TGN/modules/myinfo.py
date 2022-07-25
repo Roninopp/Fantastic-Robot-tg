@@ -80,5 +80,3 @@ async def callback_query_handler(event):
 __mod_name__ = "ᴍʏ ɪɴғᴏ"
 
 
-TO GET YOUR INFO /myinfo
-
