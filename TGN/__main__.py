@@ -132,18 +132,7 @@ InlineKeyboardButton(
 
 
 HELP_STRINGS = """
-Help
-
-✧ __Hey! My name is Fantastic. I am a group management bot, here to help you get around and keep the order in your groups!__
-✧ __I have lots of handy features, such as flood control, a warning system, a note keeping system, and even predetermined replies on certain keywords__
-
-Helpful commands:
-✧ - /start: __Starts me! You've probably already used this__
-✧ - /help: __Sends this message; I'll tell you more about myself__
-✧ - /donate: __Gives you info on how to support me and my creator__.
-
-✧ __If you have any bugs or questions on how to use me__, __so use__ /bug {issue}, __or head to__ @RoninXJin_updates.
-✧ __All commands can be used with the following__: / !."""
+Click on the button bellow to get description about specifics command."""
 
 HELP_MSG = "Click the button below to get help manu in your pm."
 DONATE_STRING = """Contact to **@DushmanxRonin**"""
