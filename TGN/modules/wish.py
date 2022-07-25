@@ -15,3 +15,13 @@ async def wish(e):
          fire = "https://telegra.ph/file/fd0d24d1d156f355572aa.jpg"
          await neko.send_file(e.chat_id, fire,caption=f"**Hey [{e.sender.first_name}](tg://user?id={e.sender.id}), Your wish has been cast.💜**\n\n__chance of success {mm}%__", reply_to=e)
 
+
+
+
+__help__ = """
+× ʜᴇʀᴇ wish ᴍᴏᴅᴜʟᴇ use /wish and say anything 
+ __if you need reading some hindi shayari so use__ /shayari __and see__×
+"""
+
+__mod_name__ = "wish💫"
+
