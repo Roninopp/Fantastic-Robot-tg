@@ -4,14 +4,7 @@ from pyrogram.types import Message
 from TGN import pbot as app
 
 
-Use these commands and try to score.\n\n
-/dice - Dice 🎲\n
-/dart - Dart 🎯\n
-/basket - Basket Ball 🏀\n
-/bowling - Bowling Ball 🎳\n
-/football - Football ⚽\n
-/slot - Spin slot machine 🎰
-"""
+
 
 @app.on_message(filters.command("dice"))
 async def throw_dice(client, message: Message): 
