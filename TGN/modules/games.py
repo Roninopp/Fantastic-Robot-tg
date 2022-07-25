@@ -4,9 +4,6 @@ from pyrogram.types import Message
 from TGN import pbot as app
 
 
-
-__mod_name__ = "Games 🎮"
-__help__ = """
 Use these commands and try to score.\n\n
 /dice - Dice 🎲\n
 /dart - Dart 🎯\n
