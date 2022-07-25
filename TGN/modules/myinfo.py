@@ -77,6 +77,11 @@ async def callback_query_handler(event):
   except Exception as e:
     await event.reply(f"{e}")
 
+__help__ = """
+× ʜᴇʀᴇ ᴍʏ ɪɴғᴏ ᴍᴏᴅᴜʟᴇ ᴊᴜsᴛ ᴜsᴇ /myinfo and see) ×
+"""
+
 __mod_name__ = "ᴍʏ ɪɴғᴏ"
+
 
 
