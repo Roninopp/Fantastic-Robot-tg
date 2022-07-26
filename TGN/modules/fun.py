@@ -294,7 +294,7 @@ help = """
 
 × HERE GAMES COMMANDS ×
 
-/dice - Dice 🎲
+/dice - Dice. 🎲
 /dart - Dart 🎯
 /basket - Basket Ball 🏀
 /bowling - Bowling Ball 🎳
