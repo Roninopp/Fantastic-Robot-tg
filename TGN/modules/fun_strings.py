@@ -33,7 +33,7 @@ GBAM_REASON = (
     "mother likely chuthiya",
     "gay being gay",
     "using gay pack trying become a gay",
-    "big dick more than sucks a bots",
+    "big noob nalla 😛",
     "see rules mother tickers",
     "idk. wtf he is mom sai",
     "fucking with gay bots",
