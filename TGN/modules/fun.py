@@ -294,9 +294,18 @@ dispatcher.add_handler(DARE_HANDLER)
 
 
 
-__mod_name__ = "💞 ғᴜɴ"
+__mod_name__ = "👒ғᴜɴ"
 
 __help__ = """
 =>> *Fun Module all cmd are given below* 🤫
- /alexa, /slap, /decide, /judge, /abuse, /insult, /truth, /dare, /gbam, /pat, /gbun, /repo 😊
+ /shayari, /slap, /decide, /judge, /abuse, /insult, /truth, /dare, /gbam, /pat, /gbun , /gaali 
+
+  ××here games commands××
+
+/dice - Dice 🎲
+/dart - Dart 🎯
+/basket - Basket Ball 🏀
+/bowling - Bowling Ball 🎳
+/football - Football ⚽
+/slot - Spin slot machine 🎰
 """
