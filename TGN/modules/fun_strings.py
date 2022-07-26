@@ -44,14 +44,14 @@ GBAM_REASON = (
 
 DECIDE_HANDLER = ("𝗬𝗲𝘀 ☑️", "𝗜𝘁𝘁𝘂 🤏 𝗦𝗮", "𝗡𝗼 🙅‍♀️")
 
-fantastic_HANDLER = (
+ALEXA_HANDLER = (
     "𝗗𝗼𝗻'𝘁 tag me on this 𝘀𝘁𝘂𝗽𝗶𝗱 user",
     "Only my love 𝗔𝘀𝗮𝗱 can tag me",
     "How dare you to 𝘁𝗮𝗴 me on this user",
     "Any 𝗽𝗿𝗼𝗯𝗹𝗲𝗺 viro 😜",
 )
 
-fantastic_STRINGS = ("𝗛𝗲𝗹𝗹𝗼 user how are you & how may i 𝗵𝗲𝗹𝗽 you")
+ALEXA_STRINGS = ("𝗛𝗲𝗹𝗹𝗼 user how are you & how may i 𝗵𝗲𝗹𝗽 you")
 
 WISH = (
     "*hey! (first)*\n*your Wish Possible to 25%😟*",
