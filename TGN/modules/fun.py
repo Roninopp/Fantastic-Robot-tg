@@ -268,7 +268,7 @@ ABUSE_HANDLER = DisableAbleCommandHandler("abuse", abuse)
 JUDGE_HANDLER = DisableAbleCommandHandler("judge", judge)
 DECIDE_HANDLER = DisableAbleCommandHandler("decide", decide)
 SLAP_HANDLER = DisableAbleCommandHandler("slap", slap)
-ALEXA_HANDLER = DisableAbleCommandHandler("alexa", alexa)
+ALEXA_HANDLER = DisableAbleCommandHandler("fantastic", fantastic)
 
 dispatcher.add_handler(GOODMORNING_HANDLER)
 dispatcher.add_handler(ASADALI_HANDLER)
@@ -289,7 +289,7 @@ dispatcher.add_handler(DARE_HANDLER)
 
 
 
-__mod_name__ = "💞 ғᴜɴ"
+__mod_name__ = "ғᴜɴ"
 
 __help__ = """
 =>> *Fun Module all cmd are given below
