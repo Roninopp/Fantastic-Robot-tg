@@ -293,5 +293,5 @@ __mod_name__ = "💞 ғᴜɴ"
 
 __help__ = """
 =>> *Fun Module all cmd are given below
- /alexa, /slap, /decide, /judge, /abuse, /insult, /truth, /dare, /gbam, /pat, /gbun
+ /fantastic, /slap, /decide, /judge, /abuse, /insult, /truth, /dare, /gbam, /pat, /gbun,/repo
 """
