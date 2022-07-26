@@ -288,10 +288,19 @@ dispatcher.add_handler(REPO_HANDLER)
 dispatcher.add_handler(DARE_HANDLER)
 
 
+help = """
+×=>> *Fun Module all cmd are given below
+ /fantastic, /slap, /decide, /judge, /abuse, /insult, /truth, /dare, /gbam, /pat, /gbun,/rep
 
-__mod_name__ = "FUN"
+× HERE GAMES COMMANDS ×
 
-__help__ = """
-=>> *Fun Module all cmd are given below
- /fantastic, /slap, /decide, /judge, /abuse, /insult, /truth, /dare, /gbam, /pat, /gbun,/repo 
+/dice - Dice 🎲
+/dart - Dart 🎯
+/basket - Basket Ball 🏀
+/bowling - Bowling Ball 🎳
+/football - Football ⚽
+/slot - Spin slot machine 🎰
 """
+
+mod_name = "Fun👓"
+
