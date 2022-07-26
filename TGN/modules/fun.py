@@ -23,7 +23,7 @@ from TGN.modules.helper_funcs.chat_status import (is_user_admin)
 from TGN.modules.helper_funcs.extraction import extract_user
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-GN_IMG= "https://telegra.ph/file/52eb0e2a082550fad027a.jpg"
+GN_IMG= "https://te.legra.ph/file/a524868f792bca01aaf7c.jpg"
 DECIDE_IMG= "https://telegra.ph/file/313cfbc4056bd3b5cd995.jpg"
 JUDGE_IMG= "https://telegra.ph/file/a2ebfdd262def30ad42a7.jpg"
 
@@ -36,7 +36,7 @@ def goodnight(update, context):
     reply = f"*Hey {escape_markdown(first_name)} \nGood Night! 😴*"
     message.reply_photo(GN_IMG,reply, parse_mode=ParseMode.MARKDOWN)
 
-GM_IMG= "https://telegra.ph/file/9e008ed4dc87b7d155a59.jpg"
+GM_IMG= "https://te.legra.ph/file/a524868f792bca01aaf7c.jpg"
 @run_async
 @typing_action
 def goodmorning(update, context):
@@ -298,7 +298,7 @@ __mod_name__ = "👒ғᴜɴ"
 
 __help__ = """
 =>> *Fun Module all cmd are given below* 🤫
- /shayari, /slap, /decide, /judge, /abuse, /insult, /truth, /dare, /gbam, /pat, /gbun , /gaali 
+ /shayari, /slap, /decide, /judge, /abuse, /insult, /truth, /dare, /gbam, /pat, /gbun , /gaali ' /decide , /truth , /dare
 
   ××here games commands××
 
