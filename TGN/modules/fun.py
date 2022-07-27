@@ -250,9 +250,9 @@ def pat(update: Update, context: CallbackContext):
         reply_to.reply_text(reply, parse_mode=ParseMode.HTML)
        
     
-GOODMORNING_HANDLER = DisableAbleMessageHandler(Filters.regex(r"(?i)(gm|good morning)"), goodmorning, friendly="goodmorning")
+GOODMORNING_HANDLER = DisableAbleMessageHandler(Filters.regex(r"(?i)(gm|gm)"), goodmorning, friendly="goodmorning")
 ASADALI_HANDLER = DisableAbleMessageHandler(Filters.regex(r"(?i)(asadali|asad)"), asadali, friendly="asadali")
-GOODNIGHT_HANDLER = DisableAbleMessageHandler(Filters.regex(r"(?i)(gn|good night)"), goodnight, friendly="goodnight")
+GOODNIGHT_HANDLER = DisableAbleMessageHandler(Filters.regex(r"(?i)(gn|gn)"), goodnight, friendly="goodnight")
 DECIDE_HANDLER = DisableAbleCommandHandler("decide", decide)
 
 REPO_HANDLER = DisableAbleCommandHandler("repo", repo)
