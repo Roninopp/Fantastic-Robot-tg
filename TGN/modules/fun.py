@@ -1,9 +1,3 @@
-# A Powerful Music And Management Bot
-# Property Of Rocks Indian Largest Chatting Group
-# Without Credit (Mother Fucker)
-# Rocks © @Dr_Asad_Ali © Rocks
-# Owner Asad + Harshit
-# Roses are red, Violets are blue, A face like yours, Belongs in a zoo
 
 import html
 import random
@@ -23,7 +17,7 @@ from TGN.modules.helper_funcs.chat_status import (is_user_admin)
 from TGN.modules.helper_funcs.extraction import extract_user
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-GN_IMG= "https://te.legra.ph/file/a524868f792bca01aaf7c.jpg"
+GN_IMG= "https://te.legra.ph/file/4789bb3e07507c35248c5.jpg"
 DECIDE_IMG= "https://telegra.ph/file/313cfbc4056bd3b5cd995.jpg"
 JUDGE_IMG= "https://telegra.ph/file/a2ebfdd262def30ad42a7.jpg"
 
@@ -33,16 +27,16 @@ JUDGE_IMG= "https://telegra.ph/file/a2ebfdd262def30ad42a7.jpg"
 def goodnight(update, context):
     message = update.effective_message
     first_name = update.effective_user.first_name
-    reply = f"*Hey {escape_markdown(first_name)} \nGood Night! 😴*"
+    reply = f"*Hey {escape_markdown(first_name)} \nGood Night! sᴡᴇᴇᴛ ᴅʀᴇᴀᴍs 😴*"
     message.reply_photo(GN_IMG,reply, parse_mode=ParseMode.MARKDOWN)
 
-GM_IMG= "https://te.legra.ph/file/a524868f792bca01aaf7c.jpg"
+GM_IMG= "https://te.legra.ph/file/9012a958e07362727ae19.jpg"
 @run_async
 @typing_action
 def goodmorning(update, context):
     message = update.effective_message
     first_name = update.effective_user.first_name
-    reply = f"*Hey {escape_markdown(first_name)} \n Good Morning!☀*"
+    reply = f"*Hey {escape_markdown(first_name)} \n Good Morning ʜᴀᴠᴇ ᴀ ɢʀᴇᴀᴛ ᴅᴀʏ!☀*"
     message.reply_photo(GM_IMG,reply, parse_mode=ParseMode.MARKDOWN)
     
 ASD_IMG= "https://telegra.ph/file/de8bd6a3cf61e06679f1e.jpg"
@@ -52,7 +46,7 @@ def asadali(update, context):
     message = update.effective_message
     first_name = update.effective_user.first_name
     disable_web_page_preview=True,
-    reply = f"✪ ʜɪ ɪᴛ ɪs ᴍᴇ ᴀsᴀᴅ ᴀʟɪ ᴀʟᴇxᴀ ᴏᴡɴᴇʀ\n────────────────────────\n✪ {escape_markdown(first_name)} ᴅᴏsᴛ 🥰 ʜᴏᴡ ᴀʀᴇ ʏᴏᴜ\n────────────────────────\n✪ ᴡᴀɴᴛ ᴛᴏ ᴋɴᴏᴡ ᴀʙᴏᴜᴛ ᴍᴇ ᴠɪsɪᴛ ᴛʜɪs [ᴄʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/Dr_Asad_Ali) 🥰\n────────────────────────\n✪ ──『ᴛʜᴀɴᴋs  ғᴏʀ  ᴜsɪɴɢ』"
+    reply = f"✪ ʜɪ ɪᴛ ɪs ᴍᴇ ʀᴏɴɪɴ ᴀʟɪ ғᴀɴᴛᴀsᴛɪᴄ ᴏᴡɴᴇʀ\n────────────────────────\n✪ {escape_markdown(first_name)} ᴅᴏsᴛ 🥰 ʜᴏᴡ ᴀʀᴇ ʏᴏᴜ\n────────────────────────\n✪ ᴡᴀɴᴛ ᴛᴏ ᴋɴᴏᴡ ᴀʙᴏᴜᴛ ᴍᴇ ᴠɪsɪᴛ ᴛʜɪs [ᴄʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/DushmanXronin) 🥰\n────────────────────────\n✪ ──『ᴛʜᴀɴᴋs  ғᴏʀ  ᴜsɪɴɢ』"
     message.reply_photo(ASD_IMG,reply, parse_mode=ParseMode.MARKDOWN)
     
 @run_async
@@ -298,9 +292,8 @@ __mod_name__ = "👒ғᴜɴ"
 
 __help__ = """
 =>> *Fun Module all cmd are given below* 🤫
- /shayari, /slap, /decide, /judge, /abuse, /insult, /truth, /dare, /gbam, /pat, /gbun , /gaali ' /decide , /truth , /dare
-
-  ××here games commands××
+ /shayari, /slap, /decide, /judge, /abuse, /insult, /truth, /dare, /gbam, /pat, /gbun , /gaali ' /decide , /truth , /dare ' /toss 
+  ×× here games commands ××
 
 /dice - Dice 🎲
 /dart - Dart 🎯
@@ -308,4 +301,6 @@ __help__ = """
 /bowling - Bowling Ball 🎳
 /football - Football ⚽
 /slot - Spin slot machine 🎰
+
+ #note some commands are not working in pm so add the bot in your group then working fine 💫
 """
