@@ -293,6 +293,8 @@ __mod_name__ = "👒ғᴜɴ"
 __help__ = """
 =>> *Fun Module all cmd are given below* 🤫
  /shayari, /slap, /decide, /judge, /abuse, /insult, /truth, /dare, /gbam, /pat, /gbun , /gaali ' /decide , /truth , /dare ' /toss 
+  /nyaa ×
+
   ×× here games commands ××
 
 /dice - Dice 🎲
