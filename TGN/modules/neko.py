@@ -194,18 +194,3 @@ dispatcher.add_handler(MEOW_HANDLER)
 
 
 
-__mod_name__ = "CAT😼"
-
-
-
-__command_list__ = [
-
-       "nyaa", "meow"
-
-]
-
-__handlers__ = [
-
-       NYAA_HANDLER, MEOW_HANDLER
-
-]
