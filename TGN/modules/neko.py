@@ -168,15 +168,6 @@ def meow(update: Update, context: CallbackContext):
 
 
 
-__help__ = """
-
- • /nyaa*:* Use this to get cute Neko/Catto Gifs!
-
- • /meow*:* Works same as above!
-
-"""
-
-
 
 
 
@@ -188,9 +179,6 @@ MEOW_HANDLER = DisableAbleCommandHandler("meow", meow)
 
 
 
-dispatcher.add_handler(NYAA_HANDLER)
-
-dispatcher.add_handler(MEOW_HANDLER)
 
 
 
