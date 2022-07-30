@@ -5,7 +5,7 @@ from telethon.tl.functions.account import *
 from telethon.tl.functions.channels import *
 from telethon.tl.functions.photos import *
 from telethon.tl.types import *
-from TGN import register
+from TGN.events import register
 from TGN import telethn as borg
 from html import *
 import logging
