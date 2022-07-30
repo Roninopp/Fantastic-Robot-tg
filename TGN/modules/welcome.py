@@ -1,29 +1,3 @@
-"""
-STATUS: Code is working. ✅
-"""
-
-"""
-GNU General Public License v3.0
-
-Copyright (C) 2022, SOME-1HING [https://github.com/SOME-1HING]
-
-Credits:-
-    I don't know who originally wrote this code. If you originally wrote this code, please reach out to me. 
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <https://www.gnu.org/licenses/>.
-"""
-
 import html
 import random
 import re
@@ -36,12 +10,11 @@ from TGN import (
     OWNER_ID,
     DRAGONS,
     DEMONS,
-    OWNER_WELCOME_MEDIA,
-    SUPPORT_CHAT,
-    UPDATE_CHANNEL,
     WOLVES,
+    sw,
     LOGGER,
     dispatcher,
+    JOIN_LOGGER,
 )
 from TGN.modules.helper_funcs.chat_status import (
     is_user_ban_protected,
@@ -72,6 +45,7 @@ from telegram.ext import (
     MessageHandler,
 )
 from telegram.utils.helpers import escape_markdown, mention_html, mention_markdown
+from TGN.modules.language import gs
 
 VALID_WELCOME_FORMATTERS = [
     "first",
@@ -94,11 +68,6 @@ ENUM_FUNC_MAP = {
     sql.Types.VOICE.value: dispatcher.bot.send_voice,
     sql.Types.VIDEO.value: dispatcher.bot.send_video,
 }
-try:
-    OWNER_WELCOME_MEDIA = OWNER_WELCOME_MEDIA.split(".")
-    wel_id = OWNER_WELCOME_MEDIA[-1]
-except:
-    wel_id = None
 
 VERIFIED_USER_WAITLIST = {}
 CAPTCHA_ANS_DICT = {}
@@ -211,6 +180,11 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
         welcome_bool = True
         media_wel = False
 
+        if sw is not None:
+            sw_ban = sw.get_ban(new_mem.id)
+            if sw_ban:
+                return
+
         reply = update.message.message_id
         cleanserv = sql.clean_service(chat.id)
         # Clean service welcome
@@ -222,46 +196,23 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
             reply = False
 
         if should_welc:
-            
-            # Give the Repo Creator a special welcome
-            if new_mem.id == 1793699293:
-                update.effective_message.reply_photo(
-                    "https://telegra.ph/file/a537738bfac3c85ab919d.jpg", reply_to_message_id=reply
-                )
-                welcome_log = (
-                    f"{html.escape(chat.title)}\n"
-                    f"#USER_JOINED\n"
-                    f"#Ronin Joined the Chat"
-                )
-                continue
-
 
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
-                try:
-                    if wel_id in ("jpeg", "jpg", "png"):
-                        update.effective_message.reply_photo(OWNER_WELCOME_MEDIA, caption=TEXT, reply_to_message_id=reply)
-                    elif wel_id in ("mp4", "mkv"):
-                        update.effective_message.reply_video(OWNER_WELCOME_MEDIA, caption=TEXT, reply_to_message_id=reply)
-                    elif wel_id in ("gif", "webp"):
-                        update.effective_message.reply_animation(OWNER_WELCOME_MEDIA, caption=TEXT, reply_to_message_id=reply)
-                    else:
-                        update.effective_message.reply_text(TEXT, reply_to_message_id=reply)
-
-                except:
-                    update.effective_message.reply_text("Behold!! My Owner is Here.", reply_to_message_id=reply)
-
+                update.effective_message.reply_text(
+                    f"Welcome to {html.escape(chat.title)} my king.", reply_to_message_id=reply
+                )
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
                     f"#USER_JOINED\n"
-                    f"Bot Owner Joined The Chat"
+                    f"My King just joined the chat"
                 )
                 continue
-                
+
             # Welcome Devs
             if new_mem.id in DEV_USERS:
                 update.effective_message.reply_text(
-                    "Whoa! My Best Friend just joined!",
+                    "Whoa! The Prince just joined!",
                     reply_to_message_id=reply,
                 )
                 continue
@@ -269,7 +220,7 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
             # Welcome Sudos
             if new_mem.id in DRAGONS:
                 update.effective_message.reply_text(
-                    "Huh! My Friend just joined! Stay Alert!",
+                    "Huh! Emperor just joined! Stay Alert!",
                     reply_to_message_id=reply,
                 )
                 continue
@@ -277,7 +228,7 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
             # Welcome Support
             if new_mem.id in DEMONS:
                 update.effective_message.reply_text(
-                    "Huh! one of my servants just joined!",
+                    "Huh! Someone with Captain just joined!",
                     reply_to_message_id=reply,
                 )
                 continue
@@ -285,9 +236,38 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
             # Welcome WOLVES
             if new_mem.id in WOLVES:
                 update.effective_message.reply_text(
-                    "Oof! a slave Users just joined!", reply_to_message_id=reply
+                    "Oof! A Soldier Users just joined!", reply_to_message_id=reply
                 )
                 continue
+                
+            # Welcome yourselflog
+            elif new_mem.id == bot.id:
+                creator = None
+                for x in bot.get_chat_administrators(update.effective_chat.id):
+                    if x.status == "creator":
+                        creator = x.user
+                        break
+                if creator:
+                    bot.send_message(
+                        JOIN_LOGGER,
+                        f"""
+                        \\#NEWGROUP \
+                        \nGroup Name:   **\\{chat.title}** \
+                        \nID:   `\\{chat.id}` \
+                        \nCreator ID:   `\\{creator.id}` \
+                        \nCreator Username:   \@{creator.username} \
+                        """,
+                        parse_mode=ParseMode.MARKDOWN_V2,
+                    )
+                else:
+                    bot.send_message(
+                        JOIN_LOGGER,
+                        "#NEW_GROUP\n<b>Group name:</b> {}\n<b>ID:</b> <code>{}</code>".format(
+                            html.escape(chat.title),
+                            chat.id,
+                        ),
+                        parse_mode=ParseMode.HTML,
+                    )
 
             buttons = sql.get_welc_buttons(chat.id)
             keyb = build_keyboard(buttons)
@@ -363,30 +343,9 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
             or human_checks
         ):
             should_mute = False
-
         # Join welcome: soft mute
-        if new_mem.id == bot.id:
-                profile = context.bot.get_user_profile_photos(bot.id).photos[0][-1]
-                update.effective_message.reply_photo(
-                        profile,
-                        caption= "❤️ <b>Thanks for adding me to this group!</b>\n\n<b>Promote me as administrator of the group, to access all my commands.</b>",
-                        reply_markup=InlineKeyboardMarkup(
-                            [
-                                {
-                                    InlineKeyboardButton(
-                                        text="Support",
-                                        url=f"https://t.me/{SUPPORT_CHAT}"),
-                                    InlineKeyboardButton(
-                                        text="Updates",
-                                        url=f"https://t.me/{UPDATE_CHANNEL}",
-                                    )
-                                }
-                            ]
-                        ),
-                        parse_mode=ParseMode.HTML,
-                        reply_to_message_id=reply,
-                    )
-
+        if new_mem.is_bot:
+            should_mute = False
 
         if user.id == new_mem.id and should_mute:
             if welc_mutes == "soft":
@@ -664,6 +623,12 @@ def left_member(update: Update, context: CallbackContext):  # sourcery no-metric
 
         left_mem = update.effective_message.left_chat_member
         if left_mem:
+
+            # Thingy for spamwatched users
+            if sw is not None:
+                sw_ban = sw.get_ban(left_mem.id)
+                if sw_ban:
+                    return
 
             # Dont say goodbyes to gbanned users
             if is_user_gbanned(left_mem.id):
@@ -1226,52 +1191,21 @@ def user_captcha_button(update: Update, context: CallbackContext):
         query.answer(text="You're not allowed to do this!")
 
 
-WELC_HELP_TXT = (
-    "Your group's welcome/goodbye messages can be personalised in multiple ways. If you want the messages"
-    " to be individually generated, like the default welcome message is, you can use *these* variables:\n"
-    "  • `{first}`*:* this represents the user's *first* name\n"
-    "  • `{last}`*:* this represents the user's *last* name. Defaults to *first name* if user has no "
-    "last name.\n"
-    "  • `{fullname}`*:* this represents the user's *full* name. Defaults to *first name* if user has no "
-    "last name.\n"
-    "  • `{username}`*:* this represents the user's *username*. Defaults to a *mention* of the user's "
-    "first name if has no username.\n"
-    "  • `{mention}`*:* this simply *mentions* a user - tagging them with their first name.\n"
-    "  • `{id}`*:* this represents the user's *id*\n"
-    "  • `{count}`*:* this represents the user's *member number*.\n"
-    "  • `{chatname}`*:* this represents the *current chat name*.\n"
-    "\nEach variable MUST be surrounded by `{}` to be replaced.\n"
-    "Welcome messages also support markdown, so you can make any elements bold/italic/code/links. "
-    "Buttons are also supported, so you can make your welcomes look awesome with some nice intro "
-    "buttons.\n"
-    f"To create a button linking to your rules, use this: `[Rules](buttonurl://t.me/{dispatcher.bot.username}?start=group_id)`. "
-    "Simply replace `group_id` with your group's id, which can be obtained via /id, and you're good to "
-    "go. Note that group ids are usually preceded by a `-` sign; this is required, so please don't "
-    "remove it.\n"
-    "You can even set images/gifs/videos/voice messages as the welcome message by "
-    "replying to the desired media, and calling `/setwelcome`."
-)
-
-WELC_MUTE_HELP_TXT = (
-    "You can get the bot to mute new people who join your group and hence prevent spambots from flooding your group. "
-    "The following options are possible:\n"
-    "  • `/welcomemute soft`*:* restricts new members from sending media for 24 hours.\n"
-    "  • `/welcomemute strong`*:* mutes new members till they tap on a button thereby verifying they're human.\n"
-    "  • `/welcomemute captcha`*:*  mutes new members till they solve a button captcha thereby verifying they're human.\n"
-    "  • `/welcomemute off`*:* turns off welcomemute.\n"
-    "*Note:* Strong mode kicks a user from the chat if they dont verify in 120seconds. They can always rejoin though"
-)
-
-
 @user_admin
 def welcome_help(update: Update, context: CallbackContext):
-    update.effective_message.reply_text(WELC_HELP_TXT, parse_mode=ParseMode.MARKDOWN)
+    chat = update.effective_chat
+    update.effective_message.reply_text(
+        text=gs(chat.id, "WELCOME_HELP_TEXT"), 
+        parse_mode=ParseMode.MARKDOWN
+    )
 
 
 @user_admin
 def welcome_mute_help(update: Update, context: CallbackContext):
+    chat = update.effective_chat
     update.effective_message.reply_text(
-        WELC_MUTE_HELP_TXT, parse_mode=ParseMode.MARKDOWN
+        text=gs(chat.id, "WELCOME_MUTE_HELP_TEXT"), 
+        parse_mode=ParseMode.MARKDOWN
     )
 
 
@@ -1300,24 +1234,8 @@ def __chat_settings__(chat_id, _):
     )
 
 
-__help__ = """
-*Admins only:*
-❂ /welcome <on/off>*:* enable/disable welcome messages.
-❂ /welcome*:* shows current welcome settings.
-❂ /welcome noformat*:* shows current welcome settings, without the formatting - useful to recycle your welcome messages!
-❂ /goodbye*:* same usage and args as `/welcome`.
-❂ /setwelcome <sometext>*:* set a custom welcome message. If used replying to media, uses that media.
-❂ /setgoodbye <sometext>*:* set a custom goodbye message. If used replying to media, uses that media.
-❂ /resetwelcome*:* reset to the default welcome message.
-❂ /resetgoodbye*:* reset to the default goodbye message.
-❂ /cleanwelcome <on/off>*:* On new member, try to delete the previous welcome message to avoid spamming the chat.
-❂ /welcomemutehelp*:* gives information about welcome mutes.
-❂ /cleanservice <on/off*:* deletes telegrams welcome/left service messages.
- *Example:*
-user joined chat, user left chat.
-*Welcome markdown:*
-❂ /welcomehelp*:* view more formatting information for custom welcome/goodbye messages.
-"""
+def helps(chat):
+    return gs(chat, "greetings_help")
 
 NEW_MEM_HANDLER = MessageHandler(
     Filters.status_update.new_chat_members, new_member, run_async=True
@@ -1379,7 +1297,7 @@ dispatcher.add_handler(BUTTON_VERIFY_HANDLER)
 dispatcher.add_handler(WELCOME_MUTE_HELP)
 dispatcher.add_handler(CAPTCHA_BUTTON_VERIFY_HANDLER)
 
-__mod_name__ = "Greetings 👋"
+__mod_name__ = "Greetings"
 __command_list__ = []
 __handlers__ = [
     NEW_MEM_HANDLER,
