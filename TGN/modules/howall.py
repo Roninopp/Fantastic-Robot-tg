@@ -71,7 +71,7 @@ __help__ = """
 ➛ /boobs - Check Your Current Boobs Size 
 ➛ /cock - Check Your Current Cock Size 
 ➛ /cute - Check Your Current Cuteness 
-Note :- This Module Inspired By @HowAllBot We Just Make It For Fun Don't Take It Serious
+Note :-  We Just Make It For Fun Don't Take It Serious
 """
 
-__mod_name__ = "How-All"
+__mod_name__ = "How𖣘All"
