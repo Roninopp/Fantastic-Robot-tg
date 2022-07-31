@@ -231,9 +231,9 @@ def promote(update: Update, context: CallbackContext) -> str:
 
     log_message = (
         f"<b>{html.escape(chat.title)}:</b>\n"
-        f"#PROMOTED\n"
-        f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
-        f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}"
+        f"#PROMOTED 𖣘\n"
+        f"<b>Admin 𖣘:</b> {mention_html(user.id, user.first_name)}\n"
+        f"<b>User 𖣘:</b> {mention_html(user_member.user.id, user_member.user.first_name)}"
     )
 
     return log_message
@@ -396,9 +396,9 @@ def fullpromote(update: Update, context: CallbackContext) -> str:
 
     log_message = (
         f"<b>{html.escape(chat.title)}:</b>\n"
-        f"#FULLPROMOTED\n"
-        f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
-        f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}"
+        f"#FULLPROMOTED 𖣘\n"
+        f"<b>Admin 𖣘:</b> {mention_html(user.id, user.first_name)}\n"
+        f"<b>User 𖣘:</b> {mention_html(user_member.user.id, user_member.user.first_name)}"
     )
 
     return log_message
@@ -464,9 +464,9 @@ def demote(update: Update, context: CallbackContext) -> str:
 
         log_message = (
             f"<b>{html.escape(chat.title)}:</b>\n"
-            f"#DEMOTED\n"
-            f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
-            f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}"
+            f"#DEMOTED 𖣘\n"
+            f"<b>Admin 𖣘:</b> {mention_html(user.id, user.first_name)}\n"
+            f"<b>User 𖣘:</b> {mention_html(user_member.user.id, user_member.user.first_name)}"
         )
 
         return log_message
@@ -600,7 +600,7 @@ def pin(update: Update, context: CallbackContext) -> str:
                     [
                         [
                             InlineKeyboardButton(
-                                "👉 Go to message", url=f"{message_link}")
+                                " 𖣘Go to message", url=f"{message_link}")
                         ]
                     ]
                 ), 
