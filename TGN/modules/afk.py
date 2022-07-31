@@ -36,7 +36,7 @@ def afk(update, context):
     fname = update.effective_user.first_name
     try:
         update.effective_message.reply_text(
-         "{} Good bye see you soon 👋!".format(fname))
+         "{} 𖣘Good bye see you soon 👋!".format(fname))
             
     except BadRequest:
         pass
@@ -58,7 +58,7 @@ def no_longer_afk(update, context):
         firstname = update.effective_user.first_name
         try:
             message.reply_text(
-                "{} is no longer AFK!\nTime you were AFK for: {}".format(firstname, end_afk_time))
+                "{} 𖣘 is no longer AFK!\nTime you were AFK for: {}".format(firstname, end_afk_time))
         except Exception:
             return
 
