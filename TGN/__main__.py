@@ -116,7 +116,7 @@ InlineKeyboardButton(
                              url=f"https://t.me/op_bot_fan"),
 
         InlineKeyboardButton(
-              text="Help",
+              text="commands𖣘",
               callback_data="help_back"),
         InlineKeyboardButton(
               text="About✨me",
@@ -266,8 +266,8 @@ def start(update: Update, context: CallbackContext):
         reply_markup=InlineKeyboardMarkup(
                 [
                   [
-                  InlineKeyboardButton(text="✧ ADD+ME ", url=f"https://t.me/FANTASTICFIGHTERBOT?startgroup=new"),
-                  InlineKeyboardButton(text="✧ Updates ", url=f"https://t.me/RoninXjin_updates"),
+                  InlineKeyboardButton(text="✧ ADD+ME 𖣘", url=f"https://t.me/FANTASTICFIGHTERBOT?startgroup=new"),
+                  InlineKeyboardButton(text="✧ Updates 𖣘", url=f"https://t.me/RoninXjin_updates"),
                   ]
                 ]
             ),
@@ -837,15 +837,15 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "[𝐈 𝐀𝐦 𝐎𝐧𝐥𝐢𝐧𝐞](https://te.legra.ph/file/f3b977361cec62f89ec3d.jpg)", parse_mode=ParseMode.MARKDOWN,
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "[𝐈 𝐀𝐦 𝐎𝐧𝐥𝐢𝐧𝐞](https://te.legra.ph/file/65e03f86a72b63318ab74.jpg)", parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                   [                  
                        InlineKeyboardButton(
-                             text="🥺SUPPORT🥺",
+                             text="𖣘SUPPORT𖣘",
                              url=f"https://t.me/Ronin_Fighters_Fd"),
                        InlineKeyboardButton(
-                             text="Pm💫help",
+                             text="Pm𖣘help",
                              url="https://t.me/FANTASTICFIGHTERBOT")
                      ] 
                 ]
