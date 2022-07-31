@@ -348,7 +348,7 @@ def help_button(update, context):
                 "Here is the help for the *{}* module:\n".format(
                     HELPABLE[module].__mod_name__
                 )
-                + HELPABLE[module].__help__
+                + HELPABLE[module].__𖣘help𖣘__
             )
             query.message.edit_text(
                 text=text,
@@ -384,7 +384,7 @@ def help_button(update, context):
                 text=HELP_STRINGS,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
-                    paginate_modules(0, HELPABLE, "help")
+                    paginate_modules(0, HELPABLE, "𖣘help𖣘")
                 ),
             )
 
