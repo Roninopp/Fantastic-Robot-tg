@@ -259,16 +259,16 @@ def info(update: Update, context: CallbackContext):
     rep = message.reply_text("<code>Searching In Database.....</code>", parse_mode=ParseMode.HTML)
 
     text = (
-        f"╔═━「<b> Search Result:</b> 」\n\n"
+        f"╔═━「<b> 𖣘Search Result𖣘:</b> 」\n\n"
         f"ID: <code>{user.id}</code>\n"
         f"First Name: {html.escape(user.first_name)}"
     )
 
     if user.last_name:
-        text += f"\nLast Name: {html.escape(user.last_name)}"
+        text += f"\nLast Name𖣘: {html.escape(user.last_name)}"
 
     if user.username:
-        text += f"\nUsername: @{html.escape(user.username)}"
+        text += f"\nUsername𖣘: @{html.escape(user.username)}"
 
     if chat.type != "private" and user_id != bot.id:
         _stext = "\nPresence: <code>{}</code>"
@@ -287,7 +287,7 @@ def info(update: Update, context: CallbackContext):
                     text += _stext.format("Admin")
     if user_id not in [bot.id, 777000, 1087968824]:
         userhp = hpmanager(user)
-        text += f"\n\n<b>Health:</b> <code>{userhp['earnedhp']}/{userhp['totalhp']}</code>\n[<i>{make_bar(int(userhp['percentage']))} </i>{userhp['percentage']}%]"
+        text += f"\n\n<b>Health𖣘:</b> <code>{userhp['earnedhp']}/{userhp['totalhp']}</code>\n[<i>{make_bar(int(userhp['percentage']))} </i>{userhp['percentage']}%]"
 
     try:
         spamwtc = sw.get_ban(int(user.id))
@@ -353,7 +353,7 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "Summon💫me ", url="https://t.me/FANTASTICFIGHTERBOT?startgroup=new"),
+                                "𖣘Summon me𖣘 ", url="https://t.me/FANTASTICFIGHTERBOT?startgroup=new"),
                             InlineKeyboardButton(
                                 "User", url=f"https://t.me/{html.escape(user.username)}")
                         ],
