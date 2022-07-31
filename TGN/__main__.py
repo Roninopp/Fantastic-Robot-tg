@@ -116,7 +116,7 @@ InlineKeyboardButton(
                              url=f"https://t.me/op_bot_fan"),
 
         InlineKeyboardButton(
-              text="𖣘commands&help𖣘",
+              text="𖣘Commands",
               callback_data="help_back"),
         InlineKeyboardButton(
               text="About✨me",
