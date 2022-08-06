@@ -190,7 +190,7 @@ def slap(update: Update, context: CallbackContext):
     throw = random.choice(fun.THROW)
 
     if update.effective_user.id == 2042185317:
-        temp = "Alexa Owner @AsadSupport Slaps You Noob 😁 {user2}"
+        temp = "Alexa Owner @DushmanXronin Slaps You Noob 😁 {user2}"
 
     reply = temp.format(
         user1=user1, user2=user2, item=item, hits=hit, throws=throw)
@@ -250,9 +250,9 @@ def pat(update: Update, context: CallbackContext):
         reply_to.reply_text(reply, parse_mode=ParseMode.HTML)
        
     
-GOODMORNING_HANDLER = DisableAbleMessageHandler(Filters.regex(r"(?i)(gm|gm)"), goodmorning, friendly="goodmorning")
-ASADALI_HANDLER = DisableAbleMessageHandler(Filters.regex(r"(?i)(asadali|asad)"), asadali, friendly="asadali")
-GOODNIGHT_HANDLER = DisableAbleMessageHandler(Filters.regex(r"(?i)(gn|gn)"), goodnight, friendly="goodnight")
+GOODMORNING_HANDLER = DisableAbleMessageHandler(Filters.regex(r"(?i)(gm|good morning)"), goodmorning, friendly="goodmorning")
+ASADALI_HANDLER = DisableAbleMessageHandler(Filters.regex(r"(?i)(asadali|Ronin)"), asadali, friendly="MY MASTER")
+GOODNIGHT_HANDLER = DisableAbleMessageHandler(Filters.regex(r"(?i)(gn|good night)"), goodnight, friendly="goodnight")
 DECIDE_HANDLER = DisableAbleCommandHandler("decide", decide)
 
 REPO_HANDLER = DisableAbleCommandHandler("repo", repo)
@@ -293,7 +293,7 @@ __mod_name__ = "👒ғᴜɴ"
 __help__ = """
 =>> *Fun Module all cmd are given below* 🤫
  /shayari, /slap, /decide, /judge, /abuse, /insult, /truth, /dare, /gbam, /pat, /gbun , /gaali ' /decide , /truth , /dare ' /toss 
-  /nyaa ×
+  /nyaa 😺 /meow×
 
   ×× here games commands ××
 
