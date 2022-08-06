@@ -39,14 +39,14 @@ def goodmorning(update, context):
     reply = f"*Hey {escape_markdown(first_name)} \n Good Morning ʜᴀᴠᴇ ᴀ ɢʀᴇᴀᴛ ᴅᴀʏ!☀*"
     message.reply_photo(GM_IMG,reply, parse_mode=ParseMode.MARKDOWN)
     
-ASD_IMG= "https://telegra.ph/file/de8bd6a3cf61e06679f1e.jpg"
+ASD_IMG= "https://te.legra.ph/file/65e03f86a72b63318ab74.jpg"
 @run_async
 @typing_action
 def asadali(update, context):
     message = update.effective_message
     first_name = update.effective_user.first_name
     disable_web_page_preview=True,
-    reply = f"✪ ʜɪ ɪᴛ ɪs ᴍᴇ ʀᴏɴɪɴ ᴀʟɪ ғᴀɴᴛᴀsᴛɪᴄ ᴏᴡɴᴇʀ\n────────────────────────\n✪ {escape_markdown(first_name)} ᴅᴏsᴛ 🥰 ʜᴏᴡ ᴀʀᴇ ʏᴏᴜ\n────────────────────────\n✪ ᴡᴀɴᴛ ᴛᴏ ᴋɴᴏᴡ ᴀʙᴏᴜᴛ ᴍᴇ ᴠɪsɪᴛ ᴛʜɪs [ᴄʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/DushmanXronin) 🥰\n────────────────────────\n✪ ──『ᴛʜᴀɴᴋs  ғᴏʀ  ᴜsɪɴɢ』"
+    reply = f"✪ ʜɪ ɪᴛ ɪs ᴍᴇ ʀᴏɴɪɴ ғᴀɴᴛᴀsᴛɪᴄ ᴏᴡɴᴇʀ\n────────────────────────\n✪ {escape_markdown(first_name)} ᴅᴏsᴛ 🥰 ʜᴏᴡ ᴀʀᴇ ʏᴏᴜ\n────────────────────────\n✪ ᴡᴀɴᴛ ᴛᴏ ᴋɴᴏᴡ ᴀʙᴏᴜᴛ ᴍᴇ ᴠɪsɪᴛ ᴛʜɪs [ᴄʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/DushmanXronin) 🥰\n────────────────────────\n✪ ──『ᴛʜᴀɴᴋs  ғᴏʀ  ᴜsɪɴɢ』"
     message.reply_photo(ASD_IMG,reply, parse_mode=ParseMode.MARKDOWN)
     
 @run_async
