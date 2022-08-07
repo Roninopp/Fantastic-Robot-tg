@@ -225,7 +225,7 @@ def kang(update, context):
                     [
                         [
                             InlineKeyboardButton(
-                                text="View Pack𖣘", url=f"t.me/addstickers/{packname}"
+                                text="View Pack", url=f"t.me/addstickers/{packname}"
                             )
                         ]
                     ]
@@ -271,7 +271,7 @@ def kang(update, context):
                         [
                             [
                                 InlineKeyboardButton(
-                                    text="View Pack𖣘", url=f"t.me/addstickers/{packname}"
+                                    text="View Pack", url=f"t.me/addstickers/{packname}"
                                 )
                             ]
                         ]
@@ -291,7 +291,7 @@ def kang(update, context):
                         [
                             [
                                 InlineKeyboardButton(
-                                    text="View Pack𖣘", url=f"t.me/addstickers/{packname}"
+                                    text="View Pack", url=f"t.me/addstickers/{packname}"
                                 )
                             ]
                         ]
@@ -337,7 +337,7 @@ def kang(update, context):
                     [
                         [
                             InlineKeyboardButton(
-                                text="View Pack𖣘", url=f"t.me/addstickers/{packname}"
+                                text="View Pack", url=f"t.me/addstickers/{packname}"
                             )
                         ]
                     ]
@@ -368,7 +368,7 @@ def kang(update, context):
                         [
                             [
                                 InlineKeyboardButton(
-                                    text="View Pack𖣘", url=f"t.me/addstickers/{packname}"
+                                    text="View Pack", url=f"t.me/addstickers/{packname}"
                                 )
                             ]
                         ]
@@ -414,7 +414,7 @@ def kang(update, context):
                     [
                         [
                             InlineKeyboardButton(
-                                text="View Pack𖣘", url=f"t.me/addstickers/{packname}"
+                                text="View Pack", url=f"t.me/addstickers/{packname}"
                             )
                         ]
                     ]
@@ -445,7 +445,7 @@ def kang(update, context):
                         [
                             [
                                 InlineKeyboardButton(
-                                    text="View Pack𖣘", url=f"t.me/addstickers/{packname}"
+                                    text="View Pack", url=f"t.me/addstickers/{packname}"
                                 )
                             ]
                         ]
@@ -498,7 +498,7 @@ def kang(update, context):
                 [
                     [
                         InlineKeyboardButton(
-                            text="View Pack𖣘", url=f"t.me/addstickers/{packname}"
+                            text="View Pack", url=f"t.me/addstickers/{packname}"
                         )
                     ]
                 ]
@@ -537,7 +537,7 @@ def kang(update, context):
                     [
                         [
                             InlineKeyboardButton(
-                                text="View Pack𖣘", url=f"t.me/addstickers/{packname}"
+                                text="View Pack", url=f"t.me/addstickers/{packname}"
                             )
                         ]
                     ]
@@ -668,7 +668,7 @@ def makepack_internal(
                     [
                         [
                             InlineKeyboardButton(
-                                text="𖣘Unblock𖣘", url=f"t.me/{context.bot.username}"
+                                text="Unblock", url=f"t.me/{context.bot.username}"
                             )
                         ]
                     ]
