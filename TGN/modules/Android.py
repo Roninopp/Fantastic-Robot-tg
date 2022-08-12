@@ -345,6 +345,12 @@ dispatcher.add_handler(CHECKFW_HANDLER)
 dispatcher.add_handler(PHH_HANDLER)
 dispatcher.add_handler(MIUI_HANDLER)
 
+
 __mod_name__ =ᎪΝᎠᎡϴᏆᎠ"
+
+
+
+
+
 __command_list__ = ["magisk", "root", "su", "orangefox", "twrp", "checkfw", "getfw", "phh", "miui"]
 __handlers__ = [MAGISK_HANDLER, ORANGEFOX_HANDLER, TWRP_HANDLER, GETFW_HANDLER, CHECKFW_HANDLER, PHH_HANDLER, MIUI_HANDLER]
