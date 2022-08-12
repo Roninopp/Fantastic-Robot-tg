@@ -346,7 +346,7 @@ dispatcher.add_handler(PHH_HANDLER)
 dispatcher.add_handler(MIUI_HANDLER)
 
 
-__mod_name__ =ᎪΝᎠᎡϴᏆᎠ"
+__mod_name__ = ᎪΝᎠᎡϴᏆᎠ "
 
 
 
