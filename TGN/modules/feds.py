@@ -659,7 +659,7 @@ def fed_ban(update: Update, context: CallbackContext):
 
     if fban:
         fed_name = info["fname"]
-        # https://t.me/OnePunchSupport/41606 // https://t.me/OnePunchSupport/41619
+        # https://t.me/OnePunchSupport/41606 // https://t.me/liu_wulang_monkes/41619
         # starting = "The reason fban is replaced for {} in the Federation <b>{}</b>.".format(user_target, fed_name)
         # send_message(update.effective_message, starting, parse_mode=ParseMode.HTML)
 
@@ -707,7 +707,7 @@ def fed_ban(update: Update, context: CallbackContext):
         if getfednotif:
             bot.send_message(
                 info["owner"],
-                "<b>FedBan reason updated</b>"
+                "<b>#FedBan reason updated</b>"
                 "\n<b>Federation:</b> {}"
                 "\n<b>Federation Admin:</b> {}"
                 "\n<b>User:</b> {}"
@@ -727,7 +727,7 @@ def fed_ban(update: Update, context: CallbackContext):
             if int(get_fedlog) != int(chat.id):
                 bot.send_message(
                     get_fedlog,
-                    "<b>FedBan reason updated</b>"
+                    "<b>#FedBan reason updated</b>"
                     "\n<b>Federation:</b> {}"
                     "\n<b>Federation Admin:</b> {}"
                     "\n<b>User:</b> {}"
@@ -745,7 +745,7 @@ def fed_ban(update: Update, context: CallbackContext):
             try:
                 # Do not spam all fed chats
                 """
-				bot.send_message(chat, "<b>FedBan reason updated</b>" \
+				bot.send_message(chat, "<b>#FedBan reason updated</b>" \
 							 "\n<b>Federation:</b> {}" \
 							 "\n<b>Federation Admin:</b> {}" \
 							 "\n<b>User:</b> {}" \
@@ -777,7 +777,7 @@ def fed_ban(update: Update, context: CallbackContext):
         # Also do not spam all fed admins
         """
 		send_to_list(bot, FEDADMIN,
-				 "<b>FedBan reason updated</b>" \
+				 "<b>#FedBan reason updated</b>" \
 							 "\n<b>Federation:</b> {}" \
 							 "\n<b>Federation Admin:</b> {}" \
 							 "\n<b>User:</b> {}" \
@@ -850,7 +850,7 @@ def fed_ban(update: Update, context: CallbackContext):
     # Will send to current chat
     bot.send_message(
         chat.id,
-        "<b>New FedBan</b>"
+        "<b>#NewFedBan</b>"
         "\n<b>Federation:</b> {}"
         "\n<b>Federation Admin:</b> {}"
         "\n<b>User:</b> {}"
@@ -868,7 +868,7 @@ def fed_ban(update: Update, context: CallbackContext):
     if getfednotif:
         bot.send_message(
             info["owner"],
-            "<b>New FedBan</b>"
+            "<b>#NewFedBan</b>"
             "\n<b>Federation:</b> {}"
             "\n<b>Federation Admin:</b> {}"
             "\n<b>User:</b> {}"
@@ -888,7 +888,7 @@ def fed_ban(update: Update, context: CallbackContext):
         if int(get_fedlog) != int(chat.id):
             bot.send_message(
                 get_fedlog,
-                "<b>New FedBan</b>"
+                "<b>#NewFedBan</b>"
                 "\n<b>Federation:</b> {}"
                 "\n<b>Federation Admin:</b> {}"
                 "\n<b>User:</b> {}"
@@ -931,7 +931,7 @@ def fed_ban(update: Update, context: CallbackContext):
         # Also do not spamming all fed admins
         """
 		send_to_list(bot, FEDADMIN,
-				 "<b>FedBan reason updated</b>" \
+				 "<b>#FedBan reason updated</b>" \
 							 "\n<b>Federation:</b> {}" \
 							 "\n<b>Federation Admin:</b> {}" \
 							 "\n<b>User:</b> {}" \
