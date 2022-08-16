@@ -74,4 +74,4 @@ __help__ = """
 Note :-  We Just Make It For Fun Don't Take It Serious
 """
 
-__mod_name__ = "How𖣘All"
+__mod_name__ = "HowAll🌞"
