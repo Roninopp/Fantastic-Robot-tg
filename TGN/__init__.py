@@ -18,7 +18,7 @@ from pyrogram.errors.exceptions.bad_request_400 import PeerIdInvalid, ChannelInv
 from pyrogram.types import Chat, User
 from TGN.services.quoteapi import Quotly
 
-
+quotly = Quotly()
 
 
 StartTime = time.time()
