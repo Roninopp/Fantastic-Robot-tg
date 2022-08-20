@@ -21,7 +21,7 @@ from TGN import dispatcher
 from TGN.modules.disable import DisableAbleCommandHandler
 
 # converting a gif into a sticker method
-from src.convert import convert_gif 
+from src.covert import convert_gif 
 
 combot_stickers_url = "https://combot.org/telegram/stickers?q="
  
