@@ -27,7 +27,7 @@ googletrans==4.0.0-rc1
 google-trans-new==1.1.9
 jikanpy
 speedtest-cli
-coffeehouse
+coffeehouse==2.2.6
 regex
 bleach
 wikipedia
