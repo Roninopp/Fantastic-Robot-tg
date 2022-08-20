@@ -355,7 +355,7 @@ def info(update: Update, context: CallbackContext):
                             InlineKeyboardButton(
                                 "𖣘Summon me𖣘 ", url="https://t.me/FANTASTICFIGHTERBOT?startgroup=new"),
                             InlineKeyboardButton(
-                                "User", url=f"https://t.me/{html.escape(user.username)}")
+                                "𖣘UPDATES𖣘", url=f"https://t.me/{html.escape(user.username)}")
                         ],
                     ]
                 ),
