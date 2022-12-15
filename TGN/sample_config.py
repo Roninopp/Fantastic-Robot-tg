@@ -34,7 +34,7 @@ class Config(object):
     WEBHOOK = False
     INFOPIC = True
     URL = None
-    SPAMWATCH_API = ""  # go to support.spamwat.ch to get key
+    SPAMWATCH_API = "b27c633c-5230-4652-a637-da33d2898533"  # go to support.spamwat.ch to get key
     SPAMWATCH_SUPPORT_CHAT = "@SpamWatchSupport"
 
     # OPTIONAL
@@ -62,7 +62,7 @@ class Config(object):
     )
     TIME_API_KEY = "awoo"  # Get your API key from https://timezonedb.com/api
     WALL_API = (
-        "awoo"  # For wallpapers, get one from https://wall.alphacoders.com/api.php
+        "6950f559377140a4e1594c564cdca6a3"  # For wallpapers, get one from https://wall.alphacoders.com/api.php
     )
     AI_API_KEY = "awoo"  # For chatbot, get one from https://coffeehouse.intellivoid.net/dashboard
     VIRUS_API_KEY = "awoo" # For scan file , get one from  https://www.virustotal.com/gui/join-us
