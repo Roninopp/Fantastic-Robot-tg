@@ -16,7 +16,7 @@ class Config(object):
 
     API_ID = 7217645  # integer value, dont use ""
     API_HASH = "78ba6352dd5cdc166fdef5aa84ba7c67"
-    TOKEN = "2100096282:AAEls5EFlORYva-cCFiXQ_xQZW2wbXIR2Wo"  # This var used to be API_KEY but it is now TOKEN, adjust accordingly.
+    TOKEN = "2100096282:AAEaGplsL0dn93S7nhAerxNPi6p77WKuudg"  # This var used to be API_KEY but it is now TOKEN, adjust accordingly.
     OWNER_ID = 1793699293  # If you dont know, run the bot and do /id in your private chat with it, also an integer
     OWNER_USERNAME = "dushmanxronin"
     SUPPORT_CHAT = "Ronin_Fighters_Fd"  # Your own group for support, do not add the @
@@ -28,7 +28,7 @@ class Config(object):
     )  # Prints information like gbans, sudo promotes, AI enabled disable states that may help in debugging and shit
 
     # RECOMMENDED
-    DATABASE_URI = "postgres://qdilvugl:RSz_qLCVe07nPfWN6ahTY8Qryp_9fuhs@ruby.db.elephantsql.com/qdilvugl"  # needed for any database modules
+    DATABASE_URI = "postgres://ncttyari:DvjEut7QzjPAaTC59QkgBGyO8361YmiU@trumpet.db.elephantsql.com/ncttyari"  # needed for any database modules
     LOAD = []
     NO_LOAD = ["rss", "cleaner", "connection", "math"]
     WEBHOOK = False
