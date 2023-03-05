@@ -108,7 +108,7 @@ buttons = [
                              url=f"https://t.me/samuraixscannerlogs"),
                        InlineKeyboardButton(
                              text="UPDATES💁",
-                             url=f"https://t.me/Ronin_Fighters_Fd"),
+                             url=f"https://t.me/TEAM_SAMURAI_NETWORK"),
     ],
     [
 InlineKeyboardButton(
@@ -125,7 +125,7 @@ InlineKeyboardButton(
     [
         InlineKeyboardButton(
             text="ＯＦＦＩＣＡＬ𝒄𝒉𝒂𝒏𝒏𝒆𝒍", 
-            url=f"https://t.me/imperial_arena"),
+            url=f"https://t.me/TEAM_SAMURAI_NETWORK"),
     ],
 
 ]
