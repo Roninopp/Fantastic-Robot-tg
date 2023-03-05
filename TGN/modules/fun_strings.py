@@ -455,4 +455,4 @@ REPO = """━━━━━━━━━━━━━━━━━━━━━━━�
 ┗━━━━━━━━━━━━━━━━━┛
 
 💞 
-IF HAVE ANY QUESTION OR WANT REPO THEN CONTACT » TO » MY » [OWNER] @Dushmanxronin)"""
+IF HAVE ANY QUESTION OR WANT REPO THEN CONTACT » TO » MY » [OWNER] (@Dushmanxronin)"""
