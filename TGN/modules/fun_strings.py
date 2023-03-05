@@ -453,6 +453,4 @@ REPO = """━━━━━━━━━━━━━━━━━━━━━━━�
 ┣★ [𝐎𝐮𝐫 𝐅𝐞𝐝] @SAMURAIXSCANNERLOGS)
 ┣★ [𝐆𝐫𝐨𝐮𝐩] @RONIN_FIGHTERS_fd)
 ┗━━━━━━━━━━━━━━━━━┛
-
-💞 
 IF HAVE ANY QUESTION OR WANT REPO THEN CONTACT » TO » MY » [OWNER] (@Dushmanxronin)"""
