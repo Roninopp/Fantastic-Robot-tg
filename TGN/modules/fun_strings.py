@@ -1,23 +1,3 @@
-
-Roninopp
-/
-AlexaManagement3.0
-Public template
-forked from jankarikiduniya/AlexaManagement3.0
-Code
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-Beta Try the new code view
-AlexaManagement3.0/RocksAlexaRobot/modules/fun_strings.py
-@jankarikiduniya
-jankarikiduniya Added Alexa ❤️
- 1 contributor
-458 lines (430 sloc)  19.5 KB
 # A Powerful Music And Management Bot
 # Property Of Rocks Indian Largest Chatting Group
 # Without Credit (Mother Fucker)
@@ -463,7 +443,7 @@ SFW_STRINGS = (
   
 REPO = """━━━━━━━━━━━━━━━━━━━━━━━━
 💥 A ᴘᴏᴡᴇʀғᴜʟ ɢʀᴏᴜᴘ  ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ
-ᴏғ ♻️ 𝙳𝚄𝚂𝙷𝙼𝙰𝙽  𝚇 𝚁𝙾𝙽𝙸𝙽 🔥
+ᴏғ ♻️ ᴅʀ ᴀsᴀᴅ ᴀʟɪ 🔥
 ━━━━━━━━━━━━━━━━━
 ʙᴏᴛ ғᴏʀ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴘs ᴍᴀɴᴀɢᴇᴍᴇɴᴛ...
 ┏━━━━━━━━━━━━━━━━━┓
@@ -473,5 +453,6 @@ REPO = """━━━━━━━━━━━━━━━━━━━━━━━�
 ┣★ [𝐎𝐮𝐫 𝐅𝐞𝐝] @SAMURAIXSCANNERLOGS)
 ┣★ [𝐆𝐫𝐨𝐮𝐩] @RONIN_FIGHTERS_fd)
 ┗━━━━━━━━━━━━━━━━━┛
+
 💞 
-IF HAVE ANY QUESTION OR WANT REPO THEN CONTACT » TO » MY » [OWNER] @DUSHMANXRONIN)"""
+IF HAVE ANY QUESTION OR WANT REPO THEN CONTACT » TO » MY » [OWNER] @Dr_Asad_Ali)"""
