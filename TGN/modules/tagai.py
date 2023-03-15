@@ -290,12 +290,13 @@ async def mentioned_alert(client, message):
 
 __mod_name__ = "TAG ALERTS"
 __help__ = """
-  `If you are tagged/mentioned in a group where fantastic is present`
-  `Fantastic will notify it to you via private message after enabling tag alerts`
-`Commands`
+  If you are tagged/mentioned in a group where fantastic is present
+  Fantastic will notify it to you via private message after enabling tag alerts
+Commands
   • /tagalert on : Turn tag alerts on
   • /tagalert off : Turn tag alert off
 Example:
 If you are mentioned in a group Fantastic will tell you who mentioned you, 
 message that you are tagged in and which group is that.
+
 """
