@@ -8,7 +8,7 @@ from pyrogram.types import ChatPermissions, InlineKeyboardButton, InlineKeyboard
 
 from TGN import MONGO_DB_URL, pbot
 
-client = MongoClient(MONGO_DB_URL)
+client = MongoClient(MONGO_DB_URI)
 dbd = client["shasarobot"]
 approved_users = dbd.approve
 db = dbd
