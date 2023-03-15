@@ -288,7 +288,7 @@ async def mentioned_alert(client, message):
         return message.continue_propagation()
 
 
-mod_name = "TAG ALERTS"
+__mod_name__ = "TAG ALERTS"
 help = """
   `If you are tagged/mentioned in a group where fantastic is present`
   `Fantastic will notify it to you via private message after enabling tag alerts`
