@@ -203,8 +203,7 @@ async def mentioned_alert(client, message):
                                 can_send_animations=True,
                             ),
                         )
-
-await client.send_message(
+                        await client.send_message(
                             id,
                             "🌗 Night Mode Ended: Chat Opening \n\nEveryOne Should Be Able To Send Messages.",
                         )
