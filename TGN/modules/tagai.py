@@ -108,8 +108,7 @@ async def mentioned_alert(client, message):
                         )
 
                         message.continue_propagation()
-
-except:
+                    except:
                         alarms.delete_one(
                             {
                                 "chat": chat,
