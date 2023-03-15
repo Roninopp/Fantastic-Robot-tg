@@ -6,7 +6,7 @@ from pymongo import MongoClient
 from pyrogram import filters
 from pyrogram.types import ChatPermissions, InlineKeyboardButton, InlineKeyboardMarkup
 
-from TGN import MONGO_DB_URL, pbot
+from TGN import MONGO_DB_URI, pbot
 
 client = MongoClient(MONGO_DB_URI)
 dbd = client["shasarobot"]
