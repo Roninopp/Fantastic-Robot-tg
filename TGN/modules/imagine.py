@@ -20,7 +20,7 @@ async def imagine(app: Client, message: Message):
     if len(query) < 1:
         return await message.reply_text("Provide Prompt.")
 
-    prompt = re.sub(r"\b" + "/draw" + r"\b", "", query)
+    prompt = re.sub(r"\b" + "/draw" + r"\b", "", message.text)
     msg = await message.reply_text("Please wait.")
 
     image = await version.predict(prompt=prompt)[0]
