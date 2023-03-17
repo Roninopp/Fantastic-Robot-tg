@@ -1,4 +1,5 @@
 import os
+import re
 import replicate
 
 from pyrogram.types import Message
@@ -15,8 +16,11 @@ version = model.versions.get(
 
 @app.on_message(filters.command("draw"))
 async def imagine(app: Client, message: Message):
-    prompt = message.text.split(" ")[1:]
+    query = message.text.split(" ")
+    if len(query) < 1:
+        return await message.reply_text("Provide Prompt.")
 
+    prompt = re.sub(r"\b" + "/draw" + r"\b", "", query)
     msg = await message.reply_text("Please wait.")
 
     image = await version.predict(prompt=prompt)[0]
@@ -24,3 +28,5 @@ async def imagine(app: Client, message: Message):
     await message.reply_photo(image)
 
     await msg.delete()
+
+    return

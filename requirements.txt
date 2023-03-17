@@ -88,3 +88,4 @@ python-rapidjson
 covid
 redis
 moviepy
+replicate
