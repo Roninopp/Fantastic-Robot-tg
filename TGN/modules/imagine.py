@@ -16,14 +16,13 @@ version = model.versions.get(
 
 @app.on_message(filters.command("draw"))
 async def imagine(app: Client, message: Message):
-    query = message.text.split(" ")
-    if len(query) < 1:
+    if len(message.text.split()) < 2:
         return await message.reply_text("Provide Prompt.")
 
     prompt = re.sub(r"\b" + "/draw" + r"\b", "", message.text)
     msg = await message.reply_text("Please wait.")
 
-    image = await version.predict(prompt=prompt)[0]
+    image = version.predict(prompt=prompt)[0]
 
     await message.reply_photo(image)
 
