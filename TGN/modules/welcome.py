@@ -4,8 +4,8 @@ import re
 import time
 from functools import partial
 from io import BytesIO
-import Shikimori.modules.sql.welcome_sql as sql
-from Shikimori import (
+import TGN.modules.sql.welcome_sql as sql
+from TGN import (
     DEV_USERS,
     OWNER_ID,
     DRAGONS,
@@ -16,7 +16,7 @@ from Shikimori import (
     dispatcher,
     TIGERS,
 )
-from Shikimori.modules.helper_funcs.chat_status import (
+from TGN.modules.helper_funcs.chat_status import (
     is_user_ban_protected,
     user_admin,
 )
