@@ -4,8 +4,8 @@ import re
 import time
 from functools import partial
 from io import BytesIO
-import TGN.modules.sql.welcome_sql as sql
-from TGN import (
+import Shikimori.modules.sql.welcome_sql as sql
+from Shikimori import (
     DEV_USERS,
     OWNER_ID,
     DRAGONS,
@@ -14,9 +14,9 @@ from TGN import (
     sw,
     LOGGER,
     dispatcher,
-    JOIN_LOGGER,
+    TIGERS,
 )
-from TGN.modules.helper_funcs.chat_status import (
+from Shikimori.modules.helper_funcs.chat_status import (
     is_user_ban_protected,
     user_admin,
 )
@@ -45,7 +45,6 @@ from telegram.ext import (
     MessageHandler,
 )
 from telegram.utils.helpers import escape_markdown, mention_html, mention_markdown
-from TGN.modules.language import gs
 
 VALID_WELCOME_FORMATTERS = [
     "first",
@@ -197,7 +196,7 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
 
         if should_welc:
 
-            # Give the owner a special welcome
+            # Give the Manager a special welcome
             if new_mem.id == OWNER_ID:
                 update.effective_message.reply_text(
                     f"Welcome to {html.escape(chat.title)} my king.", reply_to_message_id=reply
@@ -205,14 +204,26 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
                     f"#USER_JOINED\n"
-                    f"My King just joined the chat"
+                    f"My Manager just joined the chat"
+                )
+                continue
+            
+            # Give the Owner a special welcome
+            if new_mem.id == 949365920:
+                update.effective_message.reply_text(
+                    f"Welcome to {html.escape(chat.title)} my king.", reply_to_message_id=reply
+                )
+                welcome_log = (
+                    f"{html.escape(chat.title)}\n"
+                    f"#USER_JOINED\n"
+                    f"My 'Owner' AKA 'Boyfriend' just joined the chat"
                 )
                 continue
 
             # Welcome Devs
             if new_mem.id in DEV_USERS:
                 update.effective_message.reply_text(
-                    "Whoa! The Prince just joined!",
+                    "Whoa! My Bestfriend just joined!",
                     reply_to_message_id=reply,
                 )
                 continue
@@ -220,7 +231,7 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
             # Welcome Sudos
             if new_mem.id in DRAGONS:
                 update.effective_message.reply_text(
-                    "Huh! Emperor just joined! Stay Alert!",
+                    "Huh! My Friend just joined! Stay Alert!",
                     reply_to_message_id=reply,
                 )
                 continue
@@ -228,7 +239,15 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
             # Welcome Support
             if new_mem.id in DEMONS:
                 update.effective_message.reply_text(
-                    "Huh! Someone with Captain just joined!",
+                    "Huh! One of my Servant just joined!",
+                    reply_to_message_id=reply,
+                )
+                continue
+             
+            # Welcome TIGERS
+            if new_mem.id in TIGERS:
+                update.effective_message.reply_text(
+                    "Huh! A Peasant just joined!",
                     reply_to_message_id=reply,
                 )
                 continue
@@ -236,38 +255,9 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
             # Welcome WOLVES
             if new_mem.id in WOLVES:
                 update.effective_message.reply_text(
-                    "Oof! A Soldier Users just joined!", reply_to_message_id=reply
+                    "Oof! A Slave just joined!", reply_to_message_id=reply
                 )
                 continue
-                
-            # Welcome yourselflog
-            elif new_mem.id == bot.id:
-                creator = None
-                for x in bot.get_chat_administrators(update.effective_chat.id):
-                    if x.status == "creator":
-                        creator = x.user
-                        break
-                if creator:
-                    bot.send_message(
-                        JOIN_LOGGER,
-                        f"""
-                        \\#NEWGROUP \
-                        \nGroup Name:   **\\{chat.title}** \
-                        \nID:   `\\{chat.id}` \
-                        \nCreator ID:   `\\{creator.id}` \
-                        \nCreator Username:   \@{creator.username} \
-                        """,
-                        parse_mode=ParseMode.MARKDOWN_V2,
-                    )
-                else:
-                    bot.send_message(
-                        JOIN_LOGGER,
-                        "#NEW_GROUP\n<b>Group name:</b> {}\n<b>ID:</b> <code>{}</code>".format(
-                            html.escape(chat.title),
-                            chat.id,
-                        ),
-                        parse_mode=ParseMode.HTML,
-                    )
 
             buttons = sql.get_welc_buttons(chat.id)
             keyb = build_keyboard(buttons)
@@ -577,7 +567,7 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
                 f"<b>User</b>: {mention_html(new_mem.id, new_mem.first_name)}\n"
                 f"<b>ID</b>: <code>{new_mem.id}</code>"
             )
-        return welcome_log
+        return welcome_log  
 
 
 def check_not_bot(member, chat_id, message_id, context):
@@ -1191,21 +1181,52 @@ def user_captcha_button(update: Update, context: CallbackContext):
         query.answer(text="You're not allowed to do this!")
 
 
+WELC_HELP_TXT = (
+    "Your group's welcome/goodbye messages can be personalised in multiple ways. If you want the messages"
+    " to be individually generated, like the default welcome message is, you can use *these* variables:\n"
+    "  • `{first}`*:* this represents the user's *first* name\n"
+    "  • `{last}`*:* this represents the user's *last* name. Defaults to *first name* if user has no "
+    "last name.\n"
+    "  • `{fullname}`*:* this represents the user's *full* name. Defaults to *first name* if user has no "
+    "last name.\n"
+    "  • `{username}`*:* this represents the user's *username*. Defaults to a *mention* of the user's "
+    "first name if has no username.\n"
+    "  • `{mention}`*:* this simply *mentions* a user - tagging them with their first name.\n"
+    "  • `{id}`*:* this represents the user's *id*\n"
+    "  • `{count}`*:* this represents the user's *member number*.\n"
+    "  • `{chatname}`*:* this represents the *current chat name*.\n"
+    "\nEach variable MUST be surrounded by `{}` to be replaced.\n"
+    "Welcome messages also support markdown, so you can make any elements bold/italic/code/links. "
+    "Buttons are also supported, so you can make your welcomes look awesome with some nice intro "
+    "buttons.\n"
+    f"To create a button linking to your rules, use this: `[Rules](buttonurl://t.me/{dispatcher.bot.username}?start=group_id)`. "
+    "Simply replace `group_id` with your group's id, which can be obtained via /id, and you're good to "
+    "go. Note that group ids are usually preceded by a `-` sign; this is required, so please don't "
+    "remove it.\n"
+    "You can even set images/gifs/videos/voice messages as the welcome message by "
+    "replying to the desired media, and calling `/setwelcome`."
+)
+
+WELC_MUTE_HELP_TXT = (
+    "You can get the bot to mute new people who join your group and hence prevent spambots from flooding your group. "
+    "The following options are possible:\n"
+    "  • `/welcomemute soft`*:* restricts new members from sending media for 24 hours.\n"
+    "  • `/welcomemute strong`*:* mutes new members till they tap on a button thereby verifying they're human.\n"
+    "  • `/welcomemute captcha`*:*  mutes new members till they solve a button captcha thereby verifying they're human.\n"
+    "  • `/welcomemute off`*:* turns off welcomemute.\n"
+    "*Note:* Strong mode kicks a user from the chat if they dont verify in 120seconds. They can always rejoin though"
+)
+
+
 @user_admin
 def welcome_help(update: Update, context: CallbackContext):
-    chat = update.effective_chat
-    update.effective_message.reply_text(
-        text=gs(chat.id, "WELCOME_HELP_TEXT"), 
-        parse_mode=ParseMode.MARKDOWN
-    )
+    update.effective_message.reply_text(WELC_HELP_TXT, parse_mode=ParseMode.MARKDOWN)
 
 
 @user_admin
 def welcome_mute_help(update: Update, context: CallbackContext):
-    chat = update.effective_chat
     update.effective_message.reply_text(
-        text=gs(chat.id, "WELCOME_MUTE_HELP_TEXT"), 
-        parse_mode=ParseMode.MARKDOWN
+        WELC_MUTE_HELP_TXT, parse_mode=ParseMode.MARKDOWN
     )
 
 
@@ -1234,8 +1255,24 @@ def __chat_settings__(chat_id, _):
     )
 
 
-def helps(chat):
-    return gs(chat, "greetings_help")
+__help__ = """
+*Admins only:*
+❂ /welcome <on/off>*:* enable/disable welcome messages.
+❂ /welcome*:* shows current welcome settings.
+❂ /welcome noformat*:* shows current welcome settings, without the formatting - useful to recycle your welcome messages!
+❂ /goodbye*:* same usage and args as `/welcome`.
+❂ /setwelcome <sometext>*:* set a custom welcome message. If used replying to media, uses that media.
+❂ /setgoodbye <sometext>*:* set a custom goodbye message. If used replying to media, uses that media.
+❂ /resetwelcome*:* reset to the default welcome message.
+❂ /resetgoodbye*:* reset to the default goodbye message.
+❂ /cleanwelcome <on/off>*:* On new member, try to delete the previous welcome message to avoid spamming the chat.
+❂ /welcomemutehelp*:* gives information about welcome mutes.
+❂ /cleanservice <on/off*:* deletes telegrams welcome/left service messages.
+ *Example:*
+user joined chat, user left chat.
+*Welcome markdown:*
+❂ /welcomehelp*:* view more formatting information for custom welcome/goodbye messages.
+"""
 
 NEW_MEM_HANDLER = MessageHandler(
     Filters.status_update.new_chat_members, new_member, run_async=True
@@ -1297,7 +1334,7 @@ dispatcher.add_handler(BUTTON_VERIFY_HANDLER)
 dispatcher.add_handler(WELCOME_MUTE_HELP)
 dispatcher.add_handler(CAPTCHA_BUTTON_VERIFY_HANDLER)
 
-__mod_name__ = "Greetings"
+__mod_name__ = "Greetings 👋 "
 __command_list__ = []
 __handlers__ = [
     NEW_MEM_HANDLER,
