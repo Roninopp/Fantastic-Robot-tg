@@ -9,12 +9,7 @@ from PIL import Image, PngImagePlugin
 import base64
 
 from TGN import pbot
-bot = Client(
-    "stable",
-    api_id=API_ID,
-    api_hash=API_HASH,
-    bot_token=TOKEN
-)
+
 SD_URL = os.environ.get("TOKEN", None)
 
 @pbot.on_message(filters.command(["draw"]))
