@@ -8,10 +8,10 @@ import random
 from PIL import Image, PngImagePlugin
 import base64
 
-from TGN import pbot as app
+from TGN import pbot
 
-@app.on_message(filters.command(["draw"]))
-def draw(client, message):
+@pbot.on_message(filters.command(["draw"]))
+def draw(Client, message):
     msgs = message.text.split(' ', 1)
     if len(msgs) == 1:
         message.reply_text("Format : /draw < text to anime image >")
@@ -52,7 +52,7 @@ def draw(client, message):
         message.reply_photo(
             photo=f"{word}.png",
             caption=
-            f"Prompt - **{msg}**\n **[{message.from_user.first_name}-Kun](tg://user?id={message.from_user.id})**\n Join @WaifuAiSupport"
+            f"Prompt - **{msg}**\n **[{message.from_user.first_name}-Kun](tg://user?id={message.from_user.id})**\n Produce bye @FANTASTICFIGHTERBOT"
         )
         os.remove(f"{word}.png")
         K.delete()
