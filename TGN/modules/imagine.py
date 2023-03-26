@@ -10,6 +10,8 @@ import base64
 
 from TGN import pbot
 
+SD_URL = os.environ.get("TOKEN", None)
+
 @pbot.on_message(filters.command(["draw"]))
 def draw(Client, message):
     msgs = message.text.split(' ', 1)
