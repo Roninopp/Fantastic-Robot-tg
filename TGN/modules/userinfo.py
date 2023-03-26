@@ -46,27 +46,9 @@ from TGN import telethn
 
 ENMU_IMG = 'https://telegra.ph/file/1df36662ab863f711ff34.jpg'
 
-def no_by_per(totalhp, percentage):
-    """
-    rtype: num of `percentage` from total
-    eg: 1000, 10 -> 10% of 1000 (100)
-    """
-    return totalhp * percentage / 100
 
-
-def get_percentage(totalhp, earnedhp):
-    """
-    rtype: percentage of `totalhp` num
-    eg: (1000, 100) will return 10%
-    """
-
-    matched_less = totalhp - earnedhp
-    per_of_totalhp = 100 - matched_less * 100.0 / totalhp
-    per_of_totalhp = str(int(per_of_totalhp))
-    return per_of_totalhp
 
 def get_readable_time(seconds: int) -> str:
-    count = 0
     ping_time = ""
     time_list = []
     time_suffix_list = ["s", "m", "h", "days"]
@@ -89,47 +71,6 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-def hpmanager(user):
-    total_hp = (get_user_num_chats(user.id) + 10) * 10
-
-    if not is_user_gbanned(user.id):
-
-        # Assign new var `new_hp` since we need `total_hp` in
-        # end to calculate percentage.
-        new_hp = total_hp
-
-        # if no username decrease 25% of hp.
-        if not user.username:
-            new_hp -= no_by_per(total_hp, 25)
-        try:
-            dispatcher.bot.get_user_profile_photos(user.id).photos[0][-1]
-        except IndexError:
-            # no profile photo ==> -25% of hp
-            new_hp -= no_by_per(total_hp, 25)
-        # if no /setme exist ==> -20% of hp
-        if not sql.get_user_me_info(user.id):
-            new_hp -= no_by_per(total_hp, 20)
-        # if no bio exsit ==> -10% of hp
-        if not sql.get_user_bio(user.id):
-            new_hp -= no_by_per(total_hp, 10)
-
-        if is_user_afk(user.id):
-            afkst = afk_reason(user.id)
-            # if user is afk and no reason then decrease 7%
-            # else if reason exist decrease 5%
-            if not afkst:
-                new_hp -= no_by_per(total_hp, 7)
-            else:
-                new_hp -= no_by_per(total_hp, 5)
-
-    else:
-        new_hp = no_by_per(total_hp, 5)
-
-    return {
-        "earnedhp": int(new_hp),
-        "totalhp": int(total_hp),
-        "percentage": get_percentage(total_hp, new_hp),
-    }
 
 
 def make_bar(per):
