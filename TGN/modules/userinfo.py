@@ -210,14 +210,6 @@ def info(update: Update, context: CallbackContext):
 
     if user.username:
         text += f"\nUsername𖣘: @{html.escape(user.username)}"
-    try:
-        spamwtc = sw.get_ban(int(user.id))
-        if spamwtc:
-            text += "\n\n<b>This person is Spamwatched!</b>"
-            text += f"\nReason: <pre>{spamwtc.reason}</pre>"
-            text += "\nAppeal at @SpamWatchSupport"
-    except:
-        pass  # don't crash if api is down somehow...
 
     disaster_level_present = False
 
