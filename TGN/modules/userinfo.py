@@ -38,7 +38,6 @@ import TGN.modules.sql.userinfo_sql as sql
 from TGN.modules.disable import DisableAbleCommandHandler
 from TGN.modules.sql.global_bans_sql import is_user_gbanned
 from TGN.modules.sql.afk_redis import is_user_afk, afk_reason
-from TGN.modules.sql.users_sql import get_user_num_chats
 from TGN.modules.helper_funcs.chat_status import sudo_plus
 from TGN.modules.helper_funcs.extraction import extract_user
 from TGN.modules.helper_funcs.decorators import Emlicallback as ENMUCALLBACK
