@@ -232,18 +232,6 @@ def info(update: Update, context: CallbackContext):
         text += "\n\nThe Disaster Of This Person Is Wolves."
         disaster_level_present = True
 
-    try:
-        user_member = chat.get_member(user.id)
-        if user_member.status == "administrator":
-            result = requests.post(
-                f"https://api.telegram.org/bot{TOKEN}/getChatMember?chat_id={chat.id}&user_id={user.id}",
-            )
-            result = result.json()["result"]
-            if "custom_title" in result.keys():
-                custom_title = result["custom_title"]
-                text += f"\n\nTitle:\n<b>{custom_title}</b>"
-    except BadRequest:
-        pass
 
     for mod in USER_INFO:
         try:
