@@ -104,28 +104,28 @@ buttons = [
     ],
     [                  
                        InlineKeyboardButton(
-                             text="SUPPORT🤵",
-                             url=f"https://t.me/samuraixscannerlogs"),
+                             text="SUPPORT",
+                             url=f"https://t.me/spiralsupport"),
                        InlineKeyboardButton(
-                             text="UPDATES💁",
-                             url=f"https://t.me/TEAM_SAMURAI_NETWORK"),
+                             text="UPDATES",
+                             url=f"https://t.me/TEAM_SAMURAI"),
     ],
     [
 InlineKeyboardButton(
-                             text="G-LOGS🖥",
+                             text="BOT-LOGS",
                              url=f"https://t.me/op_bot_fan"),
 
         InlineKeyboardButton(
-              text="𖣘Commands",
+              text="🔓Commands",
               callback_data="help_back"),
         InlineKeyboardButton(
-              text="About✨me",
+              text="About me",
               callback_data="shukurenai_"),   
     ],
     [
         InlineKeyboardButton(
             text="ＯＦＦＩＣＡＬ𝒄𝒉𝒂𝒏𝒏𝒆𝒍", 
-            url=f"https://t.me/TEAM_SAMURAI_NETWORK"),
+            url=f"https://t.me/TEAM_SAMURAI"),
     ],
 
 ]
@@ -267,7 +267,7 @@ def start(update: Update, context: CallbackContext):
                 [
                   [
                   InlineKeyboardButton(text="✧ ADD+ME 𖣘", url=f"https://t.me/FANTASTICFIGHTERBOT?startgroup=new"),
-                  InlineKeyboardButton(text="✧ Updates 𖣘", url=f"https://t.me/RoninXjin_updates"),
+                  InlineKeyboardButton(text="✧ Updates 𖣘", url=f"https://t.me/team_samurai"),
                   ]
                 ]
             ),
@@ -481,8 +481,8 @@ def shukurenai_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Support", url="https://t.me/liu_WULANG_MONKES"),
-                    InlineKeyboardButton(text="Updates", url="https://t.me/liu_WULANG_MONKES"),
+                    InlineKeyboardButton(text="Support", url="https://t.me/spiralsupport"),
+                    InlineKeyboardButton(text="Updates", url="https://t.me/team_samurai"),
                  ],
                  [
                     InlineKeyboardButton(text="Go🙅Back", callback_data="shukurenai_"),
@@ -518,7 +518,7 @@ def shukurenai_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Razorpay", url="https://t.me/liu_WULANG_MONKES"),
+                    InlineKeyboardButton(text="Razorpay", url="https://t.me/team_samurai"),
                  ],
                  [
                     InlineKeyboardButton(text="Go🙇Back", callback_data="shukurenai_back"),
@@ -793,7 +793,7 @@ def donate(update: Update, context: CallbackContext):
         if OWNER_ID != 1793699293:
             update.effective_message.reply_text(
                 "I'm free for everyone 😎 If you wanna make me smile, just join"
-                "[My Channel](https://t.me/Ronin_Fighters_Fd)".format(DONATION_LINK),
+                "[My Channel](https://t.me/team_samurai)".format(DONATION_LINK),
                 parse_mode=ParseMode.MARKDOWN,
             )
     else:
@@ -843,7 +843,7 @@ def main():
                   [                  
                        InlineKeyboardButton(
                              text="𖣘SUPPORT𖣘",
-                             url=f"https://t.me/Ronin_Fighters_Fd"),
+                             url=f"https://t.me/team_samurai"),
                        InlineKeyboardButton(
                              text="Pm𖣘help",
                              url="https://t.me/FANTASTICFIGHTERBOT")
