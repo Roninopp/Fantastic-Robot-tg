@@ -1,4 +1,5 @@
 from TGN import pbot as Mukund
+import openai
 
 openai.api_key = "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"
 @Mukund.on_message(filters.command(["chatgpt","ai","ask"],  prefixes=["",".", "/", "-", "?", "$"]))
