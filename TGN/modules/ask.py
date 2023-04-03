@@ -1,5 +1,6 @@
 from TGN import pbot as Mukund
 import openai
+import time
 from pyrogram import filters
 
 openai.api_key = "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"
