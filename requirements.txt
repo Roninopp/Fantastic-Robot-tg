@@ -3,6 +3,7 @@ emoji
 lxml
 wget
 gtts
+openai==0.27.2
 beautifulsoup4
 requests
 python-telegram-bot==13.13.0
