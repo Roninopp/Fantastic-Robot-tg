@@ -1,9 +1,10 @@
 from TGN import pbot as Mukund
 import openai
 import time
+import os 
 from pyrogram import filters
 
-openai.api_key = "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"
+openai.api_key = os.environ.get("OPENAI_TOKEN", None)
 @Mukund.on_message(filters.command(["chatgpt","ai","ask"],  prefixes=["",".", "/", "-", "?", "$"]))
 async def chat(bot, message):
     try:
