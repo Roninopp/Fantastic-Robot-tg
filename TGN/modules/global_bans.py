@@ -163,7 +163,7 @@ def gban(update: Update, context: CallbackContext):
 
         return
 
-    message.reply_text("On it!")
+    message.reply_text("`INSTALLING GBAN....`")
 
     start_time = time.time()
     datetime_fmt = "%Y-%m-%dT%H:%M"
