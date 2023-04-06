@@ -125,7 +125,7 @@ InlineKeyboardButton(
     [
         InlineKeyboardButton(
             text="ＯＦＦＩＣＡＬ𝒄𝒉𝒂𝒏𝒏𝒆𝒍", 
-            url=f"https://t.me/TEAM_SAMURAI"),
+            url=f"https://t.me/TEAMSAMURAIi"),
     ],
 
 ]
