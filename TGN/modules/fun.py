@@ -28,7 +28,7 @@ JUDGE_IMG= "https://te.legra.ph/file/210ae7181ba3d7b98d86a.jpg"
 def goodnight(update, context):
     message = update.effective_message
     first_name = update.effective_user.first_name
-    reply = f"*Hey {escape_markdown(first_name)} \nGood Night! 😴*"
+    reply = f"*Hey {escape_markdown(first_name)} \nGood Night! HAVE A  SWEET DREAMS😴*"
     message.reply_photo(GN_IMG,reply, parse_mode=ParseMode.MARKDOWN)
 
 GM_IMG= "https://te.legra.ph/file/6b6673e6cbaa08ebc9fdd.jpg"
