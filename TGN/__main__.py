@@ -108,7 +108,7 @@ buttons = [
                              url=f"https://t.me/spiralsupport"),
                        InlineKeyboardButton(
                              text="UPDATES",
-                             url=f"https://t.me/TEAM_SAMURAI"),
+                             url=f"https://t.me/TEAMSAMURAIi"),
     ],
     [
 InlineKeyboardButton(
