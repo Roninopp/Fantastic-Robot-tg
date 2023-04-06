@@ -1,4 +1,4 @@
-# Credits to dushmanxronin
+# #Credits to dushmanxronin
 
 from telethon import events, Button
 import logging
