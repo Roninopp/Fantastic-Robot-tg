@@ -34,7 +34,7 @@ def goodnight(update, context):
 GM_IMG= "https://te.legra.ph/file/6b6673e6cbaa08ebc9fdd.jpg"
 @run_async
 @typing_action
-def goodmorning(update, context):
+def ilggn(update, context):
     message = update.effective_message
     first_name = update.effective_user.first_name
     reply = f"*Hey {escape_markdown(first_name)} \n Good Morning!☀*"
