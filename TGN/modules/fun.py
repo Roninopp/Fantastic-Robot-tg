@@ -25,7 +25,7 @@ JUDGE_IMG= "https://te.legra.ph/file/210ae7181ba3d7b98d86a.jpg"
 
 @run_async
 @typing_action
-def goolt(update, context):
+def goolgm(update, context):
     message = update.effective_message
     first_name = update.effective_user.first_name
     reply = f"*Hey {escape_markdown(first_name)} \nGood Night! HAVE A  SWEET DREAMS😴*"
