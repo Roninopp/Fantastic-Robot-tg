@@ -3,10 +3,10 @@ from pyrogram import filters
 from aiohttp import ClientSession
 from Python_ARQ import ARQ
 
-from Shikimori import pbot as app, BOT_ID
-from Shikimori.utils.errors import capture_err
-from Shikimori.utils.permissions import adminsOnly
-from Shikimori.ex_plugins.dbfunctions import (
+from TGN import pbot as app, BOT_ID
+from TGN.utils.errors import capture_err
+from TGN.utils.permissions import adminsOnly
+from TGN.ex_plugins.dbfunctions import (
     alpha_to_int,
     get_karma,
     get_karmas,
@@ -16,8 +16,8 @@ from Shikimori.ex_plugins.dbfunctions import (
     karma_on,
     update_karma,
 )      
-from Shikimori.utils.filter_groups import karma_negative_group, karma_positive_group
-from Shikimori import arq
+from TGN.utils.filter_groups import karma_negative_group, karma_positive_group
+from TGN import arq
 
 regex_upvote = r"^((?i)\+|\+\+|\+1|thx|thanx|thanks|pro|cool|good|pro|pero|op|nice|noice|best|uwu|owo|right|correct|peru|piro|👍)$"
 regex_downvote = r"^(\-|\-\-|\-1|👎|noob|baka|idiot|chutiya|nub|noob|wrong|incorrect|chaprii|chapri|weak)$"
