@@ -293,5 +293,5 @@ __mod_name__ = "FUNS"
 
 __help__ = """
 =>> *Fun Module all cmd are given below* 🤫
- /fan, /slap, /decide, /judge, /abuse, /insult, /truth, /dare, /gbam, /pat, /gbun, /repo 😊
+ /fan, /slap, /decide, /judge, /abuse, /insult, /truth, /dare, /gbam, /pat, /gbun
 """
