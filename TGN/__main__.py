@@ -105,10 +105,10 @@ buttons = [
     [                  
                        InlineKeyboardButton(
                              text="SUPPORT",
-                             url=f"https://t.me/spiralsupport"),
+                             url=f"https://t.me/Fantastic_support"),
                        InlineKeyboardButton(
                              text="UPDATES",
-                             url=f"https://t.me/TEAMSAMURAIi"),
+                             url=f"https://t.me/Fantastic_updates"),
     ],
     [
 InlineKeyboardButton(
@@ -267,7 +267,7 @@ def start(update: Update, context: CallbackContext):
                 [
                   [
                   InlineKeyboardButton(text="✧ ADD+ME 𖣘", url=f"https://t.me/FANTASTICFIGHTERBOT?startgroup=new"),
-                  InlineKeyboardButton(text="✧ Updates 𖣘", url=f"https://t.me/team_samurai"),
+                  InlineKeyboardButton(text="✧ Updates 𖣘", url=f"https://t.me/fantastic_updates"),
                   ]
                 ]
             ),
