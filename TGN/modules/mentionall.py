@@ -85,4 +85,12 @@ async def cancel_spam(event):
       pass
     return await event.respond('Stopped.')
 
-__mod_name__ = "Mentions"
+__help__ = """
+Advance Chatbot which can chat with you in your free time .
+*Admins only Commands*:
+  ➢ `/all`*:* MENTION ALL IN GROUP
+  ➢  `/cancel` TO STOP MENTION IN GROUP
+ 
+"""
+
+__mod_name__ = "『MENTION』⁪⁬⁮⁮⁮⁮"
