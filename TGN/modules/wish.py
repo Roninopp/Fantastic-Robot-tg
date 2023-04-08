@@ -23,5 +23,5 @@ __help__ = """
  __if you need reading some hindi shayari so use__ /shayari __and see__×
 """
 
-__mod_name__ = "wish💫"
+__mod_name__ = "WISH💫"
 
