@@ -224,5 +224,10 @@ REACT_HANDLER = DisableAbleCommandHandler("react", react, run_async=True)
 
 dispatcher.add_handler(REACT_HANDLER)
 
-__command_list__ = ["react"]
+__help__ = """
+HERE IS A REACTION MODULE FOR JUST FUN *:
+  ➢ /react *:* JUST USE AND SEE 𖠘
+"""
+
+__mod_name__ = "『REACTION』⁪⁬⁮⁮⁮⁮"
 __handlers__ = [REACT_HANDLER]
