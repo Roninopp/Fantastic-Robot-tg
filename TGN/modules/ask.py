@@ -28,7 +28,7 @@ async def chat(bot, message):
             await message.reply_text(
             "Example:**\n\n`ai Give me a simple flask code?`")
         else:
-            ok= await message.reply_text("`Processing...`")
+            ok= await message.reply_text("`Processing... PLEASE WAIT FOR FEW SECONDS`")
             a = message.text.split(' ', 1)[1]
             x=await gen(a)
             end_time = time.time()
