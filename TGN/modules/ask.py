@@ -35,3 +35,11 @@ async def chat(bot, message):
             await message.reply_text(f"{message.from_user.first_name} ᴀꜱᴋᴇᴅ:\n\n {a} \n\n FANTASTIC ROBOT ᴀɴꜱᴡᴇʀᴇᴅ:-\n\n {x}\n\n✨ᴛɪᴍᴇ ᴛᴀᴋᴇɴ  {telegram_ping} \n\n🎉ᴘᴏᴡᴇʀᴇᴅ ʙʏ @FANTASTICFIGHTERBOT")     
     except Exception as e:
         await message.reply_text(f"**ᴇʀʀᴏʀ:    {e} ")
+
+__help__ = """
+**HERE IS ASK MODULE YOU CAN ALSO LEARN PYTHON BASICS BY USING THIS COMMAND**
+  ➢ /ask *:* What is java
+ 
+"""
+
+__mod_name__ = "『ASKER』⁪⁬⁮⁮⁮⁮"
