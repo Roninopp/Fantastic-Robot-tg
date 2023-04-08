@@ -73,3 +73,11 @@ async def quott_(event):
     os.remove(file)
     await msg.delete()
     return message
+
+__help__ = """
+HERE IS A MODULE OF QUALITY AND SOME ANIMEQUOTES
+  ➢ /q *:* MAKE A QUALITY OF MSG 
+  ➢ /animequotes *:* Anime quotes for motivate you
+"""
+
+__mod_name__ = "『QUALITY X ANIME』⁪⁬⁮⁮⁮⁮"
