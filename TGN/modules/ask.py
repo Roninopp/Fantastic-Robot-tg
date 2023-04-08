@@ -14,6 +14,7 @@ async def gen(prompt):
 
     # Get the response text from the API response
     answer = response.choices[0].text.strip()
+    return answer
 @Mukund.on_message(filters.command(["chatgpt","ai","ask"],  prefixes=["",".", "/", "-", "?", "$"]))
 async def chat(bot, message):
     try:
