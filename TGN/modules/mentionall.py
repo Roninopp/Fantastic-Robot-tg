@@ -86,7 +86,7 @@ async def cancel_spam(event):
     return await event.respond('Stopped.')
 
 __help__ = """
-Advance Chatbot which can chat with you in your free time .
+**HERE IS A MENTION ALL COMMAND YOU CAN TAG ALL PERSON IN GROUP BY USING THIS COMMANDS**
 *Admins only Commands*:
   ➢ `/all`*:* MENTION ALL IN GROUP
   ➢  `/cancel` TO STOP MENTION IN GROUP
