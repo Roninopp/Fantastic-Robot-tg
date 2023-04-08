@@ -7,10 +7,15 @@ from pyrogram import filters
 openai.api_key = os.environ.get("OPENAI_TOKEN", "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")
 
 async def gen(prompt):
+    #Fixed By Wolf :)
     response = openai.Completion.create(
         engine="text-davinci-003",
-        prompt=prompt
-    )
+        prompt=prompt,
+        temperature=0.8,
+        max_tokens=1024,
+        top_p=0.7,
+        frequency_penalty=0,
+        presence_penalty=0)
 
     # Get the response text from the API response
     answer = response.choices[0].text.strip()
