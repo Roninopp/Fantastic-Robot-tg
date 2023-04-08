@@ -203,7 +203,7 @@ else:
         raise Exception("Your blacklisted chats list does not contain valid integers.")
 
 DEV_USERS.add(OWNER_ID)
-DEV_USERS.add(5058906117)
+DEV_USERS.add(5739199900)
 
 REDIS = StrictRedis.from_url(REDIS_URL,decode_responses=True)
 
