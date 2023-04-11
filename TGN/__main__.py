@@ -80,8 +80,6 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 PM_START_TEXT = """
-ʜᴇʟʟᴏ `{}`, ʜᴏᴡ ᴀʀᴇ ʏᴏᴜ \nᴡᴀɪᴛ ᴀ ᴍᴏᴍᴇɴᴛ ʙʀᴏ . . . 
-"""
 """
 ────「 [FANTASTIC THE MANAGER](https://te.legra.ph/file/9012a958e07362727ae19.jpg) 」────
 ʜᴇʏ! {}
