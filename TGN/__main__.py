@@ -221,9 +221,9 @@ def start(update: Update, context: CallbackContext):
 User:
 ID: 
 Event Stamp: """
-    fname=update.effective_user.first_name
-    userid = update.effective_user.id
-    context.bot.send_message(chat_id=JOIN_LOGGER, text=ok.format(fname, userid), parse_mode=ParseMode.MARKDOWN)
+    #fname=update.effective_user.first_name
+   # userid = update.effective_user.id
+ #   context.bot.send_message(chat_id=JOIN_LOGGER, text=ok.format(fname, userid), parse_mode=ParseMode.MARKDOWN)
     if update.effective_chat.type == "private":
         if len(args) >= 1:
             if args[0].lower() == "help":
