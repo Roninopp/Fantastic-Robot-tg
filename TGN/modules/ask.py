@@ -4,7 +4,7 @@ import time
 import os 
 from pyrogram import filters
 
-openai.api_key = os.environ.get("OPENAI_TOKEN", "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")
+openai.api_key = os.environ.get("OPENAI_TOKEN")
 
 async def gen(prompt):
     #Fixed By Wolf :)
