@@ -43,4 +43,4 @@ __help__ = """
  
 """
 
-__mod_name__ = "『ASKER』⁪⁬⁮⁮⁮⁮"
+__mod_name__ = "『ASK GPT』⁪⁬⁮⁮⁮⁮"
