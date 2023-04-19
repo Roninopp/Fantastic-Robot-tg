@@ -17,6 +17,7 @@ from pyrogram import Client, errors
 from pyrogram.errors.exceptions.bad_request_400 import PeerIdInvalid, ChannelInvalid
 from pyrogram.types import Chat, User
 from TGN.services.quoteapi import Quotly
+from pyrogram import enums, filters
 
 quotly = Quotly()
 
