@@ -6,20 +6,17 @@ from pyrogram import filters
 
 openai.api_key = os.environ.get("OPENAI_TOKEN")
 
-async def gen(prompt):
-    #Fixed By Wolf :)
+async def generate_response(prompt):
     response = openai.Completion.create(
-        engine="text-davinci-003",
+        engine="davinci",
         prompt=prompt,
-        temperature=0.8,
         max_tokens=1024,
-        top_p=0.7,
-        frequency_penalty=0,
-        presence_penalty=0)
+        n=1,
+        stop=None,
+        temperature=0.7,
+    )
+    return response.choices[0].text.strip()
 
-    # Get the response text from the API response
-    answer = response.choices[0].text.strip()
-    return answer
 @Mukund.on_message(filters.command(["chatgpt","ai","ask"],  prefixes=["",".", "/", "-", "?", "$"]))
 async def chat(bot, message):
     try:
@@ -29,8 +26,8 @@ async def chat(bot, message):
             "Example:**\n\n`ai Give me a simple flask code?`")
         else:
             ok= await message.reply_text("`Processing... PLEASE WAIT FOR FEW SECONDS`")
-            a = message.text.split(' ', 1)[1]
-            x=await gen(a)
+            a = message.text.split(None, 1)[1]
+            x=await generate_response(a)
             end_time = time.time()
             telegram_ping = str(round((end_time - start_time) * 1000, 3)) + " ᴍs"
             await ok.edit(f"{message.from_user.first_name} ᴀꜱᴋᴇᴅ:\n\n {a} \n\n FANTASTIC ROBOT ᴀɴꜱᴡᴇʀᴇᴅ:-\n\n {x}\n\n✨ᴛɪᴍᴇ ᴛᴀᴋᴇɴ  {telegram_ping} \n\n🎉ᴘᴏᴡᴇʀᴇᴅ ʙʏ @TEAMSAMURAII")     
