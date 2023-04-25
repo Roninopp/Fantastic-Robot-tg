@@ -78,6 +78,7 @@ __help__ = """
 HERE IS A MODULE OF QUALITY AND SOME ANIMEQUOTES
   ➢ /q *:* MAKE A QUALITY OF MSG 
   ➢ /animequotes *:* Anime quotes for motivate you
+  ➢ /cosplay also try this
 """
 
 __mod_name__ = "『QUALITY X ANIME』⁪⁬⁮⁮⁮⁮"
