@@ -4,7 +4,7 @@ import time
 import os 
 from pyrogram import filters
 
-openai.api_key = os.environ.get("OPENAI_TOKEN")
+openai.api_key = os.environ.get("OPENAI_API_KEY")
 
 async def generate_response(prompt):
     response = openai.Completion.create(
