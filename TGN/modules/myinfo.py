@@ -78,7 +78,8 @@ async def callback_query_handler(event):
     await event.reply(f"{e}")
 
 __help__ = """
-× ʜᴇʀᴇ ᴍʏ ɪɴғᴏ ᴍᴏᴅᴜʟᴇ ᴊᴜsᴛ ᴜsᴇ /myinfo and see) ×
+✰ ʜᴇʀᴇ ᴍʏ ɪɴғᴏ ᴍᴏᴅᴜʟᴇ ᴊᴜsᴛ ᴜsᴇ /myinfo and see) ×
+✰ TAG ANY PERSON AND USE /pfp And see the magic
 """
 
 __mod_name__ = "MY INFO"
