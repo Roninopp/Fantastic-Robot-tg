@@ -196,7 +196,7 @@ def info(update: Update, context: CallbackContext):
     else:
         return
 
-    rep = message.reply_text("<code>Searching In Database.....</code>", parse_mode=ParseMode.HTML)
+    rep = message.reply_text("<code>`𝘾𝙊𝙇𝙇𝙀𝘾𝙏𝙄𝙉𝙂 𝙄𝙉𝙁𝙊𝙍𝙈𝘼𝙏𝙄𝙊𝙉....`</code>", parse_mode=ParseMode.HTML)
 
     text = (
         f"╔═━「<b> 𖣘Search Result𖣘:</b> 」\n\n"
