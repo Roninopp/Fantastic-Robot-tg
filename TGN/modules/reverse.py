@@ -25,7 +25,7 @@ class STRINGS:
     REVERSE_RESULT = '''
 <b>Search Keyword:</b> <code>{}</code>
 <b>Results link:</b> <a href='{}'>Link</a>.
-<b>Credits:</b> @SastaDev
+<b>Credits:</b> SASTADEV
     '''
 
 COMMANDS = ['reverse', 'grs', 'pp']
