@@ -11,7 +11,7 @@ from telegram.ext import CallbackContext
 from telegram.error import BadRequest
 from telegram.utils.helpers import escape_markdown, mention_html
     
-from Shikimori import (
+from TGN import (
     DEV_USERS,
     OWNER_ID,
     DRAGONS,
