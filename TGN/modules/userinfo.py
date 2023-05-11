@@ -153,7 +153,7 @@ def hpmanager(user):
 
 def make_bar(per):
     done = min(round(per / 10), 10)
-    return "❤" * done + "♡" * (10 - done)
+    return "𒈔" * done + "𖣘" * (10 - done)
 
 
 def get_id(update: Update, context: CallbackContext):
@@ -253,10 +253,10 @@ def info(update: Update, context: CallbackContext):
     buttons = [
     [
                         InlineKeyboardButton(
-                             text="Health",
-                             url="https://t.me/Shikimori_bot_Updates/9"),
+                             text="𝙐𝙋𝘿𝘼𝙏𝙀𝙎",
+                             url="https://t.me/FANTASTIC_UPDATES"),
                        InlineKeyboardButton(
-                             text="Disasters",
+                             text="𝘼𝘿𝘿+𝙈𝙀",
                              url="https://t.me/Shikimori_bot_Updates/6"),
                     ],
     ]
@@ -283,19 +283,19 @@ def info(update: Update, context: CallbackContext):
     else:
         return
 
-    rep = message.reply_text("<code>Appraising...</code>", parse_mode=ParseMode.HTML)
+    rep = message.reply_text("<code>`𝐂𝐎𝐋𝐋𝐄𝐂𝐓𝐈𝐍𝐆 𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐓𝐈𝐎𝐍...`</code>", parse_mode=ParseMode.HTML)
 
     text = (
-        f"╒═══「<b>• Appraisal results •</b> 」\n"
+        f"╒═══「<b>• 𝐀𝐏𝐀𝐑𝐀𝐈𝐒𝐀𝐋 𝐑𝐄𝐒𝐔𝐋𝐓𝐒 •</b> 」\n"
         f"• ID: <code>{user.id}</code>\n"
         f"• First Name: {html.escape(user.first_name)}"
     )
 
     if user.last_name:
-        text += f"\n• Last Name: {html.escape(user.last_name)}"
+        text += f"\n• 𖣘Last Name𖣘: {html.escape(user.last_name)}"
 
     if user.username:
-        text += f"\n• Username: @{html.escape(user.username)}"
+        text += f"\n• 𖣘Username𖣘: @{html.escape(user.username)}"
 
     text += f"\n• Userlink: {mention_html(user.id, 'link')}"
 
@@ -321,15 +321,15 @@ def info(update: Update, context: CallbackContext):
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += "\n\nThis person is my 'Owner'."
+        text += "\n\nThe Distatser Level of This person is 'FANTASTIC KING'."
     elif user.id in DEV_USERS:
-        text += "\n\nThis person is my 'Best Friend'."
+        text += "\n\nThe Distatser Level ofthis person 'FANTASTIC FAN'."
         disaster_level_present = True
     elif user.id in DRAGONS:
         text += "\n\nThis person is my 'Friend'."
         disaster_level_present = True
     elif user.id in DEMONS:
-        text += "\n\nThis person is my 'Servant'."
+        text += "\n\nThe Distatser level Of this person 'FANTASTIC X DEMON'."
         disaster_level_present = True
     elif user.id in TIGERS:
         text += "\n\nThis person is just a 'Peasant'."
