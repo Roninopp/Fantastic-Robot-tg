@@ -257,7 +257,7 @@ def info(update: Update, context: CallbackContext):
                              url="https://t.me/FANTASTIC_UPDATES"),
                        InlineKeyboardButton(
                              text="𝘼𝘿𝘿+𝙈𝙀",
-                             url="https://t.me/Shikimori_bot_Updates/6"),
+                             url="https://t.me/FANTASTICFIGHTERBOT?startgroup=new"),
                     ],
     ]
     user_id = extract_user(update.effective_message, args)
