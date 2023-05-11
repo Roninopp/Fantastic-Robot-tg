@@ -445,5 +445,8 @@ __help__ = """
    ➢ `/poke`
    ➢ `/dance`
    ➢ `/cringe`
+   SOME EXTRA FUN COMMAND 𖣁
+   ➢ /bounty or /wanted try yourself
+   ➢ /shayari Give you some thoughts about love
 """
 
