@@ -153,7 +153,7 @@ def hpmanager(user):
 
 def make_bar(per):
     done = min(round(per / 10), 10)
-    return "𒈔" * done + "𖣘" * (10 - done)
+    return "𖣘" * done + "𖣘" * (10 - done)
 
 
 def get_id(update: Update, context: CallbackContext):
