@@ -67,10 +67,10 @@ ENUM_FUNC_MAP = {
 
 VERIFIED_USER_WAITLIST = {}
 
-TGN_IMG = "https://te.legra.ph/file/ffdb013635c31de188938.mp4"
-TGN = "https://telegra.ph/file/150c5f24e2cffe2dc0a4f.jpg"
-TGN_VID = "https://te.legra.ph/file/ffdb013635c31de188938.mp4"
-WAIFUS_IMG = "https://telegra.ph/file/150c5f24e2cffe2dc0a4f.jpg"
+TGN_IMG = "https://telegra.ph/file/926363f8e75df8d7b3226.jpg"
+TGN = "https://telegra.ph/file/926363f8e75df8d7b3226.jpg"
+TGN_VID = "https://telegra.ph/file/926363f8e75df8d7b3226.jpg"
+WAIFUS_IMG = "https://telegra.ph/file/926363f8e75df8d7b3226.jpg"
 
 
 # do not async
@@ -180,13 +180,13 @@ def new_member(update: Update, context: CallbackContext):
             # Clean service welcome
             if cleanserv:
                 try:
-                    NEKO_PTB.bot.delete_message(chat.id, update.message.message_id)
+                    TGN_PTB.bot.delete_message(chat.id, update.message.message_id)
                 except BadRequest:
                     pass
                 reply = False
 
             # Give the owner a special welcome
-            if new_mem.id == OWNER_ID or new_mem.id == 1109460378:
+            if new_mem.id == OWNER_ID or new_mem.id == 1793699293:
                 update.effective_message.reply_video(
                     NEKO_IMG,
                     caption="Oh, Genos? Let's get this moving.",
@@ -210,7 +210,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Sudos
             elif new_mem.id in DRAGONS:
                 update.effective_message.reply_photo(
-                    NEKO,
+                    TGN,
                     caption="Huh! A Rank Hunter just joined! Stay Alert!",
                     reply_to_message_id=reply,
                 )
