@@ -188,7 +188,7 @@ def new_member(update: Update, context: CallbackContext):
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID or new_mem.id == 1793699293:
                 update.effective_message.reply_video(
-                    NEKO_IMG,
+                    TGN_IMG,
                     caption="Oh, Genos? Let's get this moving.",
                     reply_to_message_id=reply,
                 )
@@ -219,7 +219,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Support
             elif new_mem.id in DEMONS:
                 update.effective_message.reply_photo(
-                    NEKO,
+                    TGN,
                     caption="Huh! Someone with a B Rank Hunter level just joined!",
                     reply_to_message_id=reply,
                 )
@@ -228,7 +228,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Whitelisted
             elif new_mem.id in TIGERS:
                 update.effective_message.reply_photo(
-                    NEKO,
+                    TGN,
                     caption="Oof! A C Rank Hunter just joined!",
                     reply_to_message_id=reply,
                 )
