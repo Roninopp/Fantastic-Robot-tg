@@ -20,14 +20,13 @@ from telegram.ext import (
     MessageHandler,
 )
 from telegram.utils.helpers import escape_markdown, mention_html, mention_markdown
-
+from TGN import dispatcher as TGN_PTB
 import TGN.modules.sql.welcome_sql as sql
 from TGN import (
     DEMONS,
     DEV_USERS,
     DRAGONS,
     LOGGER,
-    NEKO_PTB,
     OWNER_ID,
     TIGERS,
     WOLVES,
