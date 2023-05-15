@@ -1,161 +1,169 @@
+# Credits to MetaVoid Team for making this module.
+
 import html
 import json
-import re
 from time import sleep
 
 import requests
-from telegram import (
-    CallbackQuery,
-    Chat,
-    InlineKeyboardButton,
-    InlineKeyboardMarkup,
-    ParseMode,
-    Update,
-    User,
-)
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.ext import (
     CallbackContext,
     CallbackQueryHandler,
     CommandHandler,
     Filters,
     MessageHandler,
-    run_async,
 )
 from telegram.utils.helpers import mention_html
 
-import TGN.modules.sql.kuki_sql as sql
-from TGN import BOT_ID, BOT_NAME, BOT_USERNAME, dispatcher
+import TGN.chatbot_mongo as sql
+from TGN import AI_API_KEY as api
+from TGN import dispatcher
 from TGN.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
-from TGN.modules.log_channel import gloggable
+from TGN.modules.log_channel import gloggable, loggable
+from TGN.modules.sql import log_channel_sql as logsql
+
+bot_name = f"{dispatcher.bot.first_name}"
 
 
-@run_async
 @user_admin_no_reply
+@loggable
 @gloggable
-def asuxrm(update: Update, context: CallbackContext) -> str:
-    query: Optional[CallbackQuery] = update.callback_query
-    user: Optional[User] = update.effective_user
-    match = re.match(r"rm_chat\((.+?)\)", query.data)
-    if match:
-        user_id = match.group(1)
-        chat: Optional[Chat] = update.effective_chat
-        is_kuki = sql.set_kuki(chat.id)
-        if is_kuki:
-            is_kuki = sql.set_kuki(user_id)
-            return (
-                f"<b>{html.escape(chat.title)}:</b>\n"
-                f"AI_DISABLED\n"
-                f"<b>Admin :</b> {mention_html(user.id, html.escape(user.first_name))}\n"
-            )
-        else:
-            update.effective_message.edit_text(
-                "{} ᴄʜᴀᴛʙᴏᴛ ᴅɪsᴀʙʟᴇᴅ ʙʏ {}.".format(
-                    dispatcher.bot.first_name, mention_html(user.id, user.first_name)
-                ),
-                parse_mode=ParseMode.HTML,
-            )
-
-    return ""
-
-
-@run_async
-@user_admin_no_reply
-@gloggable
-def asuxadd(update: Update, context: CallbackContext) -> str:
-    query: Optional[CallbackQuery] = update.callback_query
-    user: Optional[User] = update.effective_user
-    match = re.match(r"add_chat\((.+?)\)", query.data)
-    if match:
-        user_id = match.group(1)
-        chat: Optional[Chat] = update.effective_chat
-        is_kuki = sql.rem_kuki(chat.id)
-        if is_kuki:
-            is_kuki = sql.rem_kuki(user_id)
-            return (
+def chatbot_status(update: Update, context: CallbackContext):
+    query = update.callback_query
+    bot = context.bot
+    user = update.effective_user
+    if query.data == "add_chatbot":
+        chat = update.effective_chat
+        is_chatbot = sql.is_chatbot(chat.id)
+        if not is_chatbot:
+            is_chatbot = sql.add_chatbot(chat.id)
+            LOG = (
                 f"<b>{html.escape(chat.title)}:</b>\n"
                 f"AI_ENABLE\n"
-                f"<b>Admin :</b> {mention_html(user.id, html.escape(user.first_name))}\n"
+                f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
+            )
+            log_channel = logsql.get_chat_log_channel(chat.id)
+            if log_channel:
+                bot.send_message(
+                    log_channel,
+                    LOG,
+                    parse_mode=ParseMode.HTML,
+                    disable_web_page_preview=True,
+                )
+            update.effective_message.edit_text(
+                f"{bot_name} Chatbot Enabled by {mention_html(user.id, user.first_name)}.",
+                parse_mode=ParseMode.HTML,
+            )
+            return LOG
+        elif is_chatbot:
+            return update.effective_message.edit_text(
+                f"{bot_name} Chatbot Already Enabled.",
+                parse_mode=ParseMode.HTML,
             )
         else:
+            return update.effective_message.edit_text(
+                "Error!",
+                parse_mode=ParseMode.HTML,
+            )
+    elif query.data == "rem_chatbot":
+        chat = update.effective_chat
+        is_chatbot = sql.is_chatbot(chat.id)
+        if is_chatbot:
+            is_chatbot = sql.rm_chatbot(chat.id)
+            LOG = (
+                f"<b>{html.escape(chat.title)}:</b>\n"
+                f"AI_DISABLE\n"
+                f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
+            )
+            log_channel = logsql.get_chat_log_channel(chat.id)
+            if log_channel:
+                bot.send_message(
+                    log_channel,
+                    LOG,
+                    parse_mode=ParseMode.HTML,
+                    disable_web_page_preview=True,
+                )
             update.effective_message.edit_text(
-                "{} ᴄʜᴀᴛʙᴏᴛ ᴇɴᴀʙʟᴇᴅ ʙʏ {}.".format(
-                    dispatcher.bot.first_name, mention_html(user.id, user.first_name)
-                ),
+                f"{bot_name} Chatbot disabled by {mention_html(user.id, user.first_name)}.",
+                parse_mode=ParseMode.HTML,
+            )
+            return LOG
+        elif not is_chatbot:
+            return update.effective_message.edit_text(
+                f"{bot_name} Chatbot Already Disabled.",
+                parse_mode=ParseMode.HTML,
+            )
+        else:
+            return update.effective_message.edit_text(
+                "Error!",
                 parse_mode=ParseMode.HTML,
             )
 
-    return ""
 
-
-@run_async
 @user_admin
-@gloggable
-def Hydrachatbot(update: Update, context: CallbackContext):
+@loggable
+def chatbot(update: Update, context: CallbackContext):
     message = update.effective_message
-    msg = "• ᴄʜᴏᴏsᴇ ᴀɴ ᴏᴩᴛɪᴏɴ ᴛᴏ ᴇɴᴀʙʟᴇ/ᴅɪsᴀʙʟᴇ ᴄʜᴀᴛʙᴏᴛ"
+    msg = "Choose an option"
     keyboard = InlineKeyboardMarkup(
         [
-            [
-                InlineKeyboardButton(text="ᴇɴᴀʙʟᴇ", callback_data="add_chat({})"),
-                InlineKeyboardButton(text="ᴅɪsᴀʙʟᴇ", callback_data="rm_chat({})"),
-            ],
+            [InlineKeyboardButton(text="Enable", callback_data=r"add_chatbot")],
+            [InlineKeyboardButton(text="Disable", callback_data=r"rem_chatbot")],
         ]
     )
     message.reply_text(
-        text=msg,
+        msg,
         reply_markup=keyboard,
         parse_mode=ParseMode.HTML,
     )
 
 
-def kuki_message(context: CallbackContext, message):
+def bot_message(context: CallbackContext, message):
     reply_message = message.reply_to_message
-    if message.text.lower() == "kuki":
-        return True
-    elif BOT_USERNAME in message.text.upper():
-        return True
-    elif reply_message:
-        if reply_message.from_user.id == BOT_ID:
+    if reply_message:
+        if reply_message.from_user.id == context.bot.get_me().id:
             return True
     else:
         return False
 
 
-def chatbot(update: Update, context: CallbackContext):
+def chatbot_msg(update: Update, context: CallbackContext):
     message = update.effective_message
     chat_id = update.effective_chat.id
     bot = context.bot
-    is_kuki = sql.is_kuki(chat_id)
-    if is_kuki:
+    is_chatbot = sql.is_chatbot(chat_id)
+    if not is_chatbot:
         return
 
     if message.text and not message.document:
-        if not kuki_message(context, message):
+        if not bot_message(context, message):
             return
+        Message = message.text
         bot.send_chat_action(chat_id, action="typing")
-        url = f"https://kora-api.vercel.app/chatbot/2d94e37d-937f-4d28-9196-bd5552cac68b/{BOT_NAME}/Anonymous/message={message.text}"
-        request = requests.get(url)
-        results = json.loads(request.text)
-        sleep(0.5)
-        message.reply_text(results["reply"])
+        chatbot = requests.get(
+            "https://itsprodev.cf/chatbot/SOME1HING.php?api="
+            + api
+            + "&message="
+            + Message
+        )
+        Chat = json.loads(chatbot.text)
+        Chat = Chat["reply"]
+        sleep(0.3)
+        message.reply_text(Chat, timeout=60)
 
 
-__help__ = f"""
-*{BOT_NAME} ʜᴀs ᴀɴ ᴄʜᴀᴛʙᴏᴛ ᴡʜɪᴄʜ ᴘʀᴏᴠɪᴅᴇs ʏᴏᴜ ᴀ sᴇᴇᴍɪɴɢʟᴇss ᴄʜᴀᴛᴛɪɴɢ ᴇxᴘᴇʀɪᴇɴᴄᴇ :*
-
- »  /chatbot *:* sʜᴏᴡs ᴄʜᴀᴛʙᴏᴛ ᴄᴏɴᴛʀᴏʟ ᴘᴀɴᴇʟ.
-"""
-
-__mod_name__ = "𝙲ʜᴀᴛʙᴏᴛ"
-
-
-CHATBOTK_HANDLER = CommandHandler("chatbot", Hydrachatbot)
-ADD_CHAT_HANDLER = CallbackQueryHandler(asuxadd, pattern=r"add_chat")
-RM_CHAT_HANDLER = CallbackQueryHandler(asuxrm, pattern=r"rm_chat")
+CHATBOTK_HANDLER = CommandHandler("chatbot", chatbot, run_async=True)
+ADD_CHAT_HANDLER = CallbackQueryHandler(
+    chatbot_status, pattern=r"add_chatbot", run_async=True
+)
+RM_CHAT_HANDLER = CallbackQueryHandler(
+    chatbot_status, pattern=r"rem_chatbot", run_async=True
+)
 CHATBOT_HANDLER = MessageHandler(
     Filters.text
     & (~Filters.regex(r"^#[^\s]+") & ~Filters.regex(r"^!") & ~Filters.regex(r"^\/")),
-    chatbot,
+    chatbot_msg,
+    run_async=True,
 )
 
 dispatcher.add_handler(ADD_CHAT_HANDLER)
