@@ -2,7 +2,7 @@ import random
 
 from datetime import datetime
 
-from TGN import pgram
+from TGN import pbot as pgram
 
 from config import SUPREME_USERS
 
