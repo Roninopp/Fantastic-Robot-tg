@@ -2,11 +2,10 @@ import random
 from datetime import datetime
 
 from pyrogram import *
-from pyrogram.enums.parse_mode import ParseMode
+from pyrogram import ParseMode
 
 from TGN import pbot as pgram
 from TGN.karma_mongo import get_couple, save_couple
-
 
 def dt():
     now = datetime.now()
