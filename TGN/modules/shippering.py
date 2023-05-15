@@ -4,7 +4,7 @@ from datetime import datetime
 from pyrogram import filters
 
 from TGN import pbot as pgram
-from TGN.modules.mongo.karma_mongo import get_couple, save_couple
+from TGN.karma_mongo import get_couple, save_couple
 
 
 def dt():
