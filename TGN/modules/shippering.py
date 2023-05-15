@@ -1,11 +1,11 @@
 import random
 from datetime import datetime
 
-from pyrogram import *
-from pyrogram import ParseMode
+from pyrogram import filters
 
 from TGN import pbot as pgram
-from TGN.karma_mongo import get_couple, save_couple
+from TGN.modules.mongo.karma_mongo import get_couple, save_couple
+
 
 def dt():
     now = datetime.now()
@@ -28,30 +28,30 @@ def dt_tom():
 tomorrow = str(dt_tom())
 today = str(dt()[0])
 
-COUPLES_PIC = "https://graph.org/file/37a68dd19cd43471f949a.jpg"
+COUPLES_PIC = "https://telegra.ph/file/6cc62e903c09409ecaf1a.jpg"
 C = """
-Couples of the day : :\n
-{} + ( PGM🎀😶 + 花火 + ゼロツー ) = 💘\n
-New couple of the day can be chosen at 12AM {}
+💌 ᴄᴏᴜᴘʟᴇs ᴏғ ᴛʜᴇ ᴅᴀʏ : :\n
+{} + ( PGM🎀😶 (https://t.me/Chalnayaaaaaarr) + 花火 (https://t.me/zd_sr07) + ゼロツー (https://t.me/wewewe_x) ) = 💞\n
+ɴᴇᴡ ᴄᴏᴜᴘʟᴇ ᴏғ ᴛʜᴇ ᴅᴀʏ ᴄᴀɴ ʙᴇ ᴄʜᴏsᴇɴ ᴀᴛ 12AM {}
 """
 CAP = """
-Couples of the day : :\n
-{} + {} = 💘\n
-New couple of the day can be chosen at 12AM {}
+💌 ᴄᴏᴜᴘʟᴇs ᴏғ ᴛʜᴇ ᴅᴀʏ : :\n
+{} + {} = 💞\n
+ɴᴇᴡ ᴄᴏᴜᴘʟᴇ ᴏғ ᴛʜᴇ ᴅᴀʏ ᴄᴀɴ ʙᴇ ᴄʜᴏsᴇɴ ᴀᴛ 12AM {}
 """
 
 CAP2 = """
-Couples of the day : :\n
-{} + {} = 💘\n
-New couple of the day can be chosen at 12AM {}
+💌 ᴄᴏᴜᴘʟᴇs ᴏғ ᴛʜᴇ ᴅᴀʏ : :\n
+{} (tg://openmessage?user_id={}) + {} (tg://openmessage?user_id={}) = 💞\n
+ɴᴇᴡ ᴄᴏᴜᴘʟᴇ ᴏғ ᴛʜᴇ ᴅᴀʏ ᴄᴀɴ ʙᴇ ᴄʜᴏsᴇɴ ᴀᴛ 12AM {}
 """
 
 
 @pgram.on_message(filters.command(["couple", "couples", "shipping"]) & ~filters.private)
-async def nibba_nibbi(_: Client, message):
-    if message.from_user.id == 5907205317:
+async def nibba_nibbi(_, message):
+    if message.from_user.id == 5540249238:
         my_ = await _.get_users("rfxtuv")
-        me = await _.get_users(5907205317)
+        me = await _.get_users(5540249238)
         await message.reply_photo(
             photo=COUPLES_PIC, caption=C.format(me.mention, tomorrow)
         )
@@ -65,7 +65,7 @@ async def nibba_nibbi(_: Client, message):
                     if not i.user.is_bot:
                         list_of_users.append(i.user.id)
                 if len(list_of_users) < 2:
-                    return await message.reply_text("Not enough users in this group.")
+                    return await message.reply_text("ɴᴏᴛ ᴇɴᴏᴜɢʜ ᴜsᴇʀs ɪɴ ᴛʜɪs ɢʀᴏᴜᴘ.")
                 c1_id = random.choice(list_of_users)
                 c2_id = random.choice(list_of_users)
                 while c1_id == c2_id:
@@ -88,15 +88,21 @@ async def nibba_nibbi(_: Client, message):
                 c1_name = (await _.get_users(c1_id)).first_name
                 c2_name = (await _.get_users(c2_id)).first_name
                 print(c1_id, c2_id, c1_name, c2_name)
-                couple_selection_message = f"""Couples of the day :
+                couple_selection_message = f"""💌 ᴄᴏᴜᴘʟᴇs ᴏғ ᴛʜᴇ ᴅᴀʏ :
 [{c1_name}](tg://openmessage?user_id={c1_id}) + [{c2_name}](tg://openmessage?user_id={c2_id}) = 💞
-New couple of the day can be chosen at 12AM {tomorrow}"""
+ɴᴇᴡ ᴄᴏᴜᴘʟᴇ ᴏғ ᴛʜᴇ ᴅᴀʏ ᴄᴀɴ ʙᴇ ᴄʜᴏsᴇɴ ᴀᴛ 12AM {tomorrow}"""
                 await _.send_photo(
-                    message.chat.id,
-                    photo=COUPLES_PIC,
-                    caption=couple_selection_message,
-                    parse_mode=ParseMode.MARKDOWN,
+                    message.chat.id, photo=COUPLES_PIC, caption=couple_selection_message
                 )
         except Exception as e:
             print(e)
             await message.reply_text(e)
+
+
+__help__ = """
+💘 ᴄʜᴏᴏsᴇ ᴄᴏᴜᴘʟᴇs ɪɴ ʏᴏᴜʀ ᴄʜᴀᴛ
+
+❍ /couple,/couples,/shipping *:* ᴄʜᴏᴏsᴇ 𝟸 ᴜsᴇʀs ᴀɴᴅ sᴇɴᴅ ᴛʜᴇɪʀ ɴᴀᴍᴇ ᴀs ᴄᴏᴜᴘʟᴇs ɪɴ ʏᴏᴜʀ ᴄʜᴀᴛ.
+"""
+
+__mod_name__ = "𝙲ᴏᴜᴘʟᴇ"
