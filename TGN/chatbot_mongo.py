@@ -1,4 +1,10 @@
-from TGN import db
+from pymongo import MongoClient
+
+from TGN import MONGO_DB_URI
+
+client = MongoClient()
+client = MongoClient(MONGO_DB_URI)
+db = client["chatbot"]
 
 chatbotdb = db.chatbot
 
