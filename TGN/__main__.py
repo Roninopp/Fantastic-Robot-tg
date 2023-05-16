@@ -101,7 +101,7 @@ I have lots of handy features such as:
 buttons = [
     [
         InlineKeyboardButton(
-            text="💖 𝘼𝘿𝘿 𝙈𝙀 𝙏𝙊 𝙂𝙍𝙊𝙐𝙋 💖", url="https://t.me/FANTASTICFIGHTERBOT?startgroup=new"),
+            text="𝘼𝘿𝘿 𝙈𝙀 𝙏𝙊 𝙂𝙍𝙊𝙐𝙋", url="https://t.me/FANTASTICFIGHTERBOT?startgroup=new"),
     ],
     [                  
                        InlineKeyboardButton(
@@ -490,8 +490,8 @@ def shukurenai_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Support", url="https://t.me/spiralsupport"),
-                    InlineKeyboardButton(text="Updates", url="https://t.me/team_samurai"),
+                    InlineKeyboardButton(text="Support", url="https://t.me/serenity_support"),
+                    InlineKeyboardButton(text="Updates", url="https://t.me/Fantastic_updates"),
                  ],
                  [
                     InlineKeyboardButton(text="Go🙅Back", callback_data="shukurenai_"),
@@ -527,7 +527,7 @@ def shukurenai_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Razorpay", url="https://t.me/team_samurai"),
+                    InlineKeyboardButton(text="Razorpay", url="https://t.me/serenity_support"),
                  ],
                  [
                     InlineKeyboardButton(text="Go🙇Back", callback_data="shukurenai_back"),
@@ -802,7 +802,7 @@ def donate(update: Update, context: CallbackContext):
         if OWNER_ID != 1793699293:
             update.effective_message.reply_text(
                 "I'm free for everyone 😎 If you wanna make me smile, just join"
-                "[My Channel](https://t.me/team_samurai)".format(DONATION_LINK),
+                "[My Channel](https://t.me/serenity_support)".format(DONATION_LINK),
                 parse_mode=ParseMode.MARKDOWN,
             )
     else:
@@ -846,13 +846,13 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "[𝐈 𝐀𝐦 𝐎𝐧𝐥𝐢𝐧𝐞](https://te.legra.ph/file/65e03f86a72b63318ab74.jpg)", parse_mode=ParseMode.MARKDOWN,
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "[𝐈 𝐀𝐦 𝐎𝐧𝐥𝐢𝐧𝐞](https://telegra.ph/file/b4ba6a9727f27165f96a1.jpg)", parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                   [                  
                        InlineKeyboardButton(
                              text="𖣘SUPPORT𖣘",
-                             url=f"https://t.me/team_samurai"),
+                             url=f"https://t.me/fantastic_support"),
                        InlineKeyboardButton(
                              text="Pm𖣘help",
                              url="https://t.me/FANTASTICFIGHTERBOT")
