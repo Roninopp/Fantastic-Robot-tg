@@ -323,7 +323,7 @@ def info(update: Update, context: CallbackContext):
     if user.id == OWNER_ID:
         text += "\n\nThe Distatser Level of This person is 'FANTASTIC KING'."
     elif user.id in DEV_USERS:
-        text += "\n\nThe Distatser Level ofthis person 'FANTASTIC FAN'."
+        text += "\n\nThe Distatser Level of this person 'FANTASTIC FAN'."
         disaster_level_present = True
     elif user.id in DRAGONS:
         text += "\n\nThis person is my 'Friend'."
