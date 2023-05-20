@@ -66,5 +66,5 @@ def stats(update, context):
      
      dispatcher.add_handler(STATS_HANDLER)
      
-     __mod_name__ = 
+     __mod_name__ = "Stats"
      __handlers__ = [STATS_HANDLER]
