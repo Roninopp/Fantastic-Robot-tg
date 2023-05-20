@@ -10,13 +10,13 @@ from telegram.error import BadRequest
 
 from telegram.utils.helpers import escape_markdown, mention_html
 
-from TGN import dispatcher 
+from TGN import dispatcher, STATS
 
 from TGN.modules.helper_funcs.chat_status import sudo_plus
 
 NEKO_IMG = "https://telegra.ph/file/dafd230f403ced9aa5c3d.jpg"
 
-@sudo_plus 
+
 def stats(update, context): 
      status = "*Bot statistics*:\n"
      try: 
