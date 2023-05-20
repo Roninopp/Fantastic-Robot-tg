@@ -10,7 +10,8 @@ from telegram.error import BadRequest
 
 from telegram.utils.helpers import escape_markdown, mention_html
 
-from TGN import dispatcher, STATS
+from TGN import dispatcher
+from TGN.__main__ import STATS
 
 from TGN.modules.helper_funcs.chat_status import sudo_plus
 
