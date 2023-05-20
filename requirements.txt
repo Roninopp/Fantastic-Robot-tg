@@ -90,3 +90,4 @@ covid
 redis
 moviepy
 replicate
+unidecode
