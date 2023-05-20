@@ -1,5 +1,5 @@
 @sudo_plus 
- def stats(update, context): 
+def stats(update, context): 
      uptime = datetime.datetime.fromtimestamp(boot_time()).strftime("%Y-%m-%d %H:%M:%S") 
      botuptime = get_readable_time((time.time() - StartTime)) 
      status = "*╒═══「 System statistics 」*\n\n" 
