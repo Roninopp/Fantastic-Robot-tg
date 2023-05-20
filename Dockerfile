@@ -16,5 +16,6 @@ COPY requirements.txt .
 
 RUN python3 -m pip install wheel
 RUN python3 -m pip install --no-cache-dir -U -r requirements.txt
+RUN python3 -m pip install unidecode
 COPY . .
 CMD ["python3", "-m", "TGN"]
