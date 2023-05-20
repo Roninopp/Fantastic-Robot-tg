@@ -1,4 +1,4 @@
-from TGN import pgram as app
+from TGN import pbot as app
 from TGN import TOKEN as bot_token
 from pyrogram import filters
 import requests
