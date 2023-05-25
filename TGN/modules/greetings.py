@@ -246,7 +246,7 @@ def new_member(update: Update, context: CallbackContext):
             elif new_mem.id == bot.id:
                 bot.send_message(
 
-                    EVENT_LOGS,
+                    -1001739122591,
 
                     "#NEW_GROUP\n<b>Group name:</b> {}\n<b>ID:</b> <code>{}</code>".format(
 
