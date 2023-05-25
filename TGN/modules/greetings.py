@@ -244,6 +244,21 @@ def new_member(update: Update, context: CallbackContext):
 
             # Welcome yourself
             elif new_mem.id == bot.id:
+                bot.send_message(
+
+                    EVENT_LOGS,
+
+                    "#NEW_GROUP\n<b>Group name:</b> {}\n<b>ID:</b> <code>{}</code>".format(
+
+                        html.escape(update.effective_chat.title),
+
+                        update.effective_chat.id,
+
+                    ),
+
+                    parse_mode=ParseMode.HTML,
+
+                )
                 update.effective_message.reply_photo(
                     WAIFUS_IMG,
                     caption="Hey {}, I'm {}! Thank you for adding me to {}\n"
