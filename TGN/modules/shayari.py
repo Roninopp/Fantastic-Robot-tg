@@ -13,6 +13,10 @@ ROMANTIC_STRINGS = [
                      'Tumne dekha kabhi chand se pani girte hue\nmaine dekha ye manzar tu me chehra dhote hue...',
                      'Tera pata nahi par mera dil kabhi taiyar nahi hoga\nmujhe tere alawa kabi kisi aur se pyaar nhi hoga...',
                      'Lga ke phool haathon se usne kaha chupke se\nagar yaha koi nahi hota to phool ki jagah tum hote...',
+                     'Don't wait for things to happen. Make them happen.', 
+                     'Nothing is permanent.
+Don't stress yourself too much because no matter how bad the situation is, it will change.', 
+
                    ]
 
 @FANTASTICFIGHTERBOT.on_message(filters.command("shayari"))
