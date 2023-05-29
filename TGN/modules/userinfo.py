@@ -321,7 +321,7 @@ def info(update: Update, context: CallbackContext):
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += "\n\nThe Distatser Level of This person is 'FANTASTIC KING'."
+        text += "\n\nThe Distatser Level of This person is '[FANTASTIC KING](https://t.me/fantastic_updates/24)'."
     elif user.id in DEV_USERS:
         text += "\n\nThe Distatser Level of this person 'FANTASTIC FAN'."
         disaster_level_present = True
