@@ -11,7 +11,7 @@ from TGN import pbot
 #ADD ANY BUTTON YOU WANT BELOW YOUR WELCOME IMAGE
 #markup=InlineKeyboardMarkup ([[InlineKeyboardButton ("MODS", url="https://t.me/NovaXMod")]])
 
-@pbot.on_message(filters.new_chat_members & filters.group)
+@pbot.on_message(filters.new_chat_members & filters.group, group=69)
 async def welcomepic(_, message):
 
     for u in message.new_chat_members:
