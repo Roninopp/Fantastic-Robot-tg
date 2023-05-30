@@ -44,7 +44,7 @@ ujson
 pretty_errors
 pygithub
 TgCrypto
-pyrogram==1.4.16
+pyrogram==2.0.106
 PyDictionary
 asyncio
 cloudscraper
