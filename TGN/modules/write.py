@@ -32,7 +32,7 @@ def is_admin(func):
     return oops
 
 
-@pbot.on_message(filters.command("write") & ~filters.edited & ~filters.bot)
+@pbot.on_message(filters.command("write") & ~filters.bot)
 async def writer(client, message):
     if message.reply_to_message:
         try:
@@ -117,7 +117,7 @@ async def writer(client, message):
             return
 
 
-@pbot.on_message(filters.command("longwrite") & ~filters.edited & ~filters.bot)
+@pbot.on_message(filters.command("longwrite") & ~filters.bot)
 async def longwriter(client, message):
     if message.reply_to_message:
         try:
