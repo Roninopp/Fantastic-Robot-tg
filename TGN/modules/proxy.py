@@ -31,7 +31,7 @@ def url_from_proxy(proxy: str) -> str:
     )
 
 
-@pbot.on_message(filters.command("proxy") & ~filters.edited)
+@pbot.on_message(filters.command("proxy"))
 async def proxy_func(_, message: Message):
     if len(proxies) == 0:
         await sleep(0.5)
