@@ -9,7 +9,7 @@ from pyrogram.enums import *
 from TGN import pbot
 
 #ADD ANY BUTTON YOU WANT BELOW YOUR WELCOME IMAGE
-markup=InlineKeyboardMarkup ([[InlineKeyboardButton ("MODS", url="https://t.me/NovaXMod")]])
+#markup=InlineKeyboardMarkup ([[InlineKeyboardButton ("MODS", url="https://t.me/NovaXMod")]])
 
 @pbot.on_message(filters.new_chat_members & filters.group)
 async def welcomepic(_, message):
@@ -36,9 +36,9 @@ COUNT: {await pbot.get_chat_members_count(message.chat.id)}
             for x in a:
                 url = "https://graph.org/" + x
                 resp = r.post("https://nova-apis.up.railway.app/generate", json={'name' : f'{u.first_name}','user_name' : f'@{u.username}','user_id' : f'{u.id}','profile_pic' : f'{url}','group_name' : f'{message.chat.title}' ,"auth_key" : "Yash_Yash__@"}).json()
-                await message.reply_photo((resp['image_url']), caption=MSG, reply_markup=markup)
+                await message.reply_photo((resp['image_url']), caption=MSG)
                 os.remove(f"./downloads/pfp_{uid}.png")
         except AttributeError:
             resp = r.post("https://nova-apis.up.railway.app/generate", json={'name' : f'{u.first_name}','user_name' : f'@{u.username}','user_id' : f'{u.id}','group_name' : f'{message.chat.title}' ,"auth_key" : "Yash_Yash__@"}).json()
-            await message.reply_photo((resp['image_url']), caption=MSG, reply_markup=markup)
+            await message.reply_photo((resp['image_url']), caption=MSG)
             os.remove(f"./downloads/pfp_{uid}.png")
