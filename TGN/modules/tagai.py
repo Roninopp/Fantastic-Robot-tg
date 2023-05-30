@@ -63,7 +63,7 @@ async def locks_dfunc(_, message):
     await lol.edit("Expected on or off 👀")
 
 
-@pbot.on_message(filters.incoming & ~filters.edited)
+@pbot.on_message(filters.incoming)
 async def mentioned_alert(client, message):
     try:
         if not message:
