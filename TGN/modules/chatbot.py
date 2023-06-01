@@ -1,5 +1,5 @@
 import requests
-from Shikimori import pbot
+from TGN import pbot
 from pyrogram import filters, Client
 from pyrogram.types import Message
 from pyrogram.enums import ChatType
