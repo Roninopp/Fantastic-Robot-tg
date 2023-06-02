@@ -101,7 +101,7 @@ I have lots of handy features such as:
 buttons = [
     [
         InlineKeyboardButton(
-            text="💁‍♂️𝘼𝘿𝘿 𝙈𝙀 𝙏𝙊 𝙂𝙍𝙊𝙐𝙋", url="https://t.me/FANTASTICFIGHTERBOT?startgroup=new"),
+            text="➕ ADD FANTASTIC TO YOUR GROUP ➕", url="https://t.me/FANTASTICFIGHTERBOT?startgroup=new"),
     ],
     [                  
                        InlineKeyboardButton(
