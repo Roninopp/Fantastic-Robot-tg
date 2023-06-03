@@ -253,10 +253,10 @@ def info(update: Update, context: CallbackContext):
     buttons = [
     [
                         InlineKeyboardButton(
-                             text="𝙐𝙋𝘿𝘼𝙏𝙀𝙎",
+                             text="𝘿𝙄𝙎𝘼𝙎𝙏𝙀𝙍⚔? ",
                              url="https://t.me/FANTASTIC_UPDATES"),
                        InlineKeyboardButton(
-                             text="𝘼𝘿𝘿+𝙈𝙀",
+                             text="𝙎𝙐𝙈𝙈𝙊𝙉+𝙈𝙀",
                              url="https://t.me/FANTASTICFIGHTERBOT?startgroup=new"),
                     ],
     ]
@@ -321,7 +321,7 @@ def info(update: Update, context: CallbackContext):
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += "\n\nThe Distatser Level of This person is [FANTASTIC KING](https://t.me/fantastic_updates/24)."
+        text += "\n\nThe Distatser Level of This person is 𝐅𝐀𝐍𝐓𝐀𝐒𝐓𝐈𝐂⚔𝐊𝐈𝐍𝐆 [?](https://t.me/fantastic_updates/24)."
     elif user.id in DEV_USERS:
         text += "\n\nThe Distatser Level of this person 'FANTASTIC FAN'."
         disaster_level_present = True
