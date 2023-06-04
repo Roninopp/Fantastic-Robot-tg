@@ -321,15 +321,15 @@ def info(update: Update, context: CallbackContext):
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += "\n\nThe Distatser Level of This person is 𝐅𝐀𝐍𝐓𝐀𝐒𝐓𝐈𝐂⚔𝐊𝐈𝐍𝐆 [?](https://t.me/fantastic_updates/24)."
+        text += "\n\nThe Distatser Level of This person is 𝐅𝐀𝐍𝐓𝐀𝐒𝐓𝐈𝐂⚔𝐊𝐈𝐍𝐆"
     elif user.id in DEV_USERS:
-        text += "\n\nThe Distatser Level of this person 'FANTASTIC FAN'."
+        text += "\n\nThe Distatser Level of this person '𝐅𝐀𝐍𝐓𝐀𝐒𝐓𝐈𝐂 𝐅𝐀𝐍'."
         disaster_level_present = True
     elif user.id in DRAGONS:
-        text += "\n\nThis person is my 'Friend'."
+        text += "\n\nThis person is my '𝐅𝐚𝐧𝐭𝐚𝐬𝐭𝐢𝐜 𝐅𝐫𝐢𝐞𝐧𝐝'."
         disaster_level_present = True
     elif user.id in DEMONS:
-        text += "\n\nThe Distatser level Of this person 'FANTASTIC X DEMON'."
+        text += "\n\nThe Distatser level Of this person '𝐅𝐀𝐍𝐓𝐀𝐒𝐓𝐈𝐂 𝐗 𝐃𝐄𝐌𝐎𝐍'."
         disaster_level_present = True
     elif user.id in TIGERS:
         text += "\n\nThis person is just a 'Peasant'."
