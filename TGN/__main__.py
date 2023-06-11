@@ -6,12 +6,12 @@ import time
 import re
 import sys
 import traceback
-import TGN.modules.sql.users_sql as sql
+import Fantastic.modules.sql.users_sql as sql
 from sys import argv
 from typing import Optional
 from telegram import __version__ as peler
 from platform import python_version as memek
-from TGN import (
+from Fantastic import (
     ALLOW_EXCL,
     CERT_PATH,
     DONATION_LINK,
@@ -33,9 +33,9 @@ from TGN import (
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-from TGN.modules import ALL_MODULES
-from TGN.modules.helper_funcs.chat_status import is_user_admin
-from TGN.modules.helper_funcs.misc import paginate_modules
+from Fantastic.modules import ALL_MODULES
+from Fantastic.modules.helper_funcs.chat_status import is_user_admin
+from Fantastic.modules.helper_funcs.misc import paginate_modules
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import (
     BadRequest,
