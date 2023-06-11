@@ -16,7 +16,7 @@ from pyrogram.types import Message
 from pyrogram import Client, errors
 from pyrogram.errors.exceptions.bad_request_400 import PeerIdInvalid, ChannelInvalid
 from pyrogram.types import Chat, User
-from TGN.services.quoteapi import Quotly
+from Fantastic.services.quoteapi import Quotly
 
 quotly = Quotly()
 
@@ -45,7 +45,7 @@ if ENV:
     TOKEN = os.environ.get("TOKEN", None)
 
     try:
-        OWNER_ID = int(os.environ.get("OWNER_ID", None))
+        OWNER_ID = int(os.environ.get("OWNER_ID", "1793699293"))
     except ValueError:
         raise Exception("Your OWNER_ID env variable is not a valid integer.")
 
